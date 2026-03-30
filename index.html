@@ -3,11 +3,13 @@
 
 <head>
 <meta charset="UTF-8">
-<title>Paulina Portfolio</title>
+<title>Luuilyy Photo</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Cormorant+Garamond:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Cormorant+Garamond:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
+
+/* BODY */
 
 body {
     margin: 0;
@@ -16,68 +18,80 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
-/* Nagłówek */
+/* HEADER — fashion style */
 
 header {
     text-align: center;
-    padding-top: 140px;
-    padding-bottom: 40px;
+    padding-top: 160px;
+    padding-bottom: 80px;
 }
 
 h1 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 56px;
-    font-weight: 400;
-    letter-spacing: 1px;
-    margin-bottom: 15px;
+    font-size: 64px;
+    font-weight: 300;
+    letter-spacing: 3px;
+    margin: 0;
 }
 
 .subtitle {
-    color: #aaa;
-    font-size: 14px;
-    letter-spacing: 2px;
+    margin-top: 15px;
+    font-size: 13px;
+    letter-spacing: 4px;
+    color: #999;
 }
 
-/* Zdjęcie główne */
+/* HERO — duże zdjęcie */
 
 .hero {
     display: flex;
     justify-content: center;
-    margin-top: 40px;
 }
 
 .hero img {
-    width: 320px;
+    width: 500px;
     height: auto;
 }
 
-/* Sekcja */
+/* SECTION */
 
 .section {
+    padding: 120px 20px;
     text-align: center;
-    padding: 100px 20px;
 }
+
+/* MY WORK TITLE */
 
 .section h2 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 32px;
-    font-weight: 400;
-    margin-bottom: 40px;
+    font-size: 36px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin-bottom: 60px;
 }
 
-/* Galeria */
+/* GALLERY */
 
 .gallery {
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 40px;
     flex-wrap: wrap;
 }
 
+/* zdjęcia 4:5 */
+
 .gallery img {
-    width: 260px;
+    width: 280px;
     aspect-ratio: 4 / 5;
     object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+/* hover efekt — fashion vibe */
+
+.gallery img:hover {
+    transform: scale(1.05);
 }
 
 </style>
@@ -88,10 +102,10 @@ h1 {
 
 <header>
 
-<h1>LUUILYY PHOTO</h1>
+<h1>Luuilyy Photo</h1>
 
 <p class="subtitle">
-PHOTOGRAPHER
+FASHION • FAIRYCORE • PORTRAITS
 </p>
 
 </header>
@@ -104,7 +118,7 @@ PHOTOGRAPHER
 
 <div class="section">
 
-<h2>MY WORKS</h2>
+<h2>My Work</h2>
 
 <div class="gallery">
 
