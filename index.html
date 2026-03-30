@@ -34,9 +34,8 @@ p {
 
 .hero-image {
     width: 100%;
-    max-height: 600px;
+    max-height: 500px;
     object-fit: contain;
-    background-color: black;
 }
 
 /* Sekcja */
@@ -46,7 +45,7 @@ p {
     text-align: center;
 }
 
-/* GALERIA — idealna pod 4:5 */
+/* GALERIA OBOK SIEBIE */
 
 .gallery {
     display: flex;
@@ -55,9 +54,12 @@ p {
     flex-wrap: wrap;
 }
 
+/* Zdjęcia 4:5 */
+
 .gallery img {
     width: 260px;
-    height: auto;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
     border-radius: 12px;
 }
 
