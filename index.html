@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <title>Luuilyy Photo</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Cormorant+Garamond:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Playfair+Display:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
 
@@ -13,52 +13,32 @@
 
 body {
     margin: 0;
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: #111;
     font-family: 'Montserrat', sans-serif;
-}
-
-/* MENU */
-
-nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: black;
-    text-align: center;
-    padding: 20px 0;
-    z-index: 999;
-}
-
-nav a {
-    color: white;
-    margin: 0 25px;
-    text-decoration: none;
-    font-size: 14px;
-    letter-spacing: 3px;
 }
 
 /* HEADER */
 
 header {
     text-align: center;
-    padding-top: 180px;
-    padding-bottom: 80px;
+    padding-top: 120px;
+    padding-bottom: 60px;
 }
 
 h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 64px;
+    font-family: 'Playfair Display', serif;
+    font-size: 90px;
     font-weight: 300;
-    letter-spacing: 3px;
+    letter-spacing: 6px;
     margin: 0;
 }
 
 .subtitle {
-    margin-top: 15px;
+    margin-top: 20px;
     font-size: 13px;
     letter-spacing: 4px;
-    color: #999;
+    color: #555;
 }
 
 /* HERO */
@@ -66,61 +46,62 @@ h1 {
 .hero {
     display: flex;
     justify-content: center;
+    margin-bottom: 120px;
 }
 
 .hero img {
-    width: 420px;
+    width: 900px;
+    max-width: 90%;
     height: auto;
 }
 
 /* SECTION */
 
 .section {
-    padding: 120px 20px;
+    padding: 100px 20px;
     text-align: center;
 }
 
 .section h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 36px;
-    font-weight: 300;
-    letter-spacing: 2px;
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    letter-spacing: 3px;
     margin-bottom: 60px;
 }
 
 /* GALLERY */
 
 .gallery {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 300px);
     justify-content: center;
     gap: 40px;
-    flex-wrap: wrap;
 }
 
 .gallery img {
-    width: 280px;
+    width: 300px;
     aspect-ratio: 4 / 5;
     object-fit: cover;
     transition: transform 0.4s ease;
 }
 
 .gallery img:hover {
-    transform: scale(1.05);
+    transform: scale(1.04);
 }
 
 /* ABOUT */
 
 .about-text {
-    max-width: 600px;
+    max-width: 650px;
     margin: auto;
-    color: #bbb;
-    line-height: 1.6;
+    color: #444;
+    line-height: 1.7;
 }
 
 /* CONTACT */
 
 .contact-text {
-    color: #bbb;
+    color: #444;
 }
 
 </style>
@@ -129,31 +110,17 @@ h1 {
 
 <body>
 
-<!-- MENU -->
+<header>
 
-<nav>
-
-<a href="#home">HOME</a>
-
-<a href="#work">WORK</a>
-
-<a href="#about">ABOUT</a>
-
-<a href="#contact">CONTACT</a>
-
-</nav>
-
-<!-- HEADER -->
-
-<header id="home">
-
-<h1>Luuilyy Photo</h1>
+<h1>LUUILYY PHOTO</h1>
 
 <p class="subtitle">
 FASHION • FAIRYCORE • PORTRAITS
 </p>
 
 </header>
+
+<!-- HERO -->
 
 <div class="hero">
 
@@ -163,9 +130,9 @@ FASHION • FAIRYCORE • PORTRAITS
 
 <!-- WORK -->
 
-<div class="section" id="work">
+<div class="section">
 
-<h2>My Work</h2>
+<h2>PORTFOLIO</h2>
 
 <div class="gallery">
 
@@ -175,15 +142,29 @@ FASHION • FAIRYCORE • PORTRAITS
 
 <img src="julka.jpg">
 
+<img src="505947252_9991842110891643_2799595505019481989_n.jpg">
+
+<img src="7549f87c-7076-4012-ac51-eb9521bd15bb.jpg">
+
+<img src="julka.jpg">
+
+<img src="505947252_9991842110891643_2799595505019481989_n.jpg">
+
+<img src="7549f87c-7076-4012-ac51-eb9521bd15bb.jpg">
+
+<img src="julka.jpg">
+
+<img src="505947252_9991842110891643_2799595505019481989_n.jpg">
+
 </div>
 
 </div>
 
 <!-- ABOUT -->
 
-<div class="section" id="about">
+<div class="section">
 
-<h2>About</h2>
+<h2>ABOUT</h2>
 
 <p class="about-text">
 
@@ -197,9 +178,9 @@ My goal is to create images that feel magical, feminine and unique.
 
 <!-- CONTACT -->
 
-<div class="section" id="contact">
+<div class="section">
 
-<h2>Contact</h2>
+<h2>CONTACT</h2>
 
 <p class="contact-text">
 
