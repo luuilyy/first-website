@@ -29,7 +29,7 @@ nav {
     width: 100%;
     background-color: white;
     border-bottom: 1px solid #eee;
-    padding: 20px 0;
+    padding: 15px 0;
     z-index: 999;
 }
 
@@ -39,37 +39,34 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 20px;
 }
 
 .logo {
     font-family: 'Playfair Display', serif;
-    font-size: 22px;
+    font-size: 20px;
     letter-spacing: 2px;
 }
 
 .menu a {
     text-decoration: none;
     color: #111;
-    margin-left: 30px;
+    margin-left: 25px;
     font-size: 12px;
     letter-spacing: 2px;
-}
-
-.menu a:hover {
-    color: #777;
 }
 
 /* HEADER */
 
 header {
     text-align: center;
-    padding-top: 160px;
+    padding-top: 140px;
     padding-bottom: 60px;
 }
 
 h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 100px;
+    font-size: 90px;
     font-weight: 300;
     letter-spacing: 6px;
     margin: 0;
@@ -87,7 +84,7 @@ h1 {
 .hero {
     display: flex;
     justify-content: center;
-    margin-bottom: 120px;
+    margin-bottom: 100px;
 }
 
 .hero img {
@@ -99,15 +96,15 @@ h1 {
 /* SECTIONS */
 
 .section {
-    padding: 100px 20px;
+    padding: 90px 20px;
     text-align: center;
 }
 
 .section h2 {
     font-family: 'Playfair Display', serif;
-    font-size: 38px;
+    font-size: 36px;
     letter-spacing: 3px;
-    margin-bottom: 60px;
+    margin-bottom: 50px;
 }
 
 /* GALLERY */
@@ -116,18 +113,13 @@ h1 {
     display: grid;
     grid-template-columns: repeat(2, 300px);
     justify-content: center;
-    gap: 40px;
+    gap: 35px;
 }
 
 .gallery img {
     width: 300px;
     aspect-ratio: 4 / 5;
     object-fit: cover;
-    transition: transform 0.4s ease;
-}
-
-.gallery img:hover {
-    transform: scale(1.04);
 }
 
 /* ABOUT */
@@ -153,7 +145,7 @@ h1 {
 }
 
 .contact-link {
-    font-size: 20px;
+    font-size: 18px;
     margin-top: 5px;
 }
 
@@ -162,26 +154,43 @@ h1 {
     color: #111;
 }
 
-.contact-link a:hover {
-    color: #777;
-}
-
-/* RESPONSIVE — TELEFON */
+/* MOBILE VERSION */
 
 @media (max-width: 768px) {
 
-h1 {
-    font-size: 48px;
+/* menu */
+
+.nav-container {
+    flex-direction: column;
+    gap: 10px;
+}
+
+.logo {
+    font-size: 18px;
 }
 
 .menu a {
-    margin-left: 15px;
+    margin: 0 10px;
+}
+
+/* header */
+
+h1 {
+    font-size: 42px;
+    letter-spacing: 4px;
+}
+
+.subtitle {
     font-size: 11px;
 }
 
+/* hero */
+
 .hero img {
-    width: 95%;
+    width: 92%;
 }
+
+/* gallery */
 
 .gallery {
     grid-template-columns: 1fr;
@@ -190,6 +199,8 @@ h1 {
 .gallery img {
     width: 90%;
 }
+
+/* spacing */
 
 .section {
     padding: 70px 20px;
