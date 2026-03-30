@@ -5,62 +5,78 @@
 <meta charset="UTF-8">
 <title>Paulina Portfolio</title>
 
+<!-- Ładna czcionka -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+
 <style>
 
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
     background-color: black;
     color: white;
+    font-family: 'Inter', sans-serif;
 }
 
 /* Nagłówek */
 
 header {
     text-align: center;
-    padding: 80px 20px 40px;
+    padding-top: 120px;
+    padding-bottom: 40px;
 }
 
 h1 {
-    font-size: 42px;
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 600;
     margin-bottom: 10px;
 }
 
-p {
-    color: #bbb;
+.subtitle {
+    color: #aaa;
+    font-size: 16px;
 }
 
 /* Zdjęcie główne */
 
-.hero-image {
-    width: 100%;
-    max-height: 500px;
-    object-fit: contain;
+.hero {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
 }
 
-/* Sekcja */
+.hero img {
+    width: 350px;
+    height: auto;
+    border-radius: 16px;
+}
+
+/* Sekcja galerii */
 
 .section {
-    padding: 60px 20px;
     text-align: center;
+    padding: 80px 20px;
 }
 
-/* GALERIA OBOK SIEBIE */
+.section h2 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 40px;
+}
+
+/* Galeria */
 
 .gallery {
     display: flex;
     justify-content: center;
-    gap: 25px;
+    gap: 30px;
     flex-wrap: wrap;
 }
-
-/* Zdjęcia 4:5 */
 
 .gallery img {
     width: 260px;
     aspect-ratio: 4 / 5;
     object-fit: cover;
-    border-radius: 12px;
+    border-radius: 14px;
 }
 
 </style>
@@ -73,11 +89,17 @@ p {
 
 <h1>Paulina Witaszek</h1>
 
-<p>Photographer & beginner web developer</p>
+<p class="subtitle">
+Photographer & beginner web developer
+</p>
 
 </header>
 
-<img src="505947252_9991842110891643_2799595505019481989_n.jpg" class="hero-image">
+<div class="hero">
+
+<img src="505947252_9991842110891643_2799595505019481989_n.jpg">
+
+</div>
 
 <div class="section">
 
