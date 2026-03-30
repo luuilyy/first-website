@@ -9,6 +9,8 @@
 
 <style>
 
+/* BODY */
+
 body {
     margin: 0;
     background-color: black;
@@ -16,11 +18,31 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
+/* MENU */
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: black;
+    text-align: center;
+    padding: 20px 0;
+    z-index: 999;
+}
+
+nav a {
+    color: white;
+    margin: 0 25px;
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 3px;
+}
+
 /* HEADER */
 
 header {
     text-align: center;
-    padding-top: 160px;
+    padding-top: 180px;
     padding-bottom: 80px;
 }
 
@@ -79,7 +101,6 @@ h1 {
     width: 280px;
     aspect-ratio: 4 / 5;
     object-fit: cover;
-    cursor: pointer;
     transition: transform 0.4s ease;
 }
 
@@ -102,38 +123,29 @@ h1 {
     color: #bbb;
 }
 
-/* IMAGE MODAL (powiększanie) */
-
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 999;
-    padding-top: 60px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: black;
-}
-
-.modal img {
-    margin: auto;
-    display: block;
-    max-width: 90%;
-    max-height: 90%;
-}
-
-.modal:target {
-    display: block;
-}
-
 </style>
 
 </head>
 
 <body>
 
-<header>
+<!-- MENU -->
+
+<nav>
+
+<a href="#home">HOME</a>
+
+<a href="#work">WORK</a>
+
+<a href="#about">ABOUT</a>
+
+<a href="#contact">CONTACT</a>
+
+</nav>
+
+<!-- HEADER -->
+
+<header id="home">
 
 <h1>Luuilyy Photo</h1>
 
@@ -149,23 +161,19 @@ FASHION • FAIRYCORE • PORTRAITS
 
 </div>
 
-<div class="section">
+<!-- WORK -->
+
+<div class="section" id="work">
 
 <h2>My Work</h2>
 
 <div class="gallery">
 
-<a href="#img1">
 <img src="505947252_9991842110891643_2799595505019481989_n.jpg">
-</a>
 
-<a href="#img2">
 <img src="7549f87c-7076-4012-ac51-eb9521bd15bb.jpg">
-</a>
 
-<a href="#img3">
 <img src="julka.jpg">
-</a>
 
 </div>
 
@@ -173,7 +181,7 @@ FASHION • FAIRYCORE • PORTRAITS
 
 <!-- ABOUT -->
 
-<div class="section">
+<div class="section" id="about">
 
 <h2>About</h2>
 
@@ -189,7 +197,7 @@ My goal is to create images that feel magical, feminine and unique.
 
 <!-- CONTACT -->
 
-<div class="section">
+<div class="section" id="contact">
 
 <h2>Contact</h2>
 
@@ -200,20 +208,6 @@ Email: luuilyyphoto@gmail.com
 
 </p>
 
-</div>
-
-<!-- MODAL IMAGES -->
-
-<div id="img1" class="modal">
-<img src="505947252_9991842110891643_2799595505019481989_n.jpg">
-</div>
-
-<div id="img2" class="modal">
-<img src="7549f87c-7076-4012-ac51-eb9521bd15bb.jpg">
-</div>
-
-<div id="img3" class="modal">
-<img src="julka.jpg">
 </div>
 
 </body>
