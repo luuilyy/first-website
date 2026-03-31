@@ -153,7 +153,7 @@ pointer-events:auto;
 
 }
 
-/* ===== HERO IMAGE ===== */
+/* ===== HERO ===== */
 
 .faq-hero {
 
@@ -183,7 +183,7 @@ object-fit:cover;
 
 text-align:center;
 
-padding:60px 20px 30px;
+padding:60px 20px 40px;
 
 }
 
@@ -226,6 +226,8 @@ border-bottom:1px solid #eee;
 
 }
 
+/* PYTANIA */
+
 .faq-question {
 
 width:100%;
@@ -233,7 +235,7 @@ width:100%;
 background:none;
 border:none;
 
-padding:24px 10px;
+padding:26px 10px;
 
 font-family:'Montserrat',sans-serif;
 font-size:15px;
@@ -244,16 +246,39 @@ cursor:pointer;
 
 letter-spacing:1px;
 
+display:flex;
+justify-content:space-between;
+align-items:center;
+
 text-align:left;
 
 }
+
+/* STRZAŁKA */
+
+.arrow {
+
+transition:0.3s;
+font-size:14px;
+
+}
+
+/* OBROT STRZAŁKI */
+
+.faq-question.active .arrow {
+
+transform:rotate(180deg);
+
+}
+
+/* ODPOWIEDZI */
 
 .faq-answer {
 
 max-height:0;
 overflow:hidden;
 
-transition:0.3s ease;
+transition:0.35s ease;
 
 }
 
@@ -261,7 +286,7 @@ transition:0.3s ease;
 
 margin:0;
 
-padding:0 10px 20px 10px;
+padding:0 10px 22px 10px;
 
 font-size:14px;
 line-height:1.7;
@@ -347,13 +372,13 @@ NAJCZĘŚCIEJ ZADAWANE PYTANIA
 
 <div class="faq-container">
 
-<!-- 1 -->
+<!-- TEMPLATE PYTANIA -->
 
 <div class="faq-item">
 <button class="faq-question">
 Ile trwa sesja zdjęciowa?
+<span class="arrow">▼</span>
 </button>
-
 <div class="faq-answer">
 <p>
 Czas trwania sesji zależy od wybranego pakietu — zazwyczaj trwa od około godziny do dwóch godzin, w zależności od miejsca oraz rodzaju sesji.
@@ -361,13 +386,11 @@ Czas trwania sesji zależy od wybranego pakietu — zazwyczaj trwa od około god
 </div>
 </div>
 
-<!-- 2 -->
-
 <div class="faq-item">
 <button class="faq-question">
 Czy pomagasz w pozowaniu?
+<span class="arrow">▼</span>
 </button>
-
 <div class="faq-answer">
 <p>
 Tak — podczas sesji pokazuję, jak się ustawić, ale przygotowanie zaczyna się już wcześniej. Przed sesją wspólnie ustalamy klimat zdjęć, szukamy inspiracji i wzorujemy się na wybranych przykładach — to zdecydowanie ułatwia pracę i sprawia, że nie musisz się stresować.
@@ -375,13 +398,11 @@ Tak — podczas sesji pokazuję, jak się ustawić, ale przygotowanie zaczyna si
 </div>
 </div>
 
-<!-- 3 -->
-
 <div class="faq-item">
 <button class="faq-question">
 Jak przygotować się do sesji?
+<span class="arrow">▼</span>
 </button>
-
 <div class="faq-answer">
 <p>
 Po rezerwacji otrzymasz ode mnie wskazówki dotyczące ubioru, makijażu oraz dodatków. Pomagam dobrać stylizacje tak, aby pasowały do klimatu sesji.
@@ -389,13 +410,11 @@ Po rezerwacji otrzymasz ode mnie wskazówki dotyczące ubioru, makijażu oraz do
 </div>
 </div>
 
-<!-- 4 -->
-
 <div class="faq-item">
 <button class="faq-question">
 Gdzie odbywa się sesja zdjęciowa? Kto wybiera studio?
+<span class="arrow">▼</span>
 </button>
-
 <div class="faq-answer">
 <p>
 Sesje odbywają się w plenerze lub w studio — w zależności od wybranego pakietu i preferencji klientki.
@@ -407,13 +426,11 @@ Przed wpłaceniem zaliczki wysyłam kilka propozycji studiów i razem wybieramy 
 </div>
 </div>
 
-<!-- 5 -->
-
 <div class="faq-item">
 <button class="faq-question">
 Ile czeka się na gotowe zdjęcia?
+<span class="arrow">▼</span>
 </button>
-
 <div class="faq-answer">
 <p>
 Na gotowe zdjęcia czeka się zazwyczaj od 14 do 21 dni. Czas ten może się zmienić — fotografia nie jest moją jedyną pracą, dlatego taki czas oczekiwania. Zawsze informuję, jeśli coś się zmienia.
@@ -421,13 +438,11 @@ Na gotowe zdjęcia czeka się zazwyczaj od 14 do 21 dni. Czas ten może się zmi
 </div>
 </div>
 
-<!-- 6 -->
-
 <div class="faq-item">
 <button class="faq-question">
 Czy można dokupić dodatkowe zdjęcia?
+<span class="arrow">▼</span>
 </button>
-
 <div class="faq-answer">
 <p>
 Tak — oferuję trzy pakiety zdjęć, a po otrzymaniu galerii istnieje możliwość dokupienia dodatkowych ujęć według aktualnego cennika.
@@ -435,13 +450,11 @@ Tak — oferuję trzy pakiety zdjęć, a po otrzymaniu galerii istnieje możliwo
 </div>
 </div>
 
-<!-- 7 -->
-
 <div class="faq-item">
 <button class="faq-question">
 Czy wykonujesz makijaż?
+<span class="arrow">▼</span>
 </button>
-
 <div class="faq-answer">
 <p>
 Nie wykonuję makijażu samodzielnie, jednak współpracuję z makijażystkami oraz stylistką fryzur, które mogę polecić przed sesją.
@@ -449,13 +462,11 @@ Nie wykonuję makijażu samodzielnie, jednak współpracuję z makijażystkami o
 </div>
 </div>
 
-<!-- 8 -->
-
 <div class="faq-item">
 <button class="faq-question">
 Jak zarezerwować termin sesji?
+<span class="arrow">▼</span>
 </button>
-
 <div class="faq-answer">
 <p>
 Termin sesji możesz zarezerwować poprzez formularz rezerwacji dostępny na stronie lub kontaktując się ze mną bezpośrednio.
@@ -463,13 +474,11 @@ Termin sesji możesz zarezerwować poprzez formularz rezerwacji dostępny na str
 </div>
 </div>
 
-<!-- 9 -->
-
 <div class="faq-item">
 <button class="faq-question">
 Kto wybiera zdjęcia, które otrzymam?
+<span class="arrow">▼</span>
 </button>
-
 <div class="faq-answer">
 <p>
 Jeśli mi zaufasz, mogę samodzielnie wybrać i obrobić najlepsze zdjęcia z sesji.
@@ -481,13 +490,11 @@ Jeśli jednak wolisz dokonać wyboru samodzielnie — nie ma problemu. Wysyłam 
 </div>
 </div>
 
-<!-- 10 -->
-
 <div class="faq-item">
 <button class="faq-question">
 Czy mogę przyjść z osobą towarzyszącą?
+<span class="arrow">▼</span>
 </button>
-
 <div class="faq-answer">
 <p>
 Tak — możesz przyjść z osobą towarzyszącą. Jeśli jednak nie bierze udziału w sesji, proszę o zaczekanie przed wejściem do studia — dla komfortu naszej pracy.
@@ -513,11 +520,22 @@ document.getElementById("overlay").classList.remove("active");
 
 });
 
+/* FAQ LOGIKA */
+
 const faqQuestions = document.querySelectorAll(".faq-question");
 
 faqQuestions.forEach(question => {
 
 question.addEventListener("click", () => {
+
+faqQuestions.forEach(q => {
+if(q !== question){
+q.classList.remove("active");
+q.nextElementSibling.style.maxHeight = null;
+}
+});
+
+question.classList.toggle("active");
 
 const answer = question.nextElementSibling;
 
