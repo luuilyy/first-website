@@ -151,11 +151,35 @@ pointer-events:auto;
 
 }
 
+/* WRÓĆ DO PORTFOLIO */
+
+.back-link {
+
+display:inline-block;
+
+margin-top:140px;
+margin-left:40px;
+
+font-size:13px;
+letter-spacing:2px;
+
+text-decoration:none;
+
+color:#111;
+
+transition:0.3s;
+
+}
+
+.back-link:hover {
+
+opacity:0.6;
+
+}
+
 /* TYTUŁ */
 
 .album-title {
-
-padding-top:150px;
 
 text-align:center;
 
@@ -164,6 +188,8 @@ font-family:'Playfair Display',serif;
 font-size:38px;
 
 letter-spacing:4px;
+
+margin-top:30px;
 
 margin-bottom:60px;
 
@@ -235,13 +261,17 @@ max-height:90%;
 
 }
 
+/* STRZAŁKI — DUŻE */
+
 .arrow {
 
 position:absolute;
 
 top:50%;
 
-font-size:40px;
+transform:translateY(-50%);
+
+font-size:60px;
 
 color:white;
 
@@ -249,11 +279,29 @@ cursor:pointer;
 
 padding:20px;
 
+opacity:0.7;
+
+transition:0.3s;
+
 }
 
-.arrow-left { left:20px; }
+.arrow:hover {
 
-.arrow-right { right:20px; }
+opacity:1;
+
+}
+
+.arrow-left {
+
+left:30px;
+
+}
+
+.arrow-right {
+
+right:30px;
+
+}
 
 /* MOBILE */
 
@@ -284,6 +332,18 @@ margin:auto;
 .menu {
 
 width:260px;
+
+}
+
+.back-link {
+
+margin-left:20px;
+
+}
+
+.arrow {
+
+font-size:40px;
 
 }
 
@@ -333,21 +393,27 @@ LUUILYY PHOTO
 
 <div class="overlay" id="overlay"></div>
 
+<!-- WRÓĆ -->
+
+<a href="index.html#portfolio" class="back-link">
+
+← WRÓĆ DO PORTFOLIO
+
+</a>
+
 <!-- TYTUŁ -->
 
 <h2 class="album-title">
-
 SESJE WIZERUNKOWE
-
 </h2>
 
 <!-- GALERIA -->
 
 <div class="gallery">
 
-<img src="IMG_8453.JPG">
-<img src="IMG_4588.JPG">
-<img src="DSC04409.jpg">
+<img src="IMG_8453.JPG" loading="lazy">
+<img src="IMG_4588.JPG" loading="lazy">
+<img src="DSC04409.jpg" loading="lazy">
 
 </div>
 
@@ -397,13 +463,9 @@ document.getElementById("overlay").classList.remove("active");
 /* LIGHTBOX */
 
 const images = document.querySelectorAll(".gallery img");
-
 const lightbox = document.getElementById("lightbox");
-
 const lightboxImg = document.getElementById("lightbox-img");
-
 const next = document.getElementById("next");
-
 const prev = document.getElementById("prev");
 
 let currentIndex = 0;
