@@ -20,15 +20,17 @@ font-family:'Montserrat',sans-serif;
 background:white;
 }
 
-/* ===== MENU ===== */
+/* ===== NAVBAR ===== */
 
 nav {
 
 position:fixed;
 top:0;
 width:100%;
+
 background:white;
 border-bottom:1px solid #eee;
+
 padding:18px 0;
 z-index:999;
 
@@ -61,57 +63,95 @@ letter-spacing:3px;
 
 font-size:28px;
 cursor:pointer;
+z-index:1001;
 
 }
 
-/* ===== MENU LISTA ===== */
+/* ===== MENU PANEL (PRAWA STRONA) ===== */
 
 .menu {
 
-display:none;
+position:fixed;
 
-flex-direction:column;
+top:0;
+right:0;
 
-position:absolute;
-
-top:80px;
-left:0;
-
-width:100%;
+width:280px;
+height:100vh;
 
 background:white;
 
-border-top:1px solid #eee;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+
+transform:translateX(100%);
+transition:0.3s;
+
+box-shadow:-5px 0 15px rgba(0,0,0,0.1);
+
+z-index:1000;
 
 }
 
 .menu.active {
 
-display:flex;
+transform:translateX(0);
 
 }
+
+/* ===== MENU LINKI ===== */
 
 .menu a {
 
 text-decoration:none;
-
 color:#111;
 
-padding:15px;
+padding:18px;
 
 font-size:13px;
-
 letter-spacing:2px;
 
-border-bottom:1px solid #eee;
-
 text-align:center;
+
+transition:0.3s;
 
 }
 
 .menu a:hover {
 
-background:#f7f7f7;
+color:#888;
+
+}
+
+/* ===== OVERLAY ===== */
+
+.overlay {
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background:rgba(0,0,0,0.3);
+
+opacity:0;
+pointer-events:none;
+
+transition:0.3s;
+
+z-index:998;
+
+}
+
+.overlay.active {
+
+opacity:1;
+pointer-events:auto;
 
 }
 
@@ -243,7 +283,6 @@ margin:auto;
 .album img {
 
 width:100%;
-
 height:480px;
 
 object-fit:cover;
@@ -305,6 +344,8 @@ height:auto;
 
 <body>
 
+<!-- NAVBAR -->
+
 <nav>
 
 <div class="nav-container">
@@ -317,20 +358,28 @@ LUUILYY PHOTO
 ☰
 </div>
 
+</div>
+
+</nav>
+
+<!-- MENU PANEL -->
+
 <div class="menu" id="menu">
 
 <a href="index.html">Strona główna</a>
 <a href="#portfolio">Portfolio</a>
-<a href="#how">Jak wygląda sesja</a>
+<a href="#faq">FAQ</a>
 <a href="#about">O mnie</a>
 <a href="#contact">Kontakt</a>
 <a href="rezerwacja.html">Rezerwacja</a>
 
 </div>
 
-</div>
+<!-- OVERLAY -->
 
-</nav>
+<div class="overlay" id="overlay"></div>
+
+<!-- HEADER -->
 
 <header>
 
@@ -341,6 +390,8 @@ FASHION • FAIRYCORE • PORTRAITS
 </p>
 
 </header>
+
+<!-- HERO -->
 
 <div class="hero">
 
@@ -354,13 +405,25 @@ ZAREZERWUJ SESJĘ
 
 </div>
 
+<!-- JAVASCRIPT -->
+
 <script>
 
 function toggleMenu() {
 
 document.getElementById("menu").classList.toggle("active");
+document.getElementById("overlay").classList.toggle("active");
 
 }
+
+/* zamykanie po kliknięciu w tło */
+
+document.getElementById("overlay").addEventListener("click", function(){
+
+document.getElementById("menu").classList.remove("active");
+document.getElementById("overlay").classList.remove("active");
+
+});
 
 </script>
 
