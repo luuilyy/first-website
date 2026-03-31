@@ -12,68 +12,198 @@
 
 <style>
 
-/* ===== BODY ===== */
+/* BODY */
 
 body {
 margin:0;
-font-family:'Montserrat',sans-serif;
 background:white;
+color:#111;
+font-family:'Montserrat',sans-serif;
 scroll-behavior:smooth;
 }
 
-/* ===== NAVBAR ===== */
+/* MENU */
 
 nav {
-
 position:fixed;
 top:0;
 width:100%;
-
 background:white;
 border-bottom:1px solid #eee;
-
 padding:18px 0;
 z-index:999;
-
 }
 
 .nav-container {
-
 max-width:1150px;
 margin:auto;
-
 display:flex;
 justify-content:space-between;
 align-items:center;
-
 padding:0 25px;
-
 }
 
 .logo {
-
 font-family:'Playfair Display',serif;
 font-size:22px;
 letter-spacing:3px;
-
 }
 
-/* ===== HAMBURGER ===== */
+/* HAMBURGER */
 
 .hamburger {
-
 font-size:28px;
 cursor:pointer;
-z-index:1001;
-
+display:none;
 }
 
-/* ===== MENU PANEL ===== */
+/* MENU PANEL */
+
+.menu {
+display:flex;
+}
+
+/* MENU LINKI */
+
+.menu a {
+text-decoration:none;
+color:#111;
+margin-left:14px;
+font-size:13px;
+letter-spacing:2px;
+border:1px solid transparent;
+padding:10px 18px;
+transition:0.3s;
+}
+
+.menu a:hover {
+border:1px solid #111;
+}
+
+/* HEADER */
+
+header {
+text-align:center;
+padding-top:150px;
+padding-bottom:60px;
+}
+
+h1 {
+font-family:'Playfair Display',serif;
+font-size:80px;
+letter-spacing:6px;
+margin:0;
+}
+
+.subtitle {
+margin-top:20px;
+font-size:13px;
+letter-spacing:4px;
+color:#555;
+}
+
+/* HERO */
+
+.hero {
+display:flex;
+justify-content:center;
+margin-bottom:100px;
+}
+
+.hero img {
+width:100%;
+max-width:1100px;
+}
+
+/* PORTFOLIO */
+
+.section {
+padding:80px 20px;
+text-align:center;
+}
+
+.section h2 {
+font-family:'Playfair Display',serif;
+font-size:36px;
+letter-spacing:3px;
+margin-bottom:50px;
+}
+
+/* ALBUMY */
+
+.albums {
+display:grid;
+grid-template-columns: repeat(2, 350px);
+justify-content:center;
+gap:40px;
+}
+
+.album {
+position:relative;
+cursor:pointer;
+}
+
+.album img {
+width:350px;
+height:450px;
+object-fit:cover;
+transition:0.3s;
+}
+
+.album:hover img {
+opacity:0.85;
+}
+
+.album-title-box {
+position:absolute;
+bottom:0;
+width:100%;
+background:rgba(0,0,0,0.45);
+color:white;
+padding:18px;
+letter-spacing:3px;
+font-size:14px;
+}
+
+/* ABOUT */
+
+.about-text {
+max-width:650px;
+margin:auto;
+line-height:1.7;
+color:#444;
+}
+
+/* CONTACT */
+
+.contact-label {
+font-size:12px;
+letter-spacing:3px;
+color:#888;
+margin-top:30px;
+}
+
+.contact-link a {
+text-decoration:none;
+color:#111;
+font-size:18px;
+}
+
+/* MOBILE */
+
+@media (max-width:768px){
+
+.nav-container {
+flex-direction:row;
+}
+
+.hamburger {
+display:block;
+}
 
 .menu {
 
 position:fixed;
-
 top:0;
 right:0;
 
@@ -82,7 +212,6 @@ height:100vh;
 
 background:white;
 
-display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
@@ -92,268 +221,36 @@ transition:0.3s;
 
 box-shadow:-5px 0 15px rgba(0,0,0,0.1);
 
-z-index:1000;
-
 }
 
 .menu.active {
-
 transform:translateX(0);
-
 }
-
-/* ===== MENU LINKI ===== */
 
 .menu a {
-
-text-decoration:none;
-color:#111;
-
-padding:18px;
-
+margin:10px 0;
 font-size:13px;
-letter-spacing:2px;
-
-text-align:center;
-
-transition:0.3s;
-
 }
 
-.menu a:hover {
-
-color:#888;
-
-}
-
-/* ===== OVERLAY ===== */
-
-.overlay {
-
-position:fixed;
-
-top:0;
-left:0;
-
-width:100%;
-height:100%;
-
-background:rgba(0,0,0,0.3);
-
-opacity:0;
-pointer-events:none;
-
-transition:0.3s;
-
-z-index:900;
-
-}
-
-.overlay.active {
-
-opacity:1;
-pointer-events:auto;
-
-}
-
-/* ===== HEADER ===== */
-
-header {
-
-text-align:center;
-
-padding-top:150px;
-padding-bottom:50px;
-
-}
-
-h1 {
-
-font-family:'Playfair Display',serif;
-
-font-size:80px;
-
-letter-spacing:6px;
-
-margin:0;
-
-}
-
-.subtitle {
-
-margin-top:20px;
-
-font-size:13px;
-
-letter-spacing:4px;
-
-color:#555;
-
-}
-
-/* ===== HERO ===== */
-
-.hero {
-
-text-align:center;
-
-margin-bottom:80px;
-
-}
-
-.hero img {
-
-width:100%;
-max-width:1100px;
-
-}
-
-.booking-button {
-
-display:inline-block;
-
-margin-top:45px;
-
-padding:22px 60px;
-
-font-size:16px;
-
-letter-spacing:3px;
-
-border:1px solid #111;
-
-text-decoration:none;
-
-color:#111;
-
-transition:0.3s;
-
-}
-
-.booking-button:hover {
-
-background:#111;
-color:white;
-
-}
-
-/* ===== PORTFOLIO ===== */
-
-.section {
-
-padding:100px 20px;
-
-text-align:center;
-
-}
-
-.section h2 {
-
-font-family:'Playfair Display',serif;
-
-font-size:36px;
-
-letter-spacing:3px;
-
-margin-bottom:50px;
-
-}
-
-.albums {
-
-display:grid;
-
-grid-template-columns: repeat(2, 380px);
-
-justify-content:center;
-
-gap:40px;
-
-}
-
-.album {
-
-position:relative;
-
-width:380px;
-
-margin:auto;
-
-}
-
-.album img {
-
-width:100%;
-height:480px;
-
-object-fit:cover;
-
-}
-
-.album-title-box {
-
-position:absolute;
-
-bottom:15px;
-
-left:15px;
-right:15px;
-
-background:rgba(0,0,0,0.45);
-
-color:white;
-
-padding:16px;
-
-letter-spacing:3px;
-
-font-size:14px;
-
-text-align:center;
-
-}
-
-/* ===== ABOUT / CONTACT ===== */
-
-.simple-section {
-
-padding:100px 20px;
-text-align:center;
-
-max-width:800px;
-margin:auto;
-
-}
-
-.simple-section p {
-
-font-size:14px;
-line-height:1.7;
-color:#555;
-
-}
-
-/* ===== MOBILE ===== */
-
-@media (max-width:768px){
+/* HEADER */
 
 h1 {
 font-size:42px;
+letter-spacing:4px;
 }
 
 .subtitle {
 font-size:11px;
 }
 
+/* ALBUMY */
+
 .albums {
 grid-template-columns:1fr;
 }
 
-.album {
-width:90%;
-}
-
 .album img {
+width:90%;
 height:auto;
 }
 
@@ -365,7 +262,7 @@ height:auto;
 
 <body>
 
-<!-- NAVBAR -->
+<!-- MENU -->
 
 <nav>
 
@@ -379,12 +276,6 @@ LUUILYY PHOTO
 ☰
 </div>
 
-</div>
-
-</nav>
-
-<!-- MENU -->
-
 <div class="menu" id="menu">
 
 <a href="index.html">Strona główna</a>
@@ -396,7 +287,9 @@ LUUILYY PHOTO
 
 </div>
 
-<div class="overlay" id="overlay"></div>
+</div>
+
+</nav>
 
 <!-- HEADER -->
 
@@ -416,78 +309,99 @@ FASHION • FAIRYCORE • PORTRAITS
 
 <img src="rozmiarprawidlowy.jpg">
 
-<br>
-
-<a href="rezerwacja.html" class="booking-button">
-ZAREZERWUJ SESJĘ
-</a>
-
 </div>
 
 <!-- PORTFOLIO -->
 
-<section class="section" id="portfolio">
+<div class="section" id="portfolio">
 
 <h2>PORTFOLIO</h2>
 
-<p>Tutaj pojawią się Twoje albumy.</p>
+<div class="albums">
 
-</section>
+<a href="studio.html" class="album">
+<img src="nom.jpg">
+<div class="album-title-box">
+SESJE KOBIECE — STUDIO
+</div>
+</a>
+
+<a href="plener.html" class="album">
+<img src="IMG_5170.JPEG">
+<div class="album-title-box">
+SESJE KOBIECE — PLENER
+</div>
+</a>
+
+<a href="pary.html" class="album">
+<img src="8.jpg">
+<div class="album-title-box">
+SESJE PAR
+</div>
+</a>
+
+<a href="wizerunek.html" class="album">
+<img src="2.jpg">
+<div class="album-title-box">
+SESJE WIZERUNKOWE
+</div>
+</a>
+
+</div>
+
+</div>
 
 <!-- ABOUT -->
 
-<section class="simple-section" id="about">
+<div class="section" id="about">
 
 <h2>O MNIE</h2>
 
-<p>
-Tutaj dodamy Twój opis — kim jesteś, jak pracujesz i jaki klimat tworzysz.
+<p class="about-text">
+
+Cześć! Mam na imię Paulina i jestem fotografką.  
+Tworzę kobiece, modowe i artystyczne sesje zdjęciowe,  
+łącząc klimat fairycore z nowoczesną estetyką.
+
 </p>
 
-</section>
+</div>
 
 <!-- CONTACT -->
 
-<section class="simple-section" id="contact">
+<div class="section" id="contact">
 
 <h2>KONTAKT</h2>
 
-<p>
-Tutaj dodamy formularz kontaktowy lub dane kontaktowe.
+<p class="contact-label">
+INSTAGRAM
 </p>
 
-</section>
+<p class="contact-link">
+<a href="https://instagram.com/luuilyy.photo">
+@luuilyy.photo
+</a>
+</p>
 
-<!-- JAVASCRIPT -->
+<p class="contact-label">
+EMAIL
+</p>
+
+<p class="contact-link">
+<a href="mailto:luuilyy.photo@gmail.com">
+luuilyy.photo@gmail.com
+</a>
+</p>
+
+</div>
 
 <script>
 
 function toggleMenu() {
 
 document.getElementById("menu").classList.toggle("active");
-document.getElementById("overlay").classList.toggle("active");
 
 }
-
-document.getElementById("overlay").addEventListener("click", function(){
-
-document.getElementById("menu").classList.remove("active");
-document.getElementById("overlay").classList.remove("active");
-
-});
-
-const menuLinks = document.querySelectorAll(".menu a");
-
-menuLinks.forEach(link => {
-
-link.addEventListener("click", () => {
-
-document.getElementById("menu").classList.remove("active");
-document.getElementById("overlay").classList.remove("active");
-
-});
-
-});
 
 </script>
 
