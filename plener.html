@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sesje kobiece — studio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Playfair+Display:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+
+body {
+margin:0;
+background:white;
+font-family:'Montserrat',sans-serif;
+}
+
+/* MENU */
+
+nav {
+position:fixed;
+top:0;
+width:100%;
+background:white;
+border-bottom:1px solid #eee;
+padding:18px 0;
+z-index:999;
+}
+
+.nav-container {
+max-width:1150px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+padding:0 25px;
+}
+
+.logo {
+font-family:'Playfair Display',serif;
+font-size:22px;
+letter-spacing:3px;
+}
+
+/* MENU */
+
+.menu a {
+text-decoration:none;
+color:#111;
+margin-left:14px;
+font-size:13px;
+letter-spacing:2px;
+border:1px solid transparent;
+padding:10px 18px;
+transition:0.3s;
+}
+
+.menu a:hover {
+border:1px solid #111;
+}
+
+/* TYTUŁ */
+
+.album-title {
+padding-top:160px;
+text-align:center;
+font-family:'Playfair Display',serif;
+font-size:36px;
+letter-spacing:4px;
+margin-bottom:60px;
+}
+
+/* GALERIA */
+
+.gallery {
+display:grid;
+grid-template-columns:repeat(3,320px);
+justify-content:center;
+gap:35px;
+}
+
+.gallery img {
+width:320px;
+aspect-ratio:4/5;
+object-fit:cover;
+cursor:pointer;
+transition:0.3s;
+}
+
+.gallery img:hover {
+transform:scale(1.03);
+}
+
+/* LIGHTBOX */
+
+.lightbox {
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+justify-content:center;
+align-items:center;
+z-index:1000;
+}
+
+.lightbox img {
+max-width:90%;
+max-height:90%;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+
+<div class="nav-container">
+
+<div class="logo">
+LUUILYY PHOTO
+</div>
+
+<div class="menu">
+
+<a href="index.html">Strona główna</a>
+<a href="index.html#portfolio">Portfolio</a>
+<a href="index.html#about">O mnie</a>
+<a href="index.html#contact">Kontakt</a>
+<a href="rezerwacja.html">Rezerwacja</a>
+
+</div>
+
+</div>
+
+</nav>
+
+<h2 class="album-title">
+SESJE KOBIECE — STUDIO
+</h2>
+
+<div class="gallery">
+
+<img src="studio1.jpg">
+<img src="studio2.jpg">
+<img src="studio3.jpg">
+<img src="studio4.jpg">
+<img src="studio5.jpg">
+<img src="studio6.jpg">
+
+</div>
+
+<div class="lightbox" id="lightbox">
+
+<img id="lightbox-img">
+
+</div>
+
+<script>
+
+const images = document.querySelectorAll(".gallery img");
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+
+images.forEach(img => {
+
+img.addEventListener("click", () => {
+
+lightbox.style.display = "flex";
+lightboxImg.src = img.src;
+
+});
+
+});
+
+lightbox.addEventListener("click", () => {
+
+lightbox.style.display = "none";
+
+});
+
+</script>
+
+</body>
+
+</html>
