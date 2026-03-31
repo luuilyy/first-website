@@ -85,6 +85,10 @@ font-size:14px;
 letter-spacing:2px;
 }
 
+.menu a:hover {
+color:#888;
+}
+
 /* OVERLAY */
 
 .overlay {
@@ -105,7 +109,7 @@ opacity:1;
 pointer-events:auto;
 }
 
-/* BACK BUTTON */
+/* BACK */
 
 .back-link {
 
@@ -217,6 +221,48 @@ max-height:90%;
 
 }
 
+/* STRZAŁKI */
+
+.arrow {
+
+position:absolute;
+
+top:50%;
+
+transform:translateY(-50%);
+
+font-size:60px;
+
+color:white;
+
+cursor:pointer;
+
+padding:20px;
+
+opacity:0.7;
+
+transition:0.3s;
+
+}
+
+.arrow:hover {
+
+opacity:1;
+
+}
+
+.arrow-left {
+
+left:30px;
+
+}
+
+.arrow-right {
+
+right:30px;
+
+}
+
 /* MOBILE */
 
 @media (max-width:768px){
@@ -236,6 +282,10 @@ width:260px;
 
 .back-link {
 margin-left:20px;
+}
+
+.arrow {
+font-size:40px;
 }
 
 }
@@ -275,8 +325,6 @@ LUUILYY PHOTO
 
 <div class="overlay" id="overlay"></div>
 
-<!-- BACK -->
-
 <a href="index.html#portfolio" class="back-link">
 
 ← WRÓĆ DO PORTFOLIO
@@ -291,15 +339,19 @@ SESJE KOBIECE — STUDIO
 
 <div class="gallery">
 
-<img src="B6561F9D-D11D-44A8-97ED-794853CE5E23.jpg">
-<img src="IMG_8599.JPG">
-<img src="28886b2b-4367-4c60-a7d6-4655f1ab8574.jpg">
+<img src="B6561F9D-D11D-44A8-97ED-794853CE5E23.jpg" loading="lazy">
+<img src="IMG_8599.JPG" loading="lazy">
+<img src="28886b2b-4367-4c60-a7d6-4655f1ab8574.jpg" loading="lazy">
 
 </div>
 
 <div class="lightbox" id="lightbox">
 
+<span class="arrow arrow-left" id="prev">&#10094;</span>
+
 <img id="lightbox-img">
+
+<span class="arrow arrow-right" id="next">&#10095;</span>
 
 </div>
 
@@ -327,22 +379,76 @@ const lightbox=document.getElementById("lightbox");
 
 const lightboxImg=document.getElementById("lightbox-img");
 
-images.forEach(img=>{
+const next=document.getElementById("next");
+
+const prev=document.getElementById("prev");
+
+let currentIndex=0;
+
+images.forEach((img,index)=>{
 
 img.addEventListener("click",()=>{
 
+currentIndex=index;
+
+showImage();
+
 lightbox.style.display="flex";
-lightboxImg.src=img.src;
 
 });
 
 });
+
+function showImage(){
+
+lightboxImg.src=images[currentIndex].src;
+
+}
+
+next.onclick=(e)=>{
+
+e.stopPropagation();
+
+currentIndex++;
+
+if(currentIndex>=images.length)
+currentIndex=0;
+
+showImage();
+
+};
+
+prev.onclick=(e)=>{
+
+e.stopPropagation();
+
+currentIndex--;
+
+if(currentIndex<0)
+currentIndex=images.length-1;
+
+showImage();
+
+};
 
 lightbox.onclick=()=>{
 
 lightbox.style.display="none";
 
 };
+
+document.addEventListener("keydown",(e)=>{
+
+if(e.key==="Escape")
+lightbox.style.display="none";
+
+if(e.key==="ArrowRight")
+next.click();
+
+if(e.key==="ArrowLeft")
+prev.click();
+
+});
 
 </script>
 
