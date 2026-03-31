@@ -55,9 +55,37 @@ letter-spacing:3px;
 
 }
 
-/* MENU */
+/* ===== HAMBURGER ===== */
+
+.hamburger {
+
+font-size:28px;
+cursor:pointer;
+
+}
+
+/* ===== MENU LISTA ===== */
 
 .menu {
+
+display:none;
+
+flex-direction:column;
+
+position:absolute;
+
+top:80px;
+left:0;
+
+width:100%;
+
+background:white;
+
+border-top:1px solid #eee;
+
+}
+
+.menu.active {
 
 display:flex;
 
@@ -66,36 +94,24 @@ display:flex;
 .menu a {
 
 text-decoration:none;
+
 color:#111;
 
-margin-left:12px;
+padding:15px;
 
 font-size:13px;
+
 letter-spacing:2px;
 
-border:1px solid transparent;
+border-bottom:1px solid #eee;
 
-padding:10px 16px;
-
-transition:0.3s;
+text-align:center;
 
 }
 
 .menu a:hover {
 
-border:1px solid #111;
-
-}
-
-/* HAMBURGER */
-
-.hamburger {
-
-display:none;
-
-font-size:26px;
-
-cursor:pointer;
+background:#f7f7f7;
 
 }
 
@@ -150,8 +166,6 @@ width:100%;
 max-width:1100px;
 
 }
-
-/* ===== BUTTON ===== */
 
 .booking-button {
 
@@ -263,110 +277,24 @@ text-align:center;
 
 @media (max-width:768px){
 
-.menu {
-
-display:none;
-
-flex-direction:column;
-
-width:100%;
-
-text-align:center;
-
-margin-top:10px;
-
-}
-
-.menu.active {
-
-display:flex;
-
-}
-
-.menu a {
-
-margin:5px 0;
-
-font-size:12px;
-
-}
-
-/* hamburger */
-
-.hamburger {
-
-display:block;
-
-}
-
-.nav-container {
-
-flex-direction:column;
-
-}
-
-.logo {
-
-font-size:18px;
-
-}
-
-/* HEADER */
-
 h1 {
-
 font-size:42px;
-
 }
 
 .subtitle {
-
 font-size:11px;
-
 }
-
-/* HERO */
-
-.hero img {
-
-width:92%;
-
-}
-
-/* BUTTON */
-
-.booking-button {
-
-padding:18px 40px;
-
-font-size:13px;
-
-}
-
-/* ALBUMY */
 
 .albums {
-
 grid-template-columns:1fr;
-
 }
 
 .album {
-
 width:90%;
-
 }
 
 .album img {
-
 height:auto;
-
-}
-
-.album-title-box {
-
-font-size:12px;
-
 }
 
 }
@@ -393,6 +321,7 @@ LUUILYY PHOTO
 
 <a href="index.html">Strona główna</a>
 <a href="#portfolio">Portfolio</a>
+<a href="#how">Jak wygląda sesja</a>
 <a href="#about">O mnie</a>
 <a href="#contact">Kontakt</a>
 <a href="rezerwacja.html">Rezerwacja</a>
@@ -420,99 +349,8 @@ FASHION • FAIRYCORE • PORTRAITS
 <br>
 
 <a href="rezerwacja.html" class="booking-button">
-
 ZAREZERWUJ SESJĘ
-
 </a>
-
-</div>
-
-<div class="section" id="portfolio">
-
-<h2>PORTFOLIO</h2>
-
-<div class="albums">
-
-<a href="studio.html" class="album">
-
-<img src="nom.jpg">
-
-<div class="album-title-box">
-SESJE KOBIECE — STUDIO
-</div>
-
-</a>
-
-<a href="plener.html" class="album">
-
-<img src="IMG_5170.JPEG">
-
-<div class="album-title-box">
-SESJE KOBIECE — PLENER
-</div>
-
-</a>
-
-<a href="pary.html" class="album">
-
-<img src="8.jpg">
-
-<div class="album-title-box">
-SESJE PAR
-</div>
-
-</a>
-
-<a href="wizerunek.html" class="album">
-
-<img src="2.jpg">
-
-<div class="album-title-box">
-SESJE WIZERUNKOWE
-</div>
-
-</a>
-
-</div>
-
-</div>
-
-<div class="section" id="about">
-
-<h2>O MNIE</h2>
-
-<p class="about-text">
-
-Cześć! Mam na imię Paulina i jestem fotografką.  
-Tworzę kobiece, modowe i artystyczne sesje zdjęciowe.
-
-</p>
-
-</div>
-
-<div class="section" id="contact">
-
-<h2>KONTAKT</h2>
-
-<p class="contact-label">
-INSTAGRAM
-</p>
-
-<p>
-<a href="https://instagram.com/luuilyy.photo">
-@luuilyy.photo
-</a>
-</p>
-
-<p class="contact-label">
-EMAIL
-</p>
-
-<p>
-<a href="mailto:luuilyy.photo@gmail.com">
-luuilyy.photo@gmail.com
-</a>
-</p>
 
 </div>
 
