@@ -16,14 +16,14 @@
 
 body {
 margin:0;
-background:white;
-color:#111;
 font-family:'Montserrat',sans-serif;
+background:white;
 }
 
 /* ===== MENU ===== */
 
 nav {
+
 position:fixed;
 top:0;
 width:100%;
@@ -31,93 +31,144 @@ background:white;
 border-bottom:1px solid #eee;
 padding:18px 0;
 z-index:999;
+
 }
 
 .nav-container {
+
 max-width:1150px;
 margin:auto;
+
 display:flex;
 justify-content:space-between;
 align-items:center;
+
 padding:0 25px;
+
 }
 
 .logo {
+
 font-family:'Playfair Display',serif;
 font-size:22px;
 letter-spacing:3px;
+
 }
 
+/* MENU */
+
 .menu {
+
 display:flex;
-flex-wrap:wrap;
-justify-content:center;
+
 }
 
 .menu a {
+
 text-decoration:none;
 color:#111;
+
 margin-left:12px;
+
 font-size:13px;
 letter-spacing:2px;
+
 border:1px solid transparent;
+
 padding:10px 16px;
+
 transition:0.3s;
+
 }
 
 .menu a:hover {
+
 border:1px solid #111;
+
+}
+
+/* HAMBURGER */
+
+.hamburger {
+
+display:none;
+
+font-size:26px;
+
+cursor:pointer;
+
 }
 
 /* ===== HEADER ===== */
 
 header {
+
 text-align:center;
+
 padding-top:150px;
 padding-bottom:50px;
+
 }
 
 h1 {
+
 font-family:'Playfair Display',serif;
+
 font-size:80px;
+
 letter-spacing:6px;
+
 margin:0;
+
 }
 
 .subtitle {
+
 margin-top:20px;
+
 font-size:13px;
+
 letter-spacing:4px;
+
 color:#555;
+
 }
 
 /* ===== HERO ===== */
 
 .hero {
+
 text-align:center;
+
 margin-bottom:80px;
+
 }
 
 .hero img {
+
 width:100%;
 max-width:1100px;
+
 }
 
-/* ===== PRZYCISK ===== */
+/* ===== BUTTON ===== */
 
 .booking-button {
 
 display:inline-block;
+
 margin-top:45px;
 
 padding:22px 60px;
 
 font-size:16px;
+
 letter-spacing:3px;
 
 border:1px solid #111;
 
 text-decoration:none;
+
 color:#111;
 
 transition:0.3s;
@@ -131,27 +182,36 @@ color:white;
 
 }
 
-/* ===== SEKCJE ===== */
+/* ===== PORTFOLIO ===== */
 
 .section {
+
 padding:80px 20px;
+
 text-align:center;
+
 }
 
 .section h2 {
-font-family:'Playfair Display',serif;
-font-size:36px;
-letter-spacing:3px;
-margin-bottom:50px;
-}
 
-/* ===== ALBUMY ===== */
+font-family:'Playfair Display',serif;
+
+font-size:36px;
+
+letter-spacing:3px;
+
+margin-bottom:50px;
+
+}
 
 .albums {
 
 display:grid;
+
 grid-template-columns: repeat(2, 380px);
+
 justify-content:center;
+
 gap:40px;
 
 }
@@ -159,7 +219,9 @@ gap:40px;
 .album {
 
 position:relative;
+
 width:380px;
+
 margin:auto;
 
 }
@@ -167,25 +229,17 @@ margin:auto;
 .album img {
 
 width:100%;
+
 height:480px;
 
 object-fit:cover;
 
-transition:0.3s;
-
 }
-
-.album:hover img {
-
-opacity:0.85;
-
-}
-
-/* ===== NAPIS NA ZDJĘCIU ===== */
 
 .album-title-box {
 
 position:absolute;
+
 bottom:15px;
 
 left:15px;
@@ -198,57 +252,56 @@ color:white;
 padding:16px;
 
 letter-spacing:3px;
+
 font-size:14px;
 
 text-align:center;
 
 }
 
-/* ===== ABOUT ===== */
+/* ===== MOBILE ===== */
 
-.about-text {
+@media (max-width:768px){
 
-max-width:650px;
-margin:auto;
+.menu {
 
-line-height:1.7;
+display:none;
 
-color:#444;
+flex-direction:column;
+
+width:100%;
+
+text-align:center;
+
+margin-top:10px;
 
 }
 
-/* ===== CONTACT ===== */
+.menu.active {
 
-.contact-label {
+display:flex;
+
+}
+
+.menu a {
+
+margin:5px 0;
 
 font-size:12px;
 
-letter-spacing:3px;
-
-color:#888;
-
-margin-top:30px;
-
 }
 
-.contact-link a {
+/* hamburger */
 
-text-decoration:none;
+.hamburger {
 
-color:#111;
-
-font-size:18px;
+display:block;
 
 }
-
-/* ================= MOBILE ================= */
-
-@media (max-width:768px){
 
 .nav-container {
 
 flex-direction:column;
-gap:10px;
 
 }
 
@@ -258,20 +311,11 @@ font-size:18px;
 
 }
 
-.menu a {
-
-margin:5px;
-font-size:11px;
-padding:8px 12px;
-
-}
-
 /* HEADER */
 
 h1 {
 
 font-size:42px;
-letter-spacing:4px;
 
 }
 
@@ -294,6 +338,7 @@ width:92%;
 .booking-button {
 
 padding:18px 40px;
+
 font-size:13px;
 
 }
@@ -303,8 +348,6 @@ font-size:13px;
 .albums {
 
 grid-template-columns:1fr;
-
-gap:35px;
 
 }
 
@@ -320,17 +363,9 @@ height:auto;
 
 }
 
-/* NAPIS */
-
 .album-title-box {
 
 font-size:12px;
-padding:14px;
-
-left:10px;
-right:10px;
-
-bottom:10px;
 
 }
 
@@ -342,8 +377,6 @@ bottom:10px;
 
 <body>
 
-<!-- ===== MENU ===== -->
-
 <nav>
 
 <div class="nav-container">
@@ -352,7 +385,11 @@ bottom:10px;
 LUUILYY PHOTO
 </div>
 
-<div class="menu">
+<div class="hamburger" onclick="toggleMenu()">
+☰
+</div>
+
+<div class="menu" id="menu">
 
 <a href="index.html">Strona główna</a>
 <a href="#portfolio">Portfolio</a>
@@ -366,21 +403,15 @@ LUUILYY PHOTO
 
 </nav>
 
-<!-- ===== HEADER ===== -->
-
 <header>
 
 <h1>LUUILYY PHOTO</h1>
 
 <p class="subtitle">
-
 FASHION • FAIRYCORE • PORTRAITS
-
 </p>
 
 </header>
-
-<!-- ===== HERO ===== -->
 
 <div class="hero">
 
@@ -396,8 +427,6 @@ ZAREZERWUJ SESJĘ
 
 </div>
 
-<!-- ===== PORTFOLIO ===== -->
-
 <div class="section" id="portfolio">
 
 <h2>PORTFOLIO</h2>
@@ -409,9 +438,7 @@ ZAREZERWUJ SESJĘ
 <img src="nom.jpg">
 
 <div class="album-title-box">
-
 SESJE KOBIECE — STUDIO
-
 </div>
 
 </a>
@@ -421,9 +448,7 @@ SESJE KOBIECE — STUDIO
 <img src="IMG_5170.JPEG">
 
 <div class="album-title-box">
-
 SESJE KOBIECE — PLENER
-
 </div>
 
 </a>
@@ -433,9 +458,7 @@ SESJE KOBIECE — PLENER
 <img src="8.jpg">
 
 <div class="album-title-box">
-
 SESJE PAR
-
 </div>
 
 </a>
@@ -445,9 +468,7 @@ SESJE PAR
 <img src="2.jpg">
 
 <div class="album-title-box">
-
 SESJE WIZERUNKOWE
-
 </div>
 
 </a>
@@ -455,8 +476,6 @@ SESJE WIZERUNKOWE
 </div>
 
 </div>
-
-<!-- ===== ABOUT ===== -->
 
 <div class="section" id="about">
 
@@ -465,52 +484,47 @@ SESJE WIZERUNKOWE
 <p class="about-text">
 
 Cześć! Mam na imię Paulina i jestem fotografką.  
-Tworzę kobiece, modowe i artystyczne sesje zdjęciowe  
-z naciskiem na klimat, kobiecość i estetykę.
+Tworzę kobiece, modowe i artystyczne sesje zdjęciowe.
 
 </p>
 
 </div>
-
-<!-- ===== CONTACT ===== -->
 
 <div class="section" id="contact">
 
 <h2>KONTAKT</h2>
 
 <p class="contact-label">
-
 INSTAGRAM
-
 </p>
 
-<p class="contact-link">
-
+<p>
 <a href="https://instagram.com/luuilyy.photo">
-
 @luuilyy.photo
-
 </a>
-
 </p>
 
 <p class="contact-label">
-
 EMAIL
-
 </p>
 
-<p class="contact-link">
-
+<p>
 <a href="mailto:luuilyy.photo@gmail.com">
-
 luuilyy.photo@gmail.com
-
 </a>
-
 </p>
 
 </div>
+
+<script>
+
+function toggleMenu() {
+
+document.getElementById("menu").classList.toggle("active");
+
+}
+
+</script>
 
 </body>
 
