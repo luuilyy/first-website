@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>FAQ | Luuilyy Photo</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+
+/* ===== BODY ===== */
+
+body {
+margin:0;
+font-family:'Montserrat',sans-serif;
+background:white;
+}
+
+/* ===== NAV ===== */
+
+nav {
+
+position:fixed;
+top:0;
+width:100%;
+
+background:white;
+border-bottom:1px solid #eee;
+
+padding:18px 0;
+z-index:999;
+
+}
+
+.nav-container {
+
+max-width:1150px;
+margin:auto;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:0 25px;
+
+}
+
+.logo {
+
+font-family:'Playfair Display',serif;
+font-size:22px;
+letter-spacing:3px;
+
+}
+
+/* ===== HAMBURGER ===== */
+
+.hamburger {
+
+font-size:28px;
+cursor:pointer;
+z-index:1001;
+
+}
+
+/* ===== MENU PANEL ===== */
+
+.menu {
+
+position:fixed;
+
+top:0;
+right:0;
+
+width:280px;
+height:100vh;
+
+background:white;
+
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+
+transform:translateX(100%);
+transition:0.3s;
+
+box-shadow:-5px 0 15px rgba(0,0,0,0.1);
+
+z-index:1000;
+
+}
+
+.menu.active {
+
+transform:translateX(0);
+
+}
+
+.menu a {
+
+text-decoration:none;
+color:#111;
+
+padding:18px;
+
+font-size:13px;
+letter-spacing:2px;
+
+transition:0.3s;
+
+}
+
+.menu a:hover {
+
+color:#888;
+
+}
+
+/* ===== OVERLAY ===== */
+
+.overlay {
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background:rgba(0,0,0,0.3);
+
+opacity:0;
+pointer-events:none;
+
+transition:0.3s;
+
+z-index:998;
+
+}
+
+.overlay.active {
+
+opacity:1;
+pointer-events:auto;
+
+}
+
+/* ===== HERO IMAGE ===== */
+
+.faq-hero {
+
+margin-top:110px;
+text-align:center;
+
+}
+
+.faq-hero img {
+
+width:100%;
+max-width:500px;
+height:auto;
+
+}
+
+/* ===== HEADER ===== */
+
+.faq-header {
+
+text-align:center;
+
+padding:50px 20px 30px;
+
+}
+
+.faq-header h1 {
+
+font-family:'Playfair Display',serif;
+
+font-size:42px;
+letter-spacing:4px;
+
+margin:0;
+
+}
+
+.faq-header p {
+
+margin-top:15px;
+
+font-size:13px;
+letter-spacing:3px;
+
+color:#555;
+
+}
+
+/* ===== FAQ ===== */
+
+.faq-container {
+
+max-width:800px;
+margin:auto;
+
+padding:40px 20px 80px;
+
+}
+
+.faq-item {
+
+border-bottom:1px solid #eee;
+
+}
+
+/* PYTANIA */
+
+.faq-question {
+
+width:100%;
+
+background:none;
+border:none;
+
+padding:22px 10px;
+
+font-family:'Montserrat',sans-serif;
+font-size:15px;
+
+font-weight:600;
+
+cursor:pointer;
+
+letter-spacing:1px;
+
+text-align:left;
+
+}
+
+/* ODPOWIEDZI */
+
+.faq-answer {
+
+max-height:0;
+overflow:hidden;
+
+transition:0.3s ease;
+
+}
+
+.faq-answer p {
+
+margin:0;
+
+padding:0 10px 20px 10px;
+
+font-size:14px;
+line-height:1.7;
+
+color:#444;
+
+}
+
+/* ===== MOBILE ===== */
+
+@media (max-width:768px){
+
+.faq-header h1 {
+font-size:30px;
+}
+
+.faq-hero img {
+max-width:90%;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- NAV -->
+
+<nav>
+
+<div class="nav-container">
+
+<div class="logo">
+LUUILYY PHOTO
+</div>
+
+<div class="hamburger" onclick="toggleMenu()">
+☰
+</div>
+
+</div>
+
+</nav>
+
+<!-- MENU -->
+
+<div class="menu" id="menu">
+
+<a href="index.html">Strona główna</a>
+<a href="index.html#portfolio">Portfolio</a>
+<a href="faq.html">FAQ</a>
+<a href="index.html#about">O mnie</a>
+<a href="index.html#contact">Kontakt</a>
+<a href="rezerwacja.html">Rezerwacja</a>
+
+</div>
+
+<div class="overlay" id="overlay"></div>
+
+<!-- HERO IMAGE -->
+
+<div class="faq-hero">
+
+<img src="2d13db5eb02ef191e58dfd69b9c3c6d1.jpg">
+
+</div>
+
+<!-- HEADER -->
+
+<div class="faq-header">
+
+<h1>FAQ</h1>
+
+<p>
+NAJCZĘŚCIEJ ZADAWANE PYTANIA
+</p>
+
+</div>
+
+<!-- FAQ -->
+
+<div class="faq-container">
+
+<div class="faq-item">
+<button class="faq-question">
+Ile trwa sesja zdjęciowa?
+</button>
+<div class="faq-answer">
+<p>
+Czas trwania sesji zależy od wybranego pakietu — zazwyczaj trwa od około godziny do dwóch godzin, w zależności od miejsca oraz rodzaju sesji.
+</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">
+Czy pomagasz w pozowaniu?
+</button>
+<div class="faq-answer">
+<p>
+Tak — podczas sesji pokazuję, jak się ustawić, ale przygotowanie zaczyna się już wcześniej. Przed sesją wspólnie ustalamy klimat zdjęć, szukamy inspiracji i wzorujemy się na wybranych przykładach — to zdecydowanie ułatwia pracę i sprawia, że nie musisz się stresować.
+</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">
+Jak przygotować się do sesji?
+</button>
+<div class="faq-answer">
+<p>
+Po rezerwacji otrzymasz ode mnie wskazówki dotyczące ubioru, makijażu oraz dodatków. Pomagam dobrać stylizacje tak, aby pasowały do klimatu sesji.
+</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">
+Gdzie odbywa się sesja zdjęciowa? Kto wybiera studio?
+</button>
+<div class="faq-answer">
+<p>
+Sesje odbywają się w plenerze lub w studio — w zależności od wybranego pakietu i preferencji klientki.
+</p>
+<p>
+Przed wpłaceniem zaliczki wysyłam kilka propozycji studiów i razem wybieramy najlepsze. Zazwyczaj mam jedno swoje ulubione studio, jednak wszystko zależy od charakteru sesji i tego, czego potrzebujemy.
+</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">
+Ile czeka się na gotowe zdjęcia?
+</button>
+<div class="faq-answer">
+<p>
+Na gotowe zdjęcia czeka się zazwyczaj od 14 do 21 dni. Czas ten może się zmienić — fotografia nie jest moją jedyną pracą, dlatego taki czas oczekiwania. Zawsze informuję, jeśli coś się zmienia.
+</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">
+Czy można dokupić dodatkowe zdjęcia?
+</button>
+<div class="faq-answer">
+<p>
+Tak — oferuję trzy pakiety zdjęć, a po otrzymaniu galerii istnieje możliwość dokupienia dodatkowych ujęć według aktualnego cennika.
+</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">
+Czy wykonujesz makijaż?
+</button>
+<div class="faq-answer">
+<p>
+Nie wykonuję makijażu samodzielnie, jednak współpracuję z makijażystkami oraz stylistką fryzur, które mogę polecić przed sesją.
+</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">
+Jak zarezerwować termin sesji?
+</button>
+<div class="faq-answer">
+<p>
+Termin sesji możesz zarezerwować poprzez formularz rezerwacji dostępny na stronie lub kontaktując się ze mną bezpośrednio.
+</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">
+Kto wybiera zdjęcia, które otrzymam?
+</button>
+<div class="faq-answer">
+<p>
+Jeśli mi zaufasz, mogę samodzielnie wybrać i obrobić najlepsze zdjęcia z sesji.
+</p>
+<p>
+Jeśli jednak wolisz dokonać wyboru samodzielnie — nie ma problemu. Wysyłam galerię online z możliwością wyboru zdjęć oraz dokupienia dodatkowych ujęć. Obrabiam dokładnie te zdjęcia, które wybierzesz.
+</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">
+Czy mogę przyjść z osobą towarzyszącą?
+</button>
+<div class="faq-answer">
+<p>
+Tak — możesz przyjść z osobą towarzyszącą. Jeśli jednak nie bierze udziału w sesji, proszę o zaczekanie przed wejściem do studia — dla komfortu naszej pracy.
+</p>
+</div>
+</div>
+
+</div>
+
+<script>
+
+function toggleMenu() {
+
+document.getElementById("menu").classList.toggle("active");
+document.getElementById("overlay").classList.toggle("active");
+
+}
+
+document.getElementById("overlay").addEventListener("click", function(){
+
+document.getElementById("menu").classList.remove("active");
+document.getElementById("overlay").classList.remove("active");
+
+});
+
+const faqQuestions = document.querySelectorAll(".faq-question");
+
+faqQuestions.forEach(question => {
+
+question.addEventListener("click", () => {
+
+const answer = question.nextElementSibling;
+
+if (answer.style.maxHeight) {
+
+answer.style.maxHeight = null;
+
+} else {
+
+answer.style.maxHeight = answer.scrollHeight + "px";
+
+}
+
+});
+
+});
+
+</script>
+
+</body>
+
+</html>
