@@ -2,77 +2,166 @@
 <html lang="pl">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Rezerwacja sesji | Luuilyy.photo</title>
 
-    <!-- Czcionki -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Twój CSS -->
-    <link rel="stylesheet" href="style.css">
+<title>Rezerwacja | Luuilyy Photo</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Playfair+Display:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+
+/* BODY */
+
+body {
+    margin: 0;
+    background-color: white;
+    color: #111;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* MENU — identyczne jak na index */
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    border-bottom: 1px solid #eee;
+    padding: 15px 0;
+    z-index: 999;
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #111;
+    margin-left: 25px;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+/* SEKCJA REZERWACJI */
+
+.booking-section {
+    padding-top: 140px;
+    padding-bottom: 80px;
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+}
+
+.booking-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    letter-spacing: 3px;
+    margin-bottom: 40px;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+.nav-container {
+    flex-direction: column;
+    gap: 10px;
+}
+
+.menu a {
+    margin: 0 10px;
+}
+
+.booking-section {
+    padding-top: 120px;
+}
+
+}
+
+</style>
 
 </head>
 
 <body>
 
-<header class="header">
+<!-- MENU -->
 
-    <h1 class="logo">Luuilyy.photo</h1>
+<nav>
 
-    <nav class="nav">
-        <a href="index.html">Strona główna</a>
-        <a href="rezerwacja.html">Rezerwacja</a>
-    </nav>
+<div class="nav-container">
 
-</header>
+<div class="logo">
+LUUILYY PHOTO
+</div>
 
-<section class="booking-section">
+<div class="menu">
 
-    <h2>Zarezerwuj sesję</h2>
+<a href="index.html">Home</a>
+<a href="index.html#portfolio">Portfolio</a>
+<a href="index.html#contact">Kontakt</a>
+<a href="rezerwacja.html">Rezerwacja</a>
 
-    <!-- SimplyBook Widget -->
-    <script src="//widget.simplybook.it/v2/widget/widget.js"></script>
+</div>
 
-    <script>
-        var widget = new SimplybookWidget({
-            "widget_type": "iframe",
-            "url": "https://luuilyyphoto.simplybook.it",
-            "theme": "space",
+</div>
 
-            "theme_settings": {
+</nav>
 
-                "timeline_hide_unavailable": "1",
+<!-- REZERWACJA -->
 
-                "sb_base_color": "#000000",
+<div class="booking-section">
 
-                "body_bg_color": "#ffffff",
+<h2>REZERWACJA SESJI</h2>
 
-                "dark_font_color": "#222222",
+<!-- SimplyBook Widget -->
 
-                "light_font_color": "#ffffff",
+<script src="//widget.simplybook.it/v2/widget/widget.js"></script>
 
-                "btn_color_1": "#000000",
+<script>
+var widget = new SimplybookWidget({
+"widget_type": "iframe",
+"url": "https://luuilyyphoto.simplybook.it",
 
-                "sb_busy": "#e5e5e5",
+"theme_settings": {
 
-                "sb_available": "#f7f7f7"
+"sb_base_color": "#000000",
 
-            },
+"body_bg_color": "#ffffff",
 
-            "timeline": "modern",
+"dark_font_color": "#222222",
 
-            "datepicker": "top_calendar"
+"light_font_color": "#ffffff",
 
-        });
-    </script>
+"btn_color_1": "#000000",
 
-</section>
+"sb_busy": "#e5e5e5",
 
-<footer class="footer">
+"sb_available": "#f7f7f7"
 
-    <p>© 2026 Luuilyy.photo</p>
+},
 
-</footer>
+"timeline": "modern",
+
+"datepicker": "top_calendar"
+
+});
+</script>
+
+</div>
 
 </body>
 
