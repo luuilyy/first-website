@@ -21,7 +21,7 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
-/* MENU — IDENTYCZNE JAK W INDEX */
+/* MENU */
 
 nav {
     position: fixed;
@@ -56,7 +56,7 @@ nav {
     letter-spacing: 2px;
 }
 
-/* SEKCJA REZERWACJI */
+/* REZERWACJA */
 
 .booking-section {
     padding-top: 140px;
@@ -71,25 +71,6 @@ nav {
     font-size: 36px;
     letter-spacing: 3px;
     margin-bottom: 40px;
-}
-
-/* MOBILE */
-
-@media (max-width: 768px) {
-
-.nav-container {
-    flex-direction: column;
-    gap: 10px;
-}
-
-.menu a {
-    margin: 0 10px;
-}
-
-.booking-section {
-    padding-top: 120px;
-}
-
 }
 
 </style>
@@ -110,8 +91,9 @@ LUUILYY PHOTO
 
 <div class="menu">
 
-<a href="index.html">Home</a>
+<a href="index.html#home">Strona główna</a>
 <a href="index.html#portfolio">Portfolio</a>
+<a href="index.html#about">O mnie</a>
 <a href="index.html#contact">Kontakt</a>
 <a href="rezerwacja.html">Rezerwacja</a>
 
@@ -127,8 +109,6 @@ LUUILYY PHOTO
 
 <h2>REZERWACJA SESJI</h2>
 
-<!-- SimplyBook Widget -->
-
 <script src="//widget.simplybook.it/v2/widget/widget.js"></script>
 
 <script>
@@ -139,19 +119,14 @@ var widget = new SimplybookWidget({
 "theme_settings": {
 
 "sb_base_color": "#000000",
-
 "body_bg_color": "#ffffff",
-
 "dark_font_color": "#222222",
-
 "light_font_color": "#ffffff",
-
 "btn_color_1": "#000000"
 
 },
 
 "timeline": "modern",
-
 "datepicker": "top_calendar"
 
 });
