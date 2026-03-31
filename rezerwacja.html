@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Rezerwacja sesji | Luuilyy.photo</title>
+
+    <!-- Czcionki -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Twój CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header class="header">
+
+    <h1 class="logo">Luuilyy.photo</h1>
+
+    <nav class="nav">
+        <a href="index.html">Strona główna</a>
+        <a href="rezerwacja.html">Rezerwacja</a>
+    </nav>
+
+</header>
+
+<section class="booking-section">
+
+    <h2>Zarezerwuj sesję</h2>
+
+    <!-- SimplyBook Widget -->
+    <script src="//widget.simplybook.it/v2/widget/widget.js"></script>
+
+    <script>
+        var widget = new SimplybookWidget({
+            "widget_type": "iframe",
+            "url": "https://luuilyyphoto.simplybook.it",
+            "theme": "space",
+
+            "theme_settings": {
+
+                "timeline_hide_unavailable": "1",
+
+                "sb_base_color": "#000000",
+
+                "body_bg_color": "#ffffff",
+
+                "dark_font_color": "#222222",
+
+                "light_font_color": "#ffffff",
+
+                "btn_color_1": "#000000",
+
+                "sb_busy": "#e5e5e5",
+
+                "sb_available": "#f7f7f7"
+
+            },
+
+            "timeline": "modern",
+
+            "datepicker": "top_calendar"
+
+        });
+    </script>
+
+</section>
+
+<footer class="footer">
+
+    <p>© 2026 Luuilyy.photo</p>
+
+</footer>
+
+</body>
+
+</html>
