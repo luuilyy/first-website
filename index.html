@@ -18,6 +18,7 @@ body {
 margin:0;
 font-family:'Montserrat',sans-serif;
 background:white;
+scroll-behavior:smooth;
 }
 
 /* ===== NAVBAR ===== */
@@ -67,7 +68,7 @@ z-index:1001;
 
 }
 
-/* ===== MENU PANEL (PRAWA STRONA) ===== */
+/* ===== MENU PANEL ===== */
 
 .menu {
 
@@ -143,8 +144,6 @@ opacity:0;
 pointer-events:none;
 
 transition:0.3s;
-
-/* KLUCZOWA POPRAWKA */
 
 z-index:900;
 
@@ -242,7 +241,7 @@ color:white;
 
 .section {
 
-padding:80px 20px;
+padding:100px 20px;
 
 text-align:center;
 
@@ -314,6 +313,26 @@ text-align:center;
 
 }
 
+/* ===== ABOUT / CONTACT ===== */
+
+.simple-section {
+
+padding:100px 20px;
+text-align:center;
+
+max-width:800px;
+margin:auto;
+
+}
+
+.simple-section p {
+
+font-size:14px;
+line-height:1.7;
+color:#555;
+
+}
+
 /* ===== MOBILE ===== */
 
 @media (max-width:768px){
@@ -364,24 +383,18 @@ LUUILYY PHOTO
 
 </nav>
 
-<!-- MENU PANEL -->
+<!-- MENU -->
 
 <div class="menu" id="menu">
 
 <a href="index.html">Strona główna</a>
 <a href="#portfolio">Portfolio</a>
-
-<!-- POPRAWKA: FAQ jako osobna strona -->
-
 <a href="faq.html">FAQ</a>
-
 <a href="#about">O mnie</a>
 <a href="#contact">Kontakt</a>
 <a href="rezerwacja.html">Rezerwacja</a>
 
 </div>
-
-<!-- OVERLAY -->
 
 <div class="overlay" id="overlay"></div>
 
@@ -411,6 +424,40 @@ ZAREZERWUJ SESJĘ
 
 </div>
 
+<!-- PORTFOLIO -->
+
+<section class="section" id="portfolio">
+
+<h2>PORTFOLIO</h2>
+
+<p>Tutaj pojawią się Twoje albumy.</p>
+
+</section>
+
+<!-- ABOUT -->
+
+<section class="simple-section" id="about">
+
+<h2>O MNIE</h2>
+
+<p>
+Tutaj dodamy Twój opis — kim jesteś, jak pracujesz i jaki klimat tworzysz.
+</p>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="simple-section" id="contact">
+
+<h2>KONTAKT</h2>
+
+<p>
+Tutaj dodamy formularz kontaktowy lub dane kontaktowe.
+</p>
+
+</section>
+
 <!-- JAVASCRIPT -->
 
 <script>
@@ -422,16 +469,12 @@ document.getElementById("overlay").classList.toggle("active");
 
 }
 
-/* zamykanie po kliknięciu w tło */
-
 document.getElementById("overlay").addEventListener("click", function(){
 
 document.getElementById("menu").classList.remove("active");
 document.getElementById("overlay").classList.remove("active");
 
 });
-
-/* NOWOŚĆ — zamykanie menu po kliknięciu linku */
 
 const menuLinks = document.querySelectorAll(".menu a");
 
