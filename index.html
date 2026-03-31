@@ -144,7 +144,9 @@ pointer-events:none;
 
 transition:0.3s;
 
-z-index:998;
+/* KLUCZOWA POPRAWKA */
+
+z-index:900;
 
 }
 
@@ -368,7 +370,11 @@ LUUILYY PHOTO
 
 <a href="index.html">Strona główna</a>
 <a href="#portfolio">Portfolio</a>
-<a href="#faq">FAQ</a>
+
+<!-- POPRAWKA: FAQ jako osobna strona -->
+
+<a href="faq.html">FAQ</a>
+
 <a href="#about">O mnie</a>
 <a href="#contact">Kontakt</a>
 <a href="rezerwacja.html">Rezerwacja</a>
@@ -422,6 +428,21 @@ document.getElementById("overlay").addEventListener("click", function(){
 
 document.getElementById("menu").classList.remove("active");
 document.getElementById("overlay").classList.remove("active");
+
+});
+
+/* NOWOŚĆ — zamykanie menu po kliknięciu linku */
+
+const menuLinks = document.querySelectorAll(".menu a");
+
+menuLinks.forEach(link => {
+
+link.addEventListener("click", () => {
+
+document.getElementById("menu").classList.remove("active");
+document.getElementById("overlay").classList.remove("active");
+
+});
 
 });
 
