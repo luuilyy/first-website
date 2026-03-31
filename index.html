@@ -12,7 +12,7 @@
 
 <style>
 
-/* BODY */
+/* ===== BODY ===== */
 
 body {
 margin:0;
@@ -21,7 +21,7 @@ color:#111;
 font-family:'Montserrat',sans-serif;
 }
 
-/* MENU */
+/* ===== MENU ===== */
 
 nav {
 position:fixed;
@@ -50,14 +50,20 @@ letter-spacing:3px;
 
 /* MENU LINKI */
 
+.menu {
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+}
+
 .menu a {
 text-decoration:none;
 color:#111;
-margin-left:14px;
+margin-left:12px;
 font-size:13px;
 letter-spacing:2px;
 border:1px solid transparent;
-padding:10px 18px;
+padding:10px 16px;
 transition:0.3s;
 }
 
@@ -65,12 +71,12 @@ transition:0.3s;
 border:1px solid #111;
 }
 
-/* HEADER */
+/* ===== HEADER ===== */
 
 header {
 text-align:center;
 padding-top:150px;
-padding-bottom:60px;
+padding-bottom:50px;
 }
 
 h1 {
@@ -87,12 +93,11 @@ letter-spacing:4px;
 color:#555;
 }
 
-/* HERO */
+/* ===== HERO ===== */
 
 .hero {
-display:flex;
-justify-content:center;
-margin-bottom:100px;
+text-align:center;
+margin-bottom:80px;
 }
 
 .hero img {
@@ -100,7 +105,34 @@ width:100%;
 max-width:1100px;
 }
 
-/* PORTFOLIO */
+/* ===== PRZYCISK REZERWACJI ===== */
+
+.booking-button {
+
+display:inline-block;
+margin-top:45px;
+
+padding:20px 55px;
+
+font-size:15px;
+letter-spacing:3px;
+
+border:1px solid #111;
+text-decoration:none;
+color:#111;
+
+transition:0.3s;
+
+}
+
+.booking-button:hover {
+
+background:#111;
+color:white;
+
+}
+
+/* ===== SEKCJE ===== */
 
 .section {
 padding:80px 20px;
@@ -114,64 +146,85 @@ letter-spacing:3px;
 margin-bottom:50px;
 }
 
-/* ALBUMY */
+/* ===== ALBUMY ===== */
 
 .albums {
+
 display:grid;
-grid-template-columns: repeat(2, 350px);
+grid-template-columns: repeat(2, 380px);
 justify-content:center;
 gap:40px;
+
 }
 
 .album {
+
 position:relative;
-cursor:pointer;
+
 }
 
 .album img {
-width:350px;
-height:450px;
+
+width:380px;
+height:480px;
 object-fit:cover;
 transition:0.3s;
+
 }
 
 .album:hover img {
+
 opacity:0.85;
+
 }
 
 .album-title-box {
+
 position:absolute;
 bottom:0;
 width:100%;
+
 background:rgba(0,0,0,0.45);
+
 color:white;
-padding:18px;
+
+padding:20px 10px;
+
 letter-spacing:3px;
 font-size:14px;
+
+text-align:center;
+
 }
 
-/* ABOUT */
+/* ===== ABOUT ===== */
 
 .about-text {
+
 max-width:650px;
 margin:auto;
 line-height:1.7;
 color:#444;
+
 }
 
-/* CONTACT */
+/* ===== CONTACT ===== */
 
 .contact-label {
+
 font-size:12px;
 letter-spacing:3px;
 color:#888;
 margin-top:30px;
+
 }
 
 .contact-link a {
+
 text-decoration:none;
 color:#111;
 font-size:18px;
+
 }
 
 /* ================= MOBILE ================= */
@@ -179,47 +232,78 @@ font-size:18px;
 @media (max-width:768px){
 
 .nav-container {
+
 flex-direction:column;
 gap:10px;
-text-align:center;
+
 }
 
 .logo {
-font-size:18px;
-}
 
-.menu {
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
+font-size:18px;
+
 }
 
 .menu a {
+
 margin:5px;
 font-size:11px;
 padding:8px 12px;
+
 }
 
 /* HEADER */
 
 h1 {
+
 font-size:42px;
 letter-spacing:4px;
+
 }
 
 .subtitle {
+
 font-size:11px;
+
+}
+
+/* HERO */
+
+.hero img {
+
+width:92%;
+
+}
+
+/* BUTTON */
+
+.booking-button {
+
+padding:16px 32px;
+font-size:12px;
+
 }
 
 /* ALBUMY */
 
 .albums {
+
 grid-template-columns:1fr;
+
 }
 
 .album img {
+
 width:90%;
 height:auto;
+
+}
+
+.album-title-box {
+
+font-size:12px;
+padding:14px;
+
 }
 
 }
@@ -272,6 +356,12 @@ FASHION • FAIRYCORE • PORTRAITS
 
 <img src="rozmiarprawidlowy.jpg">
 
+<br>
+
+<a href="rezerwacja.html" class="booking-button">
+ZAREZERWUJ SESJĘ
+</a>
+
 </div>
 
 <!-- PORTFOLIO -->
@@ -283,31 +373,43 @@ FASHION • FAIRYCORE • PORTRAITS
 <div class="albums">
 
 <a href="studio.html" class="album">
+
 <img src="nom.jpg">
+
 <div class="album-title-box">
 SESJE KOBIECE — STUDIO
 </div>
+
 </a>
 
 <a href="plener.html" class="album">
+
 <img src="IMG_5170.JPEG">
+
 <div class="album-title-box">
 SESJE KOBIECE — PLENER
 </div>
+
 </a>
 
 <a href="pary.html" class="album">
+
 <img src="8.jpg">
+
 <div class="album-title-box">
 SESJE PAR
 </div>
+
 </a>
 
 <a href="wizerunek.html" class="album">
+
 <img src="2.jpg">
+
 <div class="album-title-box">
 SESJE WIZERUNKOWE
 </div>
+
 </a>
 
 </div>
@@ -323,8 +425,8 @@ SESJE WIZERUNKOWE
 <p class="about-text">
 
 Cześć! Mam na imię Paulina i jestem fotografką.  
-Tworzę kobiece, modowe i artystyczne sesje zdjęciowe,  
-łącząc klimat fairycore z nowoczesną estetyką.
+Tworzę kobiece, modowe i artystyczne sesje zdjęciowe  
+z naciskiem na kobiecość, klimat i estetykę.
 
 </p>
 
@@ -341,9 +443,13 @@ INSTAGRAM
 </p>
 
 <p class="contact-link">
+
 <a href="https://instagram.com/luuilyy.photo">
+
 @luuilyy.photo
+
 </a>
+
 </p>
 
 <p class="contact-label">
@@ -351,9 +457,13 @@ EMAIL
 </p>
 
 <p class="contact-link">
+
 <a href="mailto:luuilyy.photo@gmail.com">
+
 luuilyy.photo@gmail.com
+
 </a>
+
 </p>
 
 </div>
