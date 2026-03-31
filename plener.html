@@ -12,8 +12,6 @@
 
 <style>
 
-/* BODY */
-
 body {
 margin:0;
 font-family:'Montserrat',sans-serif;
@@ -23,7 +21,6 @@ background:white;
 /* MENU */
 
 nav {
-
 position:fixed;
 top:0;
 width:100%;
@@ -31,29 +28,23 @@ background:white;
 border-bottom:1px solid #eee;
 padding:18px 0;
 z-index:999;
-
 }
 
 .nav-container {
-
 max-width:1150px;
 margin:auto;
 display:flex;
 justify-content:space-between;
 padding:0 25px;
-
 }
 
 .logo {
-
 font-family:'Playfair Display',serif;
 font-size:22px;
 letter-spacing:3px;
-
 }
 
 .menu a {
-
 text-decoration:none;
 color:#111;
 margin-left:14px;
@@ -62,80 +53,82 @@ letter-spacing:2px;
 border:1px solid transparent;
 padding:10px 18px;
 transition:0.3s;
-
 }
 
 .menu a:hover {
-
 border:1px solid #111;
-
 }
 
 /* TYTUŁ */
 
 .album-title {
-
 padding-top:160px;
 text-align:center;
 font-family:'Playfair Display',serif;
 font-size:38px;
 letter-spacing:4px;
 margin-bottom:60px;
-
 }
 
 /* GALERIA */
 
 .gallery {
-
 display:grid;
 grid-template-columns: repeat(3, 320px);
 justify-content:center;
 gap:35px;
-
 }
 
 .gallery img {
-
 width:320px;
 aspect-ratio:4/5;
 object-fit:cover;
 cursor:pointer;
 transition:0.3s;
-
 }
 
-/* PODŚWIETLENIE */
-
 .gallery img:hover {
-
 transform:scale(1.03);
 opacity:0.9;
-
 }
 
 /* LIGHTBOX */
 
 .lightbox {
-
 display:none;
 position:fixed;
 top:0;
 left:0;
 width:100%;
 height:100%;
-background:rgba(0,0,0,0.9);
+background:rgba(0,0,0,0.95);
 justify-content:center;
 align-items:center;
 z-index:1000;
-
 }
 
 .lightbox img {
-
 max-width:90%;
 max-height:90%;
+}
 
+/* STRZAŁKI */
+
+.arrow {
+position:absolute;
+top:50%;
+font-size:40px;
+color:white;
+cursor:pointer;
+padding:20px;
+}
+
+.arrow-left {
+left:20px;
+}
+
+.arrow-right {
+right:20px;
 }
 
 </style>
@@ -143,8 +136,6 @@ max-height:90%;
 </head>
 
 <body>
-
-<!-- MENU -->
 
 <nav>
 
@@ -157,13 +148,9 @@ LUUILYY PHOTO
 <div class="menu">
 
 <a href="index.html">Strona główna</a>
-
 <a href="index.html#portfolio">Portfolio</a>
-
 <a href="index.html#about">O mnie</a>
-
 <a href="index.html#contact">Kontakt</a>
-
 <a href="rezerwacja.html">Rezerwacja</a>
 
 </div>
@@ -172,58 +159,91 @@ LUUILYY PHOTO
 
 </nav>
 
-<!-- TYTUŁ -->
-
 <h2 class="album-title">
-
 SESJE KOBIECE — PLENER
-
 </h2>
-
-<!-- GALERIA -->
 
 <div class="gallery">
 
 <img src="Bez nazwy-1727.jpg">
-
 <img src="Bez nazwy-1687.jpg">
-
 <img src="IMG_3381.JPG">
 
 </div>
 
-<!-- LIGHTBOX -->
-
 <div class="lightbox" id="lightbox">
 
+<span class="arrow arrow-left" id="prev">&#10094;</span>
+
 <img id="lightbox-img">
+
+<span class="arrow arrow-right" id="next">&#10095;</span>
 
 </div>
 
 <script>
 
-/* LIGHTBOX */
-
 const images = document.querySelectorAll(".gallery img");
-
 const lightbox = document.getElementById("lightbox");
-
 const lightboxImg = document.getElementById("lightbox-img");
+const next = document.getElementById("next");
+const prev = document.getElementById("prev");
 
-images.forEach(img => {
+let currentIndex = 0;
+
+images.forEach((img, index) => {
 
 img.addEventListener("click", () => {
 
+currentIndex = index;
+showImage();
 lightbox.style.display = "flex";
-lightboxImg.src = img.src;
 
 });
+
+});
+
+function showImage() {
+
+lightboxImg.src = images[currentIndex].src;
+
+}
+
+next.addEventListener("click", (e) => {
+
+e.stopPropagation();
+
+currentIndex++;
+if (currentIndex >= images.length) currentIndex = 0;
+
+showImage();
+
+});
+
+prev.addEventListener("click", (e) => {
+
+e.stopPropagation();
+
+currentIndex--;
+if (currentIndex < 0) currentIndex = images.length - 1;
+
+showImage();
 
 });
 
 lightbox.addEventListener("click", () => {
 
 lightbox.style.display = "none";
+
+});
+
+document.addEventListener("keydown", (e) => {
+
+if (e.key === "Escape") lightbox.style.display = "none";
+
+if (e.key === "ArrowRight") next.click();
+
+if (e.key === "ArrowLeft") prev.click();
 
 });
 
