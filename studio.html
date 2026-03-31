@@ -8,9 +8,11 @@
 
 <title>Sesje kobiece — studio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Montserrat&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Playfair+Display:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
+
+/* BODY */
 
 body {
 margin:0;
@@ -18,15 +20,68 @@ font-family:'Montserrat',sans-serif;
 background:white;
 }
 
+/* MENU */
+
+nav {
+
+position:fixed;
+top:0;
+width:100%;
+background:white;
+border-bottom:1px solid #eee;
+padding:18px 0;
+z-index:999;
+
+}
+
+.nav-container {
+
+max-width:1150px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+padding:0 25px;
+
+}
+
+.logo {
+
+font-family:'Playfair Display',serif;
+font-size:22px;
+letter-spacing:3px;
+
+}
+
+.menu a {
+
+text-decoration:none;
+color:#111;
+margin-left:14px;
+font-size:13px;
+letter-spacing:2px;
+border:1px solid transparent;
+padding:10px 18px;
+transition:0.3s;
+
+}
+
+.menu a:hover {
+
+border:1px solid #111;
+
+}
+
 /* TYTUŁ */
 
 .album-title {
-padding-top:120px;
+
+padding-top:160px;
 text-align:center;
 font-family:'Playfair Display',serif;
 font-size:38px;
 letter-spacing:4px;
 margin-bottom:60px;
+
 }
 
 /* GALERIA */
@@ -34,11 +89,8 @@ margin-bottom:60px;
 .gallery {
 
 display:grid;
-
 grid-template-columns: repeat(3, 320px);
-
 justify-content:center;
-
 gap:35px;
 
 }
@@ -46,20 +98,19 @@ gap:35px;
 .gallery img {
 
 width:320px;
-
 aspect-ratio:4/5;
-
 object-fit:cover;
-
 cursor:pointer;
-
 transition:0.3s;
 
 }
 
+/* PODŚWIETLENIE */
+
 .gallery img:hover {
 
 transform:scale(1.03);
+opacity:0.9;
 
 }
 
@@ -68,23 +119,14 @@ transform:scale(1.03);
 .lightbox {
 
 display:none;
-
 position:fixed;
-
 top:0;
-
 left:0;
-
 width:100%;
-
 height:100%;
-
 background:rgba(0,0,0,0.9);
-
 justify-content:center;
-
 align-items:center;
-
 z-index:1000;
 
 }
@@ -92,7 +134,6 @@ z-index:1000;
 .lightbox img {
 
 max-width:90%;
-
 max-height:90%;
 
 }
@@ -103,9 +144,43 @@ max-height:90%;
 
 <body>
 
+<!-- MENU -->
+
+<nav>
+
+<div class="nav-container">
+
+<div class="logo">
+LUUILYY PHOTO
+</div>
+
+<div class="menu">
+
+<a href="index.html">Strona główna</a>
+
+<a href="index.html#portfolio">Portfolio</a>
+
+<a href="index.html#about">O mnie</a>
+
+<a href="index.html#contact">Kontakt</a>
+
+<a href="rezerwacja.html">Rezerwacja</a>
+
+</div>
+
+</div>
+
+</nav>
+
+<!-- TYTUŁ -->
+
 <h2 class="album-title">
+
 SESJE KOBIECE — STUDIO
+
 </h2>
+
+<!-- GALERIA -->
 
 <div class="gallery">
 
@@ -117,6 +192,8 @@ SESJE KOBIECE — STUDIO
 
 </div>
 
+<!-- LIGHTBOX -->
+
 <div class="lightbox" id="lightbox">
 
 <img id="lightbox-img">
@@ -124,6 +201,8 @@ SESJE KOBIECE — STUDIO
 </div>
 
 <script>
+
+/* LIGHTBOX */
 
 const images = document.querySelectorAll(".gallery img");
 
@@ -136,7 +215,6 @@ images.forEach(img => {
 img.addEventListener("click", () => {
 
 lightbox.style.display = "flex";
-
 lightboxImg.src = img.src;
 
 });
