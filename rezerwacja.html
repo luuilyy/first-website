@@ -54,6 +54,34 @@ nav {
     margin-left: 25px;
     font-size: 12px;
     letter-spacing: 2px;
+    position: relative;
+    padding-bottom: 5px;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: #777;
+}
+
+.menu a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 1px;
+    background-color: #111;
+    left: 0;
+    bottom: 0;
+    transition: 0.3s;
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+/* aktywna zakładka */
+
+.menu a.active::after {
+    width: 100%;
 }
 
 /* REZERWACJA */
@@ -79,8 +107,6 @@ nav {
 
 <body>
 
-<!-- MENU -->
-
 <nav>
 
 <div class="nav-container">
@@ -95,15 +121,13 @@ LUUILYY PHOTO
 <a href="index.html#portfolio">Portfolio</a>
 <a href="index.html#about">O mnie</a>
 <a href="index.html#contact">Kontakt</a>
-<a href="rezerwacja.html">Rezerwacja</a>
+<a href="rezerwacja.html" class="active">Rezerwacja</a>
 
 </div>
 
 </div>
 
 </nav>
-
-<!-- REZERWACJA -->
 
 <div class="booking-section">
 
@@ -117,13 +141,11 @@ var widget = new SimplybookWidget({
 "url": "https://luuilyyphoto.simplybook.it",
 
 "theme_settings": {
-
 "sb_base_color": "#000000",
 "body_bg_color": "#ffffff",
 "dark_font_color": "#222222",
 "light_font_color": "#ffffff",
 "btn_color_1": "#000000"
-
 },
 
 "timeline": "modern",
