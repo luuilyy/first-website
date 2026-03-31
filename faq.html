@@ -32,6 +32,7 @@ background:white;
 border-bottom:1px solid #eee;
 
 padding:18px 0;
+
 z-index:999;
 
 }
@@ -63,6 +64,7 @@ letter-spacing:3px;
 
 font-size:28px;
 cursor:pointer;
+
 z-index:1001;
 
 }
@@ -76,7 +78,7 @@ position:fixed;
 top:0;
 right:0;
 
-width:280px;
+width:300px;
 height:100vh;
 
 background:white;
@@ -140,7 +142,7 @@ pointer-events:none;
 
 transition:0.3s;
 
-z-index:998;
+z-index:900;
 
 }
 
@@ -155,16 +157,23 @@ pointer-events:auto;
 
 .faq-hero {
 
-margin-top:110px;
-text-align:center;
+margin-top:120px; /* KLUCZOWA POPRAWKA */
+
+width:100%;
+
+display:flex;
+justify-content:center;
 
 }
 
 .faq-hero img {
 
 width:100%;
-max-width:500px;
-height:auto;
+max-width:1100px;
+
+height:420px;
+
+object-fit:cover;
 
 }
 
@@ -174,7 +183,7 @@ height:auto;
 
 text-align:center;
 
-padding:50px 20px 30px;
+padding:60px 20px 30px;
 
 }
 
@@ -182,7 +191,7 @@ padding:50px 20px 30px;
 
 font-family:'Playfair Display',serif;
 
-font-size:42px;
+font-size:48px;
 letter-spacing:4px;
 
 margin:0;
@@ -226,7 +235,7 @@ width:100%;
 background:none;
 border:none;
 
-padding:22px 10px;
+padding:24px 10px;
 
 font-family:'Montserrat',sans-serif;
 font-size:15px;
@@ -274,7 +283,9 @@ font-size:30px;
 }
 
 .faq-hero img {
-max-width:90%;
+
+height:260px;
+
 }
 
 }
@@ -316,6 +327,8 @@ LUUILYY PHOTO
 
 </div>
 
+<!-- OVERLAY -->
+
 <div class="overlay" id="overlay"></div>
 
 <!-- HERO IMAGE -->
@@ -346,119 +359,31 @@ NAJCZĘŚCIEJ ZADAWANE PYTANIA
 <button class="faq-question">
 Ile trwa sesja zdjęciowa?
 </button>
+
 <div class="faq-answer">
 <p>
 Czas trwania sesji zależy od wybranego pakietu — zazwyczaj trwa od około godziny do dwóch godzin, w zależności od miejsca oraz rodzaju sesji.
 </p>
 </div>
+
 </div>
 
 <div class="faq-item">
 <button class="faq-question">
 Czy pomagasz w pozowaniu?
 </button>
+
 <div class="faq-answer">
 <p>
 Tak — podczas sesji pokazuję, jak się ustawić, ale przygotowanie zaczyna się już wcześniej. Przed sesją wspólnie ustalamy klimat zdjęć, szukamy inspiracji i wzorujemy się na wybranych przykładach — to zdecydowanie ułatwia pracę i sprawia, że nie musisz się stresować.
 </p>
 </div>
-</div>
 
-<div class="faq-item">
-<button class="faq-question">
-Jak przygotować się do sesji?
-</button>
-<div class="faq-answer">
-<p>
-Po rezerwacji otrzymasz ode mnie wskazówki dotyczące ubioru, makijażu oraz dodatków. Pomagam dobrać stylizacje tak, aby pasowały do klimatu sesji.
-</p>
-</div>
-</div>
-
-<div class="faq-item">
-<button class="faq-question">
-Gdzie odbywa się sesja zdjęciowa? Kto wybiera studio?
-</button>
-<div class="faq-answer">
-<p>
-Sesje odbywają się w plenerze lub w studio — w zależności od wybranego pakietu i preferencji klientki.
-</p>
-<p>
-Przed wpłaceniem zaliczki wysyłam kilka propozycji studiów i razem wybieramy najlepsze. Zazwyczaj mam jedno swoje ulubione studio, jednak wszystko zależy od charakteru sesji i tego, czego potrzebujemy.
-</p>
-</div>
-</div>
-
-<div class="faq-item">
-<button class="faq-question">
-Ile czeka się na gotowe zdjęcia?
-</button>
-<div class="faq-answer">
-<p>
-Na gotowe zdjęcia czeka się zazwyczaj od 14 do 21 dni. Czas ten może się zmienić — fotografia nie jest moją jedyną pracą, dlatego taki czas oczekiwania. Zawsze informuję, jeśli coś się zmienia.
-</p>
-</div>
-</div>
-
-<div class="faq-item">
-<button class="faq-question">
-Czy można dokupić dodatkowe zdjęcia?
-</button>
-<div class="faq-answer">
-<p>
-Tak — oferuję trzy pakiety zdjęć, a po otrzymaniu galerii istnieje możliwość dokupienia dodatkowych ujęć według aktualnego cennika.
-</p>
-</div>
-</div>
-
-<div class="faq-item">
-<button class="faq-question">
-Czy wykonujesz makijaż?
-</button>
-<div class="faq-answer">
-<p>
-Nie wykonuję makijażu samodzielnie, jednak współpracuję z makijażystkami oraz stylistką fryzur, które mogę polecić przed sesją.
-</p>
-</div>
-</div>
-
-<div class="faq-item">
-<button class="faq-question">
-Jak zarezerwować termin sesji?
-</button>
-<div class="faq-answer">
-<p>
-Termin sesji możesz zarezerwować poprzez formularz rezerwacji dostępny na stronie lub kontaktując się ze mną bezpośrednio.
-</p>
-</div>
-</div>
-
-<div class="faq-item">
-<button class="faq-question">
-Kto wybiera zdjęcia, które otrzymam?
-</button>
-<div class="faq-answer">
-<p>
-Jeśli mi zaufasz, mogę samodzielnie wybrać i obrobić najlepsze zdjęcia z sesji.
-</p>
-<p>
-Jeśli jednak wolisz dokonać wyboru samodzielnie — nie ma problemu. Wysyłam galerię online z możliwością wyboru zdjęć oraz dokupienia dodatkowych ujęć. Obrabiam dokładnie te zdjęcia, które wybierzesz.
-</p>
-</div>
-</div>
-
-<div class="faq-item">
-<button class="faq-question">
-Czy mogę przyjść z osobą towarzyszącą?
-</button>
-<div class="faq-answer">
-<p>
-Tak — możesz przyjść z osobą towarzyszącą. Jeśli jednak nie bierze udziału w sesji, proszę o zaczekanie przed wejściem do studia — dla komfortu naszej pracy.
-</p>
-</div>
 </div>
 
 </div>
+
+<!-- JAVASCRIPT -->
 
 <script>
 
@@ -475,6 +400,8 @@ document.getElementById("menu").classList.remove("active");
 document.getElementById("overlay").classList.remove("active");
 
 });
+
+/* FAQ */
 
 const faqQuestions = document.querySelectorAll(".faq-question");
 
