@@ -257,8 +257,6 @@ color:white;
 
 }
 
-/* IMAGE */
-
 .album img {
 
 width:100%;
@@ -291,8 +289,6 @@ transition:0.4s;
 z-index:1;
 
 }
-
-/* HOVER */
 
 .album:hover::before {
 
@@ -399,6 +395,38 @@ font-size:18px;
 
 }
 
+/* WRÓĆ NA GÓRĘ */
+
+.back-to-top {
+
+display:block;
+
+text-align:center;
+
+margin:80px auto;
+
+font-size:13px;
+
+letter-spacing:2px;
+
+text-decoration:none;
+
+color:#111;
+
+border-bottom:1px solid transparent;
+
+width:max-content;
+
+transition:0.3s;
+
+}
+
+.back-to-top:hover {
+
+border-bottom:1px solid #111;
+
+}
+
 /* MOBILE */
 
 @media (max-width:768px){
@@ -440,7 +468,7 @@ width:260px;
 
 </head>
 
-<body>
+<body id="top">
 
 <!-- NAV -->
 
@@ -496,7 +524,7 @@ FASHION • FAIRYCORE • PORTRAITS
 
 <div class="hero">
 
-<img src="rozmiarprawidlowy.jpg">
+<img src="rozmiarprawidlowy.jpg" loading="lazy">
 
 </div>
 
@@ -510,7 +538,7 @@ FASHION • FAIRYCORE • PORTRAITS
 
 <a href="studio.html" class="album">
 
-<img src="nom.jpg">
+<img src="nom.jpg" loading="lazy">
 
 <div class="album-hover-text">
 Kliknij, aby zobaczyć więcej zdjęć
@@ -524,7 +552,7 @@ SESJE KOBIECE — STUDIO
 
 <a href="plener.html" class="album">
 
-<img src="IMG_5170.JPEG">
+<img src="IMG_5170.JPEG" loading="lazy">
 
 <div class="album-hover-text">
 Kliknij, aby zobaczyć więcej zdjęć
@@ -538,7 +566,7 @@ SESJE KOBIECE — PLENER
 
 <a href="pary.html" class="album">
 
-<img src="8.jpg">
+<img src="8.jpg" loading="lazy">
 
 <div class="album-hover-text">
 Kliknij, aby zobaczyć więcej zdjęć
@@ -552,7 +580,7 @@ SESJE PAR
 
 <a href="wizerunek.html" class="album">
 
-<img src="2.jpg">
+<img src="2.jpg" loading="lazy">
 
 <div class="album-hover-text">
 Kliknij, aby zobaczyć więcej zdjęć
@@ -611,6 +639,14 @@ luuilyy.photo@gmail.com
 </p>
 
 </div>
+
+<!-- WRÓĆ NA GÓRĘ -->
+
+<a href="#top" class="back-to-top">
+
+← WRÓĆ NA GÓRĘ
+
+</a>
 
 <script>
 
