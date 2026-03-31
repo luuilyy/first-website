@@ -12,123 +12,281 @@
 
 <style>
 
+/* BODY */
+
 body {
 margin:0;
 font-family:'Montserrat',sans-serif;
 background:white;
 }
 
-/* MENU */
+/* NAV */
 
 nav {
+
 position:fixed;
 top:0;
 width:100%;
+
 background:white;
 border-bottom:1px solid #eee;
+
 padding:18px 0;
+
 z-index:999;
+
 }
 
 .nav-container {
+
 max-width:1150px;
 margin:auto;
+
 display:flex;
 justify-content:space-between;
+align-items:center;
+
 padding:0 25px;
+
 }
 
 .logo {
+
 font-family:'Playfair Display',serif;
 font-size:22px;
 letter-spacing:3px;
+
+}
+
+/* HAMBURGER */
+
+.hamburger {
+
+font-size:28px;
+cursor:pointer;
+
+}
+
+/* MENU PANEL */
+
+.menu {
+
+position:fixed;
+
+top:0;
+right:0;
+
+width:280px;
+height:100vh;
+
+background:white;
+
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+
+transform:translateX(100%);
+transition:0.3s;
+
+box-shadow:-5px 0 15px rgba(0,0,0,0.1);
+
+z-index:1000;
+
+}
+
+.menu.active {
+
+transform:translateX(0);
+
 }
 
 .menu a {
+
 text-decoration:none;
 color:#111;
-margin-left:14px;
-font-size:13px;
+
+padding:18px;
+
+font-size:14px;
 letter-spacing:2px;
-border:1px solid transparent;
-padding:10px 18px;
+
 transition:0.3s;
+
 }
 
 .menu a:hover {
-border:1px solid #111;
+
+color:#888;
+
+}
+
+/* OVERLAY */
+
+.overlay {
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background:rgba(0,0,0,0.3);
+
+opacity:0;
+pointer-events:none;
+
+transition:0.3s;
+
+z-index:900;
+
+}
+
+.overlay.active {
+
+opacity:1;
+pointer-events:auto;
+
 }
 
 /* TYTUŁ */
 
 .album-title {
-padding-top:160px;
+
+padding-top:150px;
+
 text-align:center;
+
 font-family:'Playfair Display',serif;
+
 font-size:38px;
+
 letter-spacing:4px;
+
 margin-bottom:60px;
+
 }
 
 /* GALERIA */
 
 .gallery {
+
 display:grid;
+
 grid-template-columns: repeat(3, 320px);
+
 justify-content:center;
+
 gap:35px;
+
 }
 
 .gallery img {
+
 width:320px;
+
 aspect-ratio:4/5;
+
 object-fit:cover;
+
 cursor:pointer;
+
 transition:0.3s;
+
 }
 
 .gallery img:hover {
+
 transform:scale(1.03);
+
 opacity:0.9;
+
 }
 
 /* LIGHTBOX */
 
 .lightbox {
+
 display:none;
+
 position:fixed;
+
 top:0;
 left:0;
+
 width:100%;
 height:100%;
+
 background:rgba(0,0,0,0.95);
+
 justify-content:center;
 align-items:center;
-z-index:1000;
+
+z-index:1001;
+
 }
 
 .lightbox img {
+
 max-width:90%;
 max-height:90%;
-}
 
-/* STRZAŁKI */
+}
 
 .arrow {
+
 position:absolute;
+
 top:50%;
+
 font-size:40px;
+
 color:white;
+
 cursor:pointer;
+
 padding:20px;
+
 }
 
-.arrow-left {
-left:20px;
+.arrow-left { left:20px; }
+
+.arrow-right { right:20px; }
+
+/* MOBILE */
+
+@media (max-width:768px){
+
+.album-title {
+
+font-size:26px;
+
+padding-top:140px;
+
 }
 
-.arrow-right {
-right:20px;
+.gallery {
+
+grid-template-columns:1fr;
+
+}
+
+.gallery img {
+
+width:90%;
+
+margin:auto;
+
+}
+
+.menu {
+
+width:260px;
+
+}
+
 }
 
 </style>
@@ -136,6 +294,8 @@ right:20px;
 </head>
 
 <body>
+
+<!-- NAV -->
 
 <nav>
 
@@ -145,31 +305,51 @@ right:20px;
 LUUILYY PHOTO
 </div>
 
-<div class="menu">
-
-<a href="index.html">Strona główna</a>
-<a href="index.html#portfolio">Portfolio</a>
-<a href="index.html#about">O mnie</a>
-<a href="index.html#contact">Kontakt</a>
-<a href="rezerwacja.html">Rezerwacja</a>
-
+<div class="hamburger" onclick="toggleMenu()">
+☰
 </div>
 
 </div>
 
 </nav>
 
+<!-- MENU -->
+
+<div class="menu" id="menu">
+
+<a href="index.html">Strona główna</a>
+
+<a href="index.html#portfolio">Portfolio</a>
+
+<a href="faq.html">FAQ</a>
+
+<a href="index.html#about">O mnie</a>
+
+<a href="index.html#contact">Kontakt</a>
+
+<a href="rezerwacja.html">Rezerwacja</a>
+
+</div>
+
+<div class="overlay" id="overlay"></div>
+
+<!-- TYTUŁ -->
+
 <h2 class="album-title">
 SESJE KOBIECE — PLENER
 </h2>
 
+<!-- GALERIA -->
+
 <div class="gallery">
 
-<img src="Bez nazwy-1727.jpg">
-<img src="Bez nazwy-1687.jpg">
 <img src="IMG_3381.JPG">
+<img src="IMG_8453.JPG">
+<img src="IMG_1010.JPG">
 
 </div>
+
+<!-- LIGHTBOX -->
 
 <div class="lightbox" id="lightbox">
 
@@ -183,67 +363,116 @@ SESJE KOBIECE — PLENER
 
 <script>
 
-const images = document.querySelectorAll(".gallery img");
-const lightbox = document.getElementById("lightbox");
-const lightboxImg = document.getElementById("lightbox-img");
-const next = document.getElementById("next");
-const prev = document.getElementById("prev");
+/* MENU */
 
-let currentIndex = 0;
+function toggleMenu() {
 
-images.forEach((img, index) => {
-
-img.addEventListener("click", () => {
-
-currentIndex = index;
-showImage();
-lightbox.style.display = "flex";
-
-});
-
-});
-
-function showImage() {
-
-lightboxImg.src = images[currentIndex].src;
+document.getElementById("menu").classList.toggle("active");
+document.getElementById("overlay").classList.toggle("active");
 
 }
 
-next.addEventListener("click", (e) => {
+document.getElementById("overlay").addEventListener("click", function(){
+
+document.getElementById("menu").classList.remove("active");
+document.getElementById("overlay").classList.remove("active");
+
+});
+
+const menuLinks = document.querySelectorAll(".menu a");
+
+menuLinks.forEach(link => {
+
+link.addEventListener("click", () => {
+
+document.getElementById("menu").classList.remove("active");
+document.getElementById("overlay").classList.remove("active");
+
+});
+
+});
+
+/* LIGHTBOX */
+
+const images=document.querySelectorAll(".gallery img");
+
+const lightbox=document.getElementById("lightbox");
+
+const lightboxImg=document.getElementById("lightbox-img");
+
+const next=document.getElementById("next");
+
+const prev=document.getElementById("prev");
+
+let currentIndex=0;
+
+images.forEach((img,index)=>{
+
+img.addEventListener("click",()=>{
+
+currentIndex=index;
+
+showImage();
+
+lightbox.style.display="flex";
+
+});
+
+});
+
+function showImage(){
+
+lightboxImg.src=images[currentIndex].src;
+
+}
+
+next.onclick=(e)=>{
 
 e.stopPropagation();
 
 currentIndex++;
-if (currentIndex >= images.length) currentIndex = 0;
+
+if(currentIndex>=images.length)
+
+currentIndex=0;
 
 showImage();
 
-});
+};
 
-prev.addEventListener("click", (e) => {
+prev.onclick=(e)=>{
 
 e.stopPropagation();
 
 currentIndex--;
-if (currentIndex < 0) currentIndex = images.length - 1;
+
+if(currentIndex<0)
+
+currentIndex=images.length-1;
 
 showImage();
 
-});
+};
 
-lightbox.addEventListener("click", () => {
+lightbox.onclick=()=>{
 
-lightbox.style.display = "none";
+lightbox.style.display="none";
 
-});
+};
 
-document.addEventListener("keydown", (e) => {
+document.addEventListener("keydown",(e)=>{
 
-if (e.key === "Escape") lightbox.style.display = "none";
+if(e.key==="Escape")
 
-if (e.key === "ArrowRight") next.click();
+lightbox.style.display="none";
 
-if (e.key === "ArrowLeft") prev.click();
+if(e.key==="ArrowRight")
+
+next.click();
+
+if(e.key==="ArrowLeft")
+
+prev.click();
 
 });
 
