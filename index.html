@@ -15,184 +15,197 @@
 /* BODY */
 
 body {
-    margin: 0;
-    background-color: white;
-    color: #111;
-    font-family: 'Montserrat', sans-serif;
+margin:0;
+background:white;
+color:#111;
+font-family:'Montserrat',sans-serif;
 }
 
 /* MENU */
 
 nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: white;
-    border-bottom: 1px solid #eee;
-    padding: 18px 0;
-    z-index: 999;
+position:fixed;
+top:0;
+width:100%;
+background:white;
+border-bottom:1px solid #eee;
+padding:18px 0;
+z-index:999;
 }
 
 .nav-container {
-    max-width: 1150px;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 25px;
+max-width:1150px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:0 25px;
 }
 
 .logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 22px;
-    letter-spacing: 3px;
+font-family:'Playfair Display',serif;
+font-size:22px;
+letter-spacing:3px;
 }
 
-/* MENU LINKI — prostokąt */
+/* MENU prostokąty */
 
 .menu a {
-    text-decoration: none;
-    color: #111;
-    margin-left: 14px;
-    font-size: 13px;
-    letter-spacing: 2px;
+text-decoration:none;
+color:#111;
+margin-left:14px;
+font-size:13px;
+letter-spacing:2px;
 
-    border: 1px solid transparent;
-    padding: 10px 18px;
+border:1px solid transparent;
+padding:10px 18px;
 
-    transition: 0.3s;
+transition:0.3s;
 }
 
-/* Hover */
-
 .menu a:hover {
-    border: 1px solid #111;
+border:1px solid #111;
 }
 
 /* HEADER */
 
 header {
-    text-align: center;
-    padding-top: 150px;
-    padding-bottom: 60px;
+text-align:center;
+padding-top:150px;
+padding-bottom:60px;
 }
 
 h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 90px;
-    font-weight: 300;
-    letter-spacing: 6px;
-    margin: 0;
+font-family:'Playfair Display',serif;
+font-size:90px;
+font-weight:300;
+letter-spacing:6px;
+margin:0;
 }
 
 .subtitle {
-    margin-top: 20px;
-    font-size: 13px;
-    letter-spacing: 4px;
-    color: #555;
+margin-top:20px;
+font-size:13px;
+letter-spacing:4px;
+color:#555;
 }
 
 /* HERO */
 
 .hero {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 110px;
+display:flex;
+flex-direction:column;
+align-items:center;
+margin-bottom:110px;
 }
 
 .hero img {
-    width: 100%;
-    max-width: 1100px;
+width:100%;
+max-width:1100px;
 }
 
 /* PRZYCISK */
 
 .hero-button {
-    margin-top: 70px;
+margin-top:70px;
 }
 
 .booking-btn {
-    text-decoration: none;
-    color: #111;
+text-decoration:none;
+color:#111;
 
-    border: 1.5px solid #111;
-    padding: 18px 52px;
+border:1.5px solid #111;
+padding:18px 52px;
 
-    font-size: 15px;
-    letter-spacing: 3px;
+font-size:15px;
+letter-spacing:3px;
 
-    transition: 0.3s;
+transition:0.3s;
 }
 
 .booking-btn:hover {
-    background-color: #111;
-    color: white;
+background:#111;
+color:white;
 }
 
 /* SEKCJE */
 
 .section {
-    padding: 100px 20px;
-    text-align: center;
+padding:100px 20px;
+text-align:center;
 }
 
 .section h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 40px;
-    letter-spacing: 4px;
-    margin-bottom: 60px;
+font-family:'Playfair Display',serif;
+font-size:40px;
+letter-spacing:4px;
+margin-bottom:60px;
 }
 
-/* GALERIA */
+/* ALBUMY */
 
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(2, 320px);
-    justify-content: center;
-    gap: 40px;
+.album-gallery {
+display:grid;
+grid-template-columns:repeat(2,360px);
+justify-content:center;
+gap:45px;
 }
 
-.gallery img {
-    width: 320px;
-    aspect-ratio: 4 / 5;
-    object-fit: cover;
-    transition: transform 0.3s ease;
+.album {
+position:relative;
+text-decoration:none;
 }
 
-.gallery img:hover {
-    transform: scale(1.03);
+.album img {
+width:360px;
+aspect-ratio:4/5;
+object-fit:cover;
+transition:0.3s;
+}
+
+.album:hover img {
+transform:scale(1.03);
+}
+
+.album-title {
+position:absolute;
+bottom:0;
+width:100%;
+
+background:rgba(0,0,0,0.5);
+color:white;
+
+padding:18px;
+
+font-size:14px;
+letter-spacing:2px;
 }
 
 /* O MNIE */
 
 .about-text {
-    max-width: 650px;
-    margin: auto;
-    color: #444;
-    line-height: 1.8;
+max-width:650px;
+margin:auto;
+color:#444;
+line-height:1.8;
 }
 
 /* KONTAKT */
 
 .contact-box {
-    margin-top: 40px;
+margin-top:40px;
 }
 
 .contact-label {
-    font-size: 12px;
-    letter-spacing: 3px;
-    color: #888;
-    margin-top: 30px;
-}
-
-.contact-link {
-    font-size: 18px;
+font-size:12px;
+letter-spacing:3px;
+color:#888;
+margin-top:30px;
 }
 
 .contact-link a {
-    text-decoration: none;
-    color: #111;
+text-decoration:none;
+color:#111;
 }
 
 </style>
@@ -247,27 +260,47 @@ ZAREZERWUJ SESJĘ
 
 </div>
 
+<!-- PORTFOLIO -->
+
 <div class="section" id="portfolio">
 
 <h2>PORTFOLIO</h2>
 
-<div class="gallery">
+<div class="album-gallery">
 
-<img src="10.jpg">
-<img src="16.jpg">
+<a href="studio.html" class="album">
+<img src="studio-okladka.jpg">
+<div class="album-title">
+SESJE KOBIECE — STUDIO
+</div>
+</a>
 
-<img src="28886b2b-4367-4c60-a7d6-4655f1ab8574.jpg">
-<img src="Bez nazwy-1687.jpg">
+<a href="plener.html" class="album">
+<img src="plener-okladka.jpg">
+<div class="album-title">
+SESJE KOBIECE — PLENER
+</div>
+</a>
 
-<img src="Bez nazwy-1727.jpg">
-<img src="D5359A2E-5EB8-46C8-B214-75968DEA868E.jpg">
+<a href="pary.html" class="album">
+<img src="pary-okladka.jpg">
+<div class="album-title">
+SESJE PAR
+</div>
+</a>
 
-<img src="DSC01148.jpg">
-<img src="IMG_5170.JPEG">
+<a href="wizerunek.html" class="album">
+<img src="wizerunek-okladka.jpg">
+<div class="album-title">
+SESJE WIZERUNKOWE
+</div>
+</a>
 
 </div>
 
 </div>
+
+<!-- O MNIE -->
 
 <div class="section" id="about">
 
@@ -283,6 +316,8 @@ Moim celem jest tworzenie zdjęć, które są magiczne, kobiece i wyjątkowe.
 
 </div>
 
+<!-- KONTAKT -->
+
 <div class="section" id="contact">
 
 <h2>KONTAKT</h2>
@@ -293,7 +328,7 @@ Moim celem jest tworzenie zdjęć, które są magiczne, kobiece i wyjątkowe.
 INSTAGRAM
 </p>
 
-<p class="contact-link">
+<p>
 <a href="https://instagram.com/luuilyy.photo">
 @luuilyy.photo
 </a>
@@ -303,7 +338,7 @@ INSTAGRAM
 EMAIL
 </p>
 
-<p class="contact-link">
+<p>
 <a href="mailto:luuilyy.photo@gmail.com">
 luuilyy.photo@gmail.com
 </a>
