@@ -819,32 +819,6 @@ document.getElementById("overlay").classList.remove("active");
 
 });
 
-/* FADE-IN PRZY SCROLLU */
-
-const faders = document.querySelectorAll(".fade-section");
-
-const appearOptions = {
-threshold: 0.2
-};
-
-const appearOnScroll = new IntersectionObserver(function(entries){
-
-entries.forEach(entry => {
-
-if (!entry.isIntersecting) {
-return;
-}
-
-entry.target.classList.add("visible");
-
-});
-
-}, appearOptions);
-
-faders.forEach(section => {
-appearOnScroll.observe(section);
-});  
-
 </script>
 
 </body>
