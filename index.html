@@ -512,15 +512,10 @@ LUUILYY PHOTO
 <div class="close-menu" onclick="toggleMenu()">✕</div>
 
 <a href="index.html">Strona główna</a>
-
 <a href="#portfolio">Portfolio</a>
-
 <a href="faq.html">FAQ</a>
-
 <a href="#about">O mnie</a>
-
 <a href="#contact">Kontakt</a>
-
 <a href="rezerwacja.html">Rezerwacja</a>
 
 </div>
@@ -543,7 +538,57 @@ FASHION • FAIRYCORE • PORTRAITS
 
 </div>
 
-<!-- reszta strony zostaje taka sama -->
+<!-- PORTFOLIO -->
+
+<div class="section" id="portfolio">
+
+<h2>PORTFOLIO</h2>
+
+<div class="albums">
+
+<a href="studio.html" class="album">
+<img src="nom.jpg" loading="lazy">
+<div class="album-hover-text">
+Kliknij, aby zobaczyć więcej zdjęć
+</div>
+<div class="album-title-box">
+SESJE KOBIECE — STUDIO
+</div>
+</a>
+
+<a href="plener.html" class="album">
+<img src="IMG_5170.JPEG" loading="lazy">
+<div class="album-hover-text">
+Kliknij, aby zobaczyć więcej zdjęć
+</div>
+<div class="album-title-box">
+SESJE KOBIECE — PLENER
+</div>
+</a>
+
+<a href="pary.html" class="album">
+<img src="8.jpg" loading="lazy">
+<div class="album-hover-text">
+Kliknij, aby zobaczyć więcej zdjęć
+</div>
+<div class="album-title-box">
+SESJE PAR
+</div>
+</a>
+
+<a href="wizerunek.html" class="album">
+<img src="2.jpg" loading="lazy">
+<div class="album-hover-text">
+Kliknij, aby zobaczyć więcej zdjęć
+</div>
+<div class="album-title-box">
+SESJE WIZERUNKOWE
+</div>
+</a>
+
+</div>
+
+</div>
 
 <script>
 
@@ -558,19 +603,6 @@ document.getElementById("overlay").addEventListener("click", function(){
 
 document.getElementById("menu").classList.remove("active");
 document.getElementById("overlay").classList.remove("active");
-
-});
-
-const menuLinks = document.querySelectorAll(".menu a");
-
-menuLinks.forEach(link => {
-
-link.addEventListener("click", () => {
-
-document.getElementById("menu").classList.remove("active");
-document.getElementById("overlay").classList.remove("active");
-
-});
 
 });
 
