@@ -25,245 +25,375 @@ scroll-behavior:smooth;
 /* NAV */
 
 nav {
+
 position:fixed;
 top:0;
 width:100%;
+
 background:white;
 border-bottom:1px solid #eee;
+
 padding:18px 0;
+
 z-index:999;
+
 }
 
 .nav-container {
+
 max-width:1150px;
 margin:auto;
+
 display:flex;
 justify-content:space-between;
 align-items:center;
+
 padding:0 25px;
+
 }
 
 .logo {
+
 font-family:'Playfair Display',serif;
 font-size:22px;
 letter-spacing:3px;
+
 }
 
 /* HAMBURGER */
 
 .hamburger {
+
 font-size:28px;
 cursor:pointer;
+
 }
 
-/* MENU */
+/* MENU PANEL */
 
 .menu {
+
 position:fixed;
+
 top:0;
 right:0;
+
 width:280px;
 height:100vh;
+
 background:white;
+
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
+
 transform:translateX(100%);
 transition:0.3s;
+
 box-shadow:-5px 0 15px rgba(0,0,0,0.1);
+
 z-index:1000;
+
 }
 
 .menu.active {
+
 transform:translateX(0);
+
 }
 
-/* X */
+/* X BUTTON */
 
 .close-menu {
+
 position:absolute;
 top:20px;
 right:25px;
+
 font-size:28px;
 cursor:pointer;
+
 }
 
-/* MENU LINKS */
-
 .menu a {
+
 text-decoration:none;
 color:#111;
+
 padding:18px;
+
 font-size:14px;
 letter-spacing:2px;
+
 transition:0.3s;
+
 }
 
 .menu a:hover {
+
 color:#888;
+
 }
 
 /* OVERLAY */
 
 .overlay {
+
 position:fixed;
+
 top:0;
 left:0;
+
 width:100%;
 height:100%;
+
 background:rgba(0,0,0,0.3);
+
 opacity:0;
 pointer-events:none;
+
 transition:0.3s;
+
 z-index:900;
+
 }
 
 .overlay.active {
+
 opacity:1;
 pointer-events:auto;
+
 }
 
 /* HEADER */
 
 header {
+
 text-align:center;
+
 padding-top:150px;
 padding-bottom:60px;
+
 }
 
 h1 {
+
 font-family:'Playfair Display',serif;
+
 font-size:80px;
 letter-spacing:6px;
+
 margin:0;
+
 }
 
 .subtitle {
+
 margin-top:20px;
+
 font-size:13px;
 letter-spacing:4px;
+
 color:#555;
+
 }
 
 /* HERO */
 
 .hero {
+
 display:flex;
 justify-content:center;
+
 margin-bottom:100px;
+
 }
 
 .hero img {
+
 width:100%;
 max-width:1100px;
+
 }
 
 /* SECTION */
 
 .section {
+
 padding:80px 20px;
+
 text-align:center;
+
 }
 
 .section h2 {
+
 font-family:'Playfair Display',serif;
+
 font-size:36px;
+
 letter-spacing:3px;
+
 margin-bottom:50px;
+
 }
 
 /* ALBUM GRID */
 
 .albums {
+
 display:grid;
+
 grid-template-columns: repeat(2, 350px);
+
 justify-content:center;
+
 gap:60px;
+
 }
 
 /* ALBUM */
 
 .album {
+
 position:relative;
+
 width:350px;
 height:450px;
+
 overflow:hidden;
+
 text-decoration:none;
+
 color:white;
+
 }
 
 .album img {
+
 width:100%;
 height:100%;
+
 object-fit:cover;
+
 transition:0.4s;
+
 }
 
 .album::before {
+
 content:"";
+
 position:absolute;
+
 top:0;
 left:0;
+
 width:100%;
 height:100%;
+
 background:rgba(0,0,0,0);
+
 transition:0.4s;
+
 z-index:1;
+
 }
 
 .album:hover::before {
+
 background:rgba(0,0,0,0.45);
+
 }
 
 .album:hover img {
+
 transform:scale(1.05);
+
 }
 
 .album-hover-text {
+
 position:absolute;
+
 top:50%;
 left:50%;
+
 transform:translate(-50%, -50%);
+
 font-size:13px;
+
 letter-spacing:2px;
+
 opacity:0;
+
 z-index:2;
+
 transition:0.3s;
+
 text-align:center;
+
 }
 
 .album:hover .album-hover-text {
+
 opacity:1;
+
 }
 
 .album-title-box {
+
 position:absolute;
+
 bottom:15px;
 left:15px;
 right:15px;
+
 background:rgba(0,0,0,0.45);
+
 padding:16px;
+
 letter-spacing:3px;
+
 font-size:13px;
+
 text-align:center;
+
 z-index:2;
+
 }
 
-/* PROCESS */
+/* PROCESS SECTION */
 
 .process-grid {
+
 display:grid;
-grid-template-columns: repeat(3,1fr);
+
+grid-template-columns: repeat(3, 1fr);
+
 gap:50px;
+
 max-width:1000px;
+
 margin:auto;
+
+}
+
+.process-step {
+
+padding:10px;
+
 }
 
 .step-number {
+
 font-family:'Playfair Display',serif;
+
 font-size:32px;
+
 margin-bottom:15px;
+
 }
 
 /* TABLET */
@@ -271,11 +401,15 @@ margin-bottom:15px;
 @media (max-width:1024px){
 
 .process-grid {
+
 grid-template-columns: repeat(2,1fr);
+
 }
 
 .albums {
+
 grid-template-columns: repeat(2,1fr);
+
 }
 
 }
@@ -286,24 +420,36 @@ grid-template-columns: repeat(2,1fr);
 
 h1 { font-size:42px; }
 
+.subtitle { font-size:11px; }
+
 .albums {
+
 grid-template-columns:1fr;
+
 gap:50px;
+
 }
 
 .album {
+
 width:90%;
 height:420px;
 margin:auto;
-}
 
-.process-grid {
-grid-template-columns:1fr;
-gap:40px;
 }
 
 .menu {
+
 width:260px;
+
+}
+
+.process-grid {
+
+grid-template-columns:1fr;
+
+gap:40px;
+
 }
 
 }
@@ -364,8 +510,6 @@ FASHION • FAIRYCORE • PORTRAITS
 
 </div>
 
-<!-- PORTFOLIO -->
-
 <div class="section" id="portfolio">
 
 <h2>PORTFOLIO</h2>
@@ -424,32 +568,32 @@ SESJE WIZERUNKOWE
 
 <div class="process-grid">
 
-<div>
+<div class="process-step">
 <div class="step-number">01</div>
-<p>Rezerwujesz termin.</p>
+<p>Rezerwacja terminu.</p>
 </div>
 
-<div>
+<div class="process-step">
 <div class="step-number">02</div>
-<p>Przygotowujemy stylizacje.</p>
+<p>Przygotowanie stylizacji oraz makijażu.</p>
 </div>
 
-<div>
+<div class="process-step">
 <div class="step-number">03</div>
-<p>Realizujemy sesję.</p>
+<p>Realizacja sesji zdjęciowej.</p>
 </div>
 
-<div>
+<div class="process-step">
 <div class="step-number">04</div>
-<p>Wybierasz zdjęcia.</p>
+<p>Wybór ulubionych zdjęć.</p>
 </div>
 
-<div>
+<div class="process-step">
 <div class="step-number">05</div>
-<p>Otrzymujesz gotowe fotografie.</p>
+<p>Otrzymanie gotowych fotografii.</p>
 </div>
 
-<div>
+<div class="process-step">
 <div class="step-number">06</div>
 <p>
 Mam nadzieję, że zdjęcia spodobają się tak bardzo,
@@ -476,8 +620,6 @@ Tworzę kobiece, modowe i artystyczne sesje zdjęciowe,
 </p>
 
 </div>
-
-<!-- CONTACT -->
 
 <div class="section" id="contact">
 
