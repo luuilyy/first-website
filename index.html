@@ -317,7 +317,7 @@ height:100%;
 
 object-fit:cover;
 
-transition:0.4s;
+transition:0.5s ease;
 
 }
 
@@ -335,7 +335,7 @@ height:100%;
 
 background:rgba(0,0,0,0);
 
-transition:0.4s;
+transition:0.5s ease;
 
 z-index:1;
 
@@ -344,12 +344,13 @@ z-index:1;
 .album:hover::before {
 
 background:rgba(0,0,0,0.45);
+backdrop-filter:blur(2px);
 
 }
 
 .album:hover img {
 
-transform:scale(1.05);
+transform:scale(1.08);
 
 }
 
