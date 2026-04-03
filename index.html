@@ -357,6 +357,62 @@ z-index:2;
 
 }
 
+/* PROCESS SECTION */
+
+.process-grid {
+
+display:grid;
+
+grid-template-columns: repeat(3, 1fr);
+
+gap:50px;
+
+max-width:1000px;
+
+margin:auto;
+
+}
+
+.process-step {
+
+text-align:center;
+
+padding:10px;
+
+}
+
+.step-number {
+
+font-family:'Playfair Display',serif;
+
+font-size:32px;
+
+letter-spacing:3px;
+
+margin-bottom:15px;
+
+}
+
+.process-step h3 {
+
+font-size:14px;
+
+letter-spacing:2px;
+
+margin-bottom:15px;
+
+}
+
+.process-step p {
+
+font-size:13px;
+
+color:#555;
+
+line-height:1.6;
+
+}
+
 /* ABOUT */
 
 .about-text {
@@ -462,6 +518,14 @@ width:260px;
 
 }
 
+.process-grid {
+
+grid-template-columns:1fr;
+
+gap:40px;
+
+}
+
 }
 
 </style>
@@ -469,8 +533,6 @@ width:260px;
 </head>
 
 <body id="top">
-
-<!-- NAV -->
 
 <nav>
 
@@ -487,8 +549,6 @@ LUUILYY PHOTO
 </div>
 
 </nav>
-
-<!-- MENU -->
 
 <div class="menu" id="menu">
 
@@ -590,6 +650,84 @@ SESJE WIZERUNKOWE
 
 </div>
 
+<!-- NOWA SEKCJA -->
+
+<div class="section" id="process">
+
+<h2>JAK WYGLĄDA SESJA</h2>
+
+<div class="process-grid">
+
+<div class="process-step">
+
+<div class="step-number">01</div>
+
+<h3>Rezerwacja terminu</h3>
+
+<p>
+Kontaktujesz się ze mną przez Instagram lub formularz rezerwacji.
+Wybieramy dogodny termin oraz ustalamy szczegóły sesji.
+</p>
+
+</div>
+
+<div class="process-step">
+
+<div class="step-number">02</div>
+
+<h3>Przygotowanie</h3>
+
+<p>
+Otrzymujesz wskazówki dotyczące stylizacji.
+Możesz skorzystać z profesjonalnego makijażu
+oraz stylizacji fryzury przed sesją.
+</p>
+
+</div>
+
+<div class="process-step">
+
+<div class="step-number">03</div>
+
+<h3>Dzień sesji</h3>
+
+<p>
+Podczas sesji pomagam w pozowaniu
+i dbam o komfortową, przyjazną atmosferę.
+</p>
+
+</div>
+
+<div class="process-step">
+
+<div class="step-number">04</div>
+
+<h3>Wybór zdjęć</h3>
+
+<p>
+Otrzymujesz galerię online,
+z której wybierasz swoje ulubione ujęcia.
+</p>
+
+</div>
+
+<div class="process-step">
+
+<div class="step-number">05</div>
+
+<h3>Gotowe fotografie</h3>
+
+<p>
+Po retuszu otrzymujesz gotowe zdjęcia
+w wersji cyfrowej.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
 <div class="section" id="about">
 
 <h2>O MNIE</h2>
@@ -629,8 +767,6 @@ luuilyy.photo@gmail.com
 </p>
 
 </div>
-
-<!-- WRÓĆ NA GÓRĘ -->
 
 <a href="#top" class="back-to-top">
 
