@@ -74,13 +74,10 @@ cursor:pointer;
 .menu {
 
 position:fixed;
-
 top:0;
 right:0;
-
 width:280px;
 height:100vh;
-
 background:white;
 
 display:flex;
@@ -143,7 +140,6 @@ color:#888;
 .overlay {
 
 position:fixed;
-
 top:0;
 left:0;
 
@@ -232,11 +228,8 @@ text-align:center;
 .section h2 {
 
 font-family:'Playfair Display',serif;
-
 font-size:36px;
-
 letter-spacing:3px;
-
 margin-bottom:50px;
 
 }
@@ -246,11 +239,8 @@ margin-bottom:50px;
 .albums {
 
 display:grid;
-
 grid-template-columns: repeat(2, 350px);
-
 justify-content:center;
-
 gap:60px;
 
 }
@@ -260,14 +250,12 @@ gap:60px;
 .album {
 
 position:relative;
-
 width:350px;
 height:450px;
 
 overflow:hidden;
 
 text-decoration:none;
-
 color:white;
 
 }
@@ -276,7 +264,6 @@ color:white;
 
 width:100%;
 height:100%;
-
 object-fit:cover;
 
 transition:0.4s;
@@ -288,7 +275,6 @@ transition:0.4s;
 .album::before {
 
 content:"";
-
 position:absolute;
 
 top:0;
@@ -317,8 +303,6 @@ transform:scale(1.05);
 
 }
 
-/* CLICK TEXT */
-
 .album-hover-text {
 
 position:absolute;
@@ -329,7 +313,6 @@ left:50%;
 transform:translate(-50%, -50%);
 
 font-size:13px;
-
 letter-spacing:2px;
 
 opacity:0;
@@ -348,8 +331,6 @@ opacity:1;
 
 }
 
-/* TITLE BOX */
-
 .album-title-box {
 
 position:absolute;
@@ -363,7 +344,6 @@ background:rgba(0,0,0,0.45);
 padding:16px;
 
 letter-spacing:3px;
-
 font-size:13px;
 
 text-align:center;
@@ -402,9 +382,41 @@ font-family:'Playfair Display',serif;
 
 font-size:32px;
 
-letter-spacing:3px;
+margin-bottom:15px;
+
+}
+
+.process-step h3 {
+
+font-size:14px;
+
+letter-spacing:2px;
 
 margin-bottom:15px;
+
+}
+
+.process-step p {
+
+font-size:13px;
+
+color:#555;
+
+line-height:1.6;
+
+}
+
+/* TABLET */
+
+@media (max-width:1024px){
+
+.process-grid {
+grid-template-columns: repeat(2,1fr);
+}
+
+.albums {
+grid-template-columns: repeat(2,1fr);
+}
 
 }
 
@@ -412,19 +424,28 @@ margin-bottom:15px;
 
 @media (max-width:768px){
 
-h1 {font-size:42px;}
+h1 { font-size:42px; }
+
+.subtitle { font-size:11px; }
 
 .albums {
 grid-template-columns:1fr;
+gap:50px;
 }
 
 .album {
 width:90%;
+height:420px;
 margin:auto;
 }
 
 .process-grid {
 grid-template-columns:1fr;
+gap:40px;
+}
+
+.menu {
+width:260px;
 }
 
 }
@@ -458,22 +479,150 @@ LUUILYY PHOTO
 <div class="close-menu" onclick="toggleMenu()">✕</div>
 
 <a href="index.html">Strona główna</a>
-
 <a href="#portfolio">Portfolio</a>
-
 <a href="faq.html">FAQ</a>
-
+<a href="#process">Jak wygląda sesja?</a>
 <a href="#about">O mnie</a>
-
 <a href="#contact">Kontakt</a>
-
 <a href="rezerwacja.html">Rezerwacja</a>
 
 </div>
 
 <div class="overlay" id="overlay"></div>
 
-<!-- TU DALEJ JEST TWOJA STRONA — NIC NIE USUNIĘTE -->
+<header>
+
+<h1>LUUILYY PHOTO</h1>
+
+<p class="subtitle">
+FASHION • FAIRYCORE • PORTRAITS
+</p>
+
+</header>
+
+<div class="hero">
+
+<img src="rozmiarprawidlowy.jpg" loading="lazy">
+
+</div>
+
+<!-- PORTFOLIO -->
+
+<div class="section" id="portfolio">
+
+<h2>PORTFOLIO</h2>
+
+<div class="albums">
+
+<a href="studio.html" class="album">
+<img src="nom.jpg" loading="lazy">
+<div class="album-hover-text">
+Kliknij, aby zobaczyć więcej zdjęć
+</div>
+<div class="album-title-box">
+SESJE KOBIECE — STUDIO
+</div>
+</a>
+
+<a href="plener.html" class="album">
+<img src="IMG_5170.JPEG" loading="lazy">
+<div class="album-hover-text">
+Kliknij, aby zobaczyć więcej zdjęć
+</div>
+<div class="album-title-box">
+SESJE KOBIECE — PLENER
+</div>
+</a>
+
+<a href="pary.html" class="album">
+<img src="8.jpg" loading="lazy">
+<div class="album-hover-text">
+Kliknij, aby zobaczyć więcej zdjęć
+</div>
+<div class="album-title-box">
+SESJE PAR
+</div>
+</a>
+
+<a href="wizerunek.html" class="album">
+<img src="2.jpg" loading="lazy">
+<div class="album-hover-text">
+Kliknij, aby zobaczyć więcej zdjęć
+</div>
+<div class="album-title-box">
+SESJE WIZERUNKOWE
+</div>
+</a>
+
+</div>
+
+</div>
+
+<!-- JAK WYGLĄDA SESJA -->
+
+<div class="section" id="process">
+
+<h2>JAK WYGLĄDA SESJA?</h2>
+
+<div class="process-grid">
+
+<div class="process-step">
+<div class="step-number">01</div>
+<h3>Rezerwacja terminu</h3>
+<p>
+Kontaktujesz się ze mną przez Instagram lub formularz rezerwacji.
+Wybieramy dogodny termin oraz ustalamy szczegóły sesji.
+</p>
+</div>
+
+<div class="process-step">
+<div class="step-number">02</div>
+<h3>Przygotowanie</h3>
+<p>
+Otrzymujesz wskazówki dotyczące stylizacji.
+Możesz skorzystać z profesjonalnego makijażu
+oraz stylizacji fryzury.
+</p>
+</div>
+
+<div class="process-step">
+<div class="step-number">03</div>
+<h3>Dzień sesji</h3>
+<p>
+Pomagam w pozowaniu i dbam o przyjazną atmosferę.
+</p>
+</div>
+
+<div class="process-step">
+<div class="step-number">04</div>
+<h3>Wybór zdjęć</h3>
+<p>
+Otrzymujesz galerię online do wyboru zdjęć.
+</p>
+</div>
+
+<div class="process-step">
+<div class="step-number">05</div>
+<h3>Gotowe fotografie</h3>
+<p>
+Po retuszu otrzymujesz gotowe zdjęcia.
+</p>
+</div>
+
+<div class="process-step">
+<div class="step-number">06</div>
+<h3>Do zobaczenia ponownie 🤍</h3>
+<p>
+Mam nadzieję, że zdjęcia spodobają się tak bardzo,
+że zobaczymy się na kolejnej sesji.
+</p>
+</div>
+
+</div>
+
+</div>
+
+<!-- RESZTA STRONY ZOSTAJE TAK JAK BYŁA -->
 
 <script>
 
@@ -488,6 +637,19 @@ document.getElementById("overlay").addEventListener("click", function(){
 
 document.getElementById("menu").classList.remove("active");
 document.getElementById("overlay").classList.remove("active");
+
+});
+
+const menuLinks = document.querySelectorAll(".menu a");
+
+menuLinks.forEach(link => {
+
+link.addEventListener("click", () => {
+
+document.getElementById("menu").classList.remove("active");
+document.getElementById("overlay").classList.remove("active");
+
+});
 
 });
 
