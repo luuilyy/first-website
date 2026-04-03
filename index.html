@@ -103,19 +103,6 @@ transform:translateX(0);
 
 }
 
-/* X */
-
-.close-menu {
-
-position:absolute;
-top:20px;
-right:25px;
-
-font-size:28px;
-cursor:pointer;
-
-}
-
 .menu a {
 
 text-decoration:none;
@@ -346,6 +333,8 @@ opacity:1;
 
 }
 
+/* TITLE BOX */
+
 .album-title-box {
 
 position:absolute;
@@ -368,33 +357,73 @@ z-index:2;
 
 }
 
-/* PROCESS */
+/* ABOUT */
 
-.process-grid {
+.about-text {
 
-display:grid;
-
-grid-template-columns: repeat(3, 1fr);
-
-gap:50px;
-
-max-width:1000px;
+max-width:650px;
 
 margin:auto;
 
+line-height:1.7;
+
+color:#444;
+
 }
 
-/* TABLET */
+/* CONTACT */
 
-@media (max-width:1024px){
+.contact-label {
 
-.process-grid {
-grid-template-columns: repeat(2,1fr);
+font-size:12px;
+
+letter-spacing:3px;
+
+color:#888;
+
+margin-top:30px;
+
 }
 
-.albums {
-grid-template-columns: repeat(2,1fr);
+.contact-link a {
+
+text-decoration:none;
+
+color:#111;
+
+font-size:18px;
+
 }
+
+/* WRÓĆ NA GÓRĘ */
+
+.back-to-top {
+
+display:block;
+
+text-align:center;
+
+margin:80px auto;
+
+font-size:13px;
+
+letter-spacing:2px;
+
+text-decoration:none;
+
+color:#111;
+
+border-bottom:1px solid transparent;
+
+width:max-content;
+
+transition:0.3s;
+
+}
+
+.back-to-top:hover {
+
+border-bottom:1px solid #111;
 
 }
 
@@ -402,28 +431,35 @@ grid-template-columns: repeat(2,1fr);
 
 @media (max-width:768px){
 
-h1 { font-size:42px; }
+h1 {
+font-size:42px;
+}
 
-.subtitle { font-size:11px; }
+.subtitle {
+font-size:11px;
+}
 
 .albums {
+
 grid-template-columns:1fr;
+
 gap:50px;
+
 }
 
 .album {
+
 width:90%;
 height:420px;
-margin:auto;
-}
 
-.process-grid {
-grid-template-columns:1fr;
-gap:40px;
+margin:auto;
+
 }
 
 .menu {
+
 width:260px;
+
 }
 
 }
@@ -433,6 +469,8 @@ width:260px;
 </head>
 
 <body id="top">
+
+<!-- NAV -->
 
 <nav>
 
@@ -450,16 +488,20 @@ LUUILYY PHOTO
 
 </nav>
 
+<!-- MENU -->
+
 <div class="menu" id="menu">
 
-<div class="close-menu" onclick="toggleMenu()">✕</div>
-
 <a href="index.html">Strona główna</a>
+
 <a href="#portfolio">Portfolio</a>
+
 <a href="faq.html">FAQ</a>
-<a href="#process">Jak wygląda sesja?</a>
+
 <a href="#about">O mnie</a>
+
 <a href="#contact">Kontakt</a>
+
 <a href="rezerwacja.html">Rezerwacja</a>
 
 </div>
@@ -482,8 +524,6 @@ FASHION • FAIRYCORE • PORTRAITS
 
 </div>
 
-<!-- PORTFOLIO zostaje bez zmian -->
-
 <div class="section" id="portfolio">
 
 <h2>PORTFOLIO</h2>
@@ -491,76 +531,64 @@ FASHION • FAIRYCORE • PORTRAITS
 <div class="albums">
 
 <a href="studio.html" class="album">
+
 <img src="nom.jpg" loading="lazy">
+
 <div class="album-hover-text">
 Kliknij, aby zobaczyć więcej zdjęć
 </div>
+
 <div class="album-title-box">
 SESJE KOBIECE — STUDIO
 </div>
+
 </a>
 
 <a href="plener.html" class="album">
+
 <img src="IMG_5170.JPEG" loading="lazy">
+
 <div class="album-hover-text">
 Kliknij, aby zobaczyć więcej zdjęć
 </div>
+
 <div class="album-title-box">
 SESJE KOBIECE — PLENER
 </div>
+
 </a>
 
 <a href="pary.html" class="album">
+
 <img src="8.jpg" loading="lazy">
+
 <div class="album-hover-text">
 Kliknij, aby zobaczyć więcej zdjęć
 </div>
+
 <div class="album-title-box">
 SESJE PAR
 </div>
+
 </a>
 
 <a href="wizerunek.html" class="album">
+
 <img src="2.jpg" loading="lazy">
+
 <div class="album-hover-text">
 Kliknij, aby zobaczyć więcej zdjęć
 </div>
+
 <div class="album-title-box">
 SESJE WIZERUNKOWE
 </div>
+
 </a>
 
 </div>
 
 </div>
-
-<!-- NOWA SEKCJA -->
-
-<div class="section" id="process">
-
-<h2>JAK WYGLĄDA SESJA?</h2>
-
-<div class="process-grid">
-
-<div><strong>01</strong><p>Rezerwacja terminu.</p></div>
-<div><strong>02</strong><p>Przygotowanie stylizacji.</p></div>
-<div><strong>03</strong><p>Realizacja sesji.</p></div>
-<div><strong>04</strong><p>Wybór zdjęć.</p></div>
-<div><strong>05</strong><p>Gotowe fotografie.</p></div>
-
-<div>
-<strong>06</strong>
-<p>
-Mam nadzieję, że zdjęcia spodobają się tak bardzo,
-że zobaczymy się na kolejnej sesji.
-</p>
-</div>
-
-</div>
-
-</div>
-
-<!-- O MNIE (Twoje oryginalne) -->
 
 <div class="section" id="about">
 
@@ -575,8 +603,6 @@ Tworzę kobiece, modowe i artystyczne sesje zdjęciowe,
 </p>
 
 </div>
-
-<!-- KONTAKT -->
 
 <div class="section" id="contact">
 
