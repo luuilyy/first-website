@@ -25,385 +25,245 @@ scroll-behavior:smooth;
 /* NAV */
 
 nav {
-
 position:fixed;
 top:0;
 width:100%;
-
 background:white;
 border-bottom:1px solid #eee;
-
 padding:18px 0;
-
 z-index:999;
-
 }
 
 .nav-container {
-
 max-width:1150px;
 margin:auto;
-
 display:flex;
 justify-content:space-between;
 align-items:center;
-
 padding:0 25px;
-
 }
 
 .logo {
-
 font-family:'Playfair Display',serif;
 font-size:22px;
 letter-spacing:3px;
-
 }
 
 /* HAMBURGER */
 
 .hamburger {
-
 font-size:28px;
 cursor:pointer;
-
 }
 
-/* MENU PANEL */
+/* MENU */
 
 .menu {
-
 position:fixed;
 top:0;
 right:0;
 width:280px;
 height:100vh;
 background:white;
-
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
-
 transform:translateX(100%);
 transition:0.3s;
-
 box-shadow:-5px 0 15px rgba(0,0,0,0.1);
-
 z-index:1000;
-
 }
 
 .menu.active {
-
 transform:translateX(0);
-
 }
 
-/* X BUTTON */
+/* X */
 
 .close-menu {
-
 position:absolute;
 top:20px;
 right:25px;
-
 font-size:28px;
 cursor:pointer;
-
 }
 
 /* MENU LINKS */
 
 .menu a {
-
 text-decoration:none;
 color:#111;
-
 padding:18px;
-
 font-size:14px;
 letter-spacing:2px;
-
 transition:0.3s;
-
 }
 
 .menu a:hover {
-
 color:#888;
-
 }
 
 /* OVERLAY */
 
 .overlay {
-
 position:fixed;
 top:0;
 left:0;
-
 width:100%;
 height:100%;
-
 background:rgba(0,0,0,0.3);
-
 opacity:0;
 pointer-events:none;
-
 transition:0.3s;
-
 z-index:900;
-
 }
 
 .overlay.active {
-
 opacity:1;
 pointer-events:auto;
-
 }
 
 /* HEADER */
 
 header {
-
 text-align:center;
-
 padding-top:150px;
 padding-bottom:60px;
-
 }
 
 h1 {
-
 font-family:'Playfair Display',serif;
-
 font-size:80px;
 letter-spacing:6px;
-
 margin:0;
-
 }
 
 .subtitle {
-
 margin-top:20px;
-
 font-size:13px;
 letter-spacing:4px;
-
 color:#555;
-
 }
 
 /* HERO */
 
 .hero {
-
 display:flex;
 justify-content:center;
-
 margin-bottom:100px;
-
 }
 
 .hero img {
-
 width:100%;
 max-width:1100px;
-
 }
 
 /* SECTION */
 
 .section {
-
 padding:80px 20px;
-
 text-align:center;
-
 }
 
 .section h2 {
-
 font-family:'Playfair Display',serif;
 font-size:36px;
 letter-spacing:3px;
 margin-bottom:50px;
-
 }
 
 /* ALBUM GRID */
 
 .albums {
-
 display:grid;
 grid-template-columns: repeat(2, 350px);
 justify-content:center;
 gap:60px;
-
 }
 
 /* ALBUM */
 
 .album {
-
 position:relative;
 width:350px;
 height:450px;
-
 overflow:hidden;
-
 text-decoration:none;
 color:white;
-
 }
 
 .album img {
-
 width:100%;
 height:100%;
 object-fit:cover;
-
 transition:0.4s;
-
 }
 
-/* DARK LAYER */
-
 .album::before {
-
 content:"";
 position:absolute;
-
 top:0;
 left:0;
-
 width:100%;
 height:100%;
-
 background:rgba(0,0,0,0);
-
 transition:0.4s;
-
 z-index:1;
-
 }
 
 .album:hover::before {
-
 background:rgba(0,0,0,0.45);
-
 }
 
 .album:hover img {
-
 transform:scale(1.05);
-
 }
 
 .album-hover-text {
-
 position:absolute;
-
 top:50%;
 left:50%;
-
 transform:translate(-50%, -50%);
-
 font-size:13px;
 letter-spacing:2px;
-
 opacity:0;
-
 z-index:2;
-
 transition:0.3s;
-
 text-align:center;
-
 }
 
 .album:hover .album-hover-text {
-
 opacity:1;
-
 }
 
 .album-title-box {
-
 position:absolute;
-
 bottom:15px;
 left:15px;
 right:15px;
-
 background:rgba(0,0,0,0.45);
-
 padding:16px;
-
 letter-spacing:3px;
 font-size:13px;
-
 text-align:center;
-
 z-index:2;
-
 }
 
 /* PROCESS */
 
 .process-grid {
-
 display:grid;
-
-grid-template-columns: repeat(3, 1fr);
-
+grid-template-columns: repeat(3,1fr);
 gap:50px;
-
 max-width:1000px;
-
 margin:auto;
-
-}
-
-.process-step {
-
-text-align:center;
-
-padding:10px;
-
 }
 
 .step-number {
-
 font-family:'Playfair Display',serif;
-
 font-size:32px;
-
 margin-bottom:15px;
-
-}
-
-.process-step h3 {
-
-font-size:14px;
-
-letter-spacing:2px;
-
-margin-bottom:15px;
-
-}
-
-.process-step p {
-
-font-size:13px;
-
-color:#555;
-
-line-height:1.6;
-
 }
 
 /* TABLET */
@@ -425,8 +285,6 @@ grid-template-columns: repeat(2,1fr);
 @media (max-width:768px){
 
 h1 { font-size:42px; }
-
-.subtitle { font-size:11px; }
 
 .albums {
 grid-template-columns:1fr;
@@ -566,52 +424,33 @@ SESJE WIZERUNKOWE
 
 <div class="process-grid">
 
-<div class="process-step">
+<div>
 <div class="step-number">01</div>
-<h3>Rezerwacja terminu</h3>
-<p>
-Kontaktujesz się ze mną przez Instagram lub formularz rezerwacji.
-Wybieramy dogodny termin oraz ustalamy szczegóły sesji.
-</p>
+<p>Rezerwujesz termin.</p>
 </div>
 
-<div class="process-step">
+<div>
 <div class="step-number">02</div>
-<h3>Przygotowanie</h3>
-<p>
-Otrzymujesz wskazówki dotyczące stylizacji.
-Możesz skorzystać z profesjonalnego makijażu
-oraz stylizacji fryzury.
-</p>
+<p>Przygotowujemy stylizacje.</p>
 </div>
 
-<div class="process-step">
+<div>
 <div class="step-number">03</div>
-<h3>Dzień sesji</h3>
-<p>
-Pomagam w pozowaniu i dbam o przyjazną atmosferę.
-</p>
+<p>Realizujemy sesję.</p>
 </div>
 
-<div class="process-step">
+<div>
 <div class="step-number">04</div>
-<h3>Wybór zdjęć</h3>
-<p>
-Otrzymujesz galerię online do wyboru zdjęć.
-</p>
+<p>Wybierasz zdjęcia.</p>
 </div>
 
-<div class="process-step">
+<div>
 <div class="step-number">05</div>
-<h3>Gotowe fotografie</h3>
-<p>
-Po retuszu otrzymujesz gotowe zdjęcia.
-</p>
+<p>Otrzymujesz gotowe fotografie.</p>
 </div>
 
-<div class="process-step">
+<div>
 <div class="step-number">06</div>
-<h3>Do zobaczenia ponownie 🤍</h3>
 <p>
 Mam nadzieję, że zdjęcia spodobają się tak bardzo,
 że zobaczymy się na kolejnej sesji.
@@ -622,7 +461,55 @@ Mam nadzieję, że zdjęcia spodobają się tak bardzo,
 
 </div>
 
-<!-- RESZTA STRONY ZOSTAJE TAK JAK BYŁA -->
+<!-- ABOUT -->
+
+<div class="section" id="about">
+
+<h2>O MNIE</h2>
+
+<p class="about-text">
+
+Cześć! Mam na imię Paulina i jestem fotografką.  
+Tworzę kobiece, modowe i artystyczne sesje zdjęciowe,  
+łącząc klimat fairycore z nowoczesną estetyką.
+
+</p>
+
+</div>
+
+<!-- CONTACT -->
+
+<div class="section" id="contact">
+
+<h2>KONTAKT</h2>
+
+<p class="contact-label">
+INSTAGRAM
+</p>
+
+<p class="contact-link">
+<a href="https://instagram.com/luuilyy.photo">
+@luuilyy.photo
+</a>
+</p>
+
+<p class="contact-label">
+EMAIL
+</p>
+
+<p class="contact-link">
+<a href="mailto:luuilyy.photo@gmail.com">
+luuilyy.photo@gmail.com
+</a>
+</p>
+
+</div>
+
+<a href="#top" class="back-to-top">
+
+↑ WRÓĆ NA GÓRĘ
+
+</a>
 
 <script>
 
