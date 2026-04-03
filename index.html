@@ -257,6 +257,25 @@ margin:18px auto 0 auto;
 
 }
 
+/* FADE-IN */
+
+.fade-section {
+
+opacity:0;
+transform:translateY(40px);
+
+transition:opacity 0.8s ease,
+transform 0.8s ease;
+
+}
+
+.fade-section.visible {
+
+opacity:1;
+transform:translateY(0);
+
+}
+
 /* ALBUM GRID */
 
 .albums {
@@ -414,9 +433,11 @@ background:#fafafa;
 
 border-radius:8px;
 
+box-shadow:0 10px 22px rgba(0,0,0,0.06);
+
 }
 
-/* O MNIE — PREMIUM */
+/* O MNIE */
 
 .about-container {
 
@@ -559,6 +580,8 @@ height:140px;
 
 <body id="top">
 
+<!-- NAV -->
+
 <nav>
 
 <div class="nav-container">
@@ -574,6 +597,8 @@ LUUILYY PHOTO
 </div>
 
 </nav>
+
+<!-- MENU -->
 
 <div class="menu" id="menu">
 
@@ -609,7 +634,7 @@ FASHION • FAIRYCORE • PORTRAITS
 
 <!-- PORTFOLIO -->
 
-<div class="section" id="portfolio">
+<div class="section fade-section" id="portfolio">
 
 <h2>PORTFOLIO</h2>
 
@@ -661,7 +686,7 @@ SESJE WIZERUNKOWE
 
 <!-- JAK WYGLĄDA SESJA -->
 
-<div class="section" id="process">
+<div class="section fade-section" id="process">
 
 <h2>JAK WYGLĄDA SESJA?</h2>
 
@@ -719,9 +744,9 @@ Mam nadzieję, że zdjęcia spodobają się tak bardzo,
 
 </div>
 
-<!-- O MNIE — POPRAWIONE -->
+<!-- O MNIE -->
 
-<div class="section" id="about">
+<div class="section fade-section" id="about">
 
 <h2>O MNIE</h2>
 
@@ -736,18 +761,14 @@ Mam nadzieję, że zdjęcia spodobają się tak bardzo,
 <div class="about-text">
 
 <p>
-
 Cześć! Mam na imię Paulina i jestem fotografką,
 która specjalizuje się w kobiecych i artystycznych sesjach zdjęciowych.
-
 </p>
 
 <p>
-
 Tworzę fotografie inspirowane modą i klimatem fairycore,
 dbając o detale, atmosferę oraz komfort podczas sesji.
 Zależy mi, aby każda kobieta czuła się pięknie i pewnie przed obiektywem.
-
 </p>
 
 </div>
@@ -758,7 +779,7 @@ Zależy mi, aby każda kobieta czuła się pięknie i pewnie przed obiektywem.
 
 <!-- KONTAKT -->
 
-<div class="section" id="contact">
+<div class="section fade-section" id="contact">
 
 <h2>KONTAKT</h2>
 
@@ -792,6 +813,8 @@ luuilyy.photo@gmail.com
 
 <script>
 
+/* MENU */
+
 function toggleMenu() {
 
 document.getElementById("menu").classList.toggle("active");
@@ -814,6 +837,38 @@ link.addEventListener("click", () => {
 
 document.getElementById("menu").classList.remove("active");
 document.getElementById("overlay").classList.remove("active");
+
+});
+
+});
+
+/* FADE-IN */
+
+document.addEventListener("DOMContentLoaded", function(){
+
+const sections = document.querySelectorAll(".fade-section");
+
+const observer = new IntersectionObserver((entries) => {
+
+entries.forEach(entry => {
+
+if (entry.isIntersecting) {
+
+entry.target.classList.add("visible");
+
+}
+
+});
+
+}, {
+
+threshold: 0.15
+
+});
+
+sections.forEach(section => {
+
+observer.observe(section);
 
 });
 
