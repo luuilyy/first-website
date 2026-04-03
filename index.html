@@ -103,7 +103,7 @@ transform:translateX(0);
 
 }
 
-/* X BUTTON */
+/* X */
 
 .close-menu {
 
@@ -281,6 +281,8 @@ transition:0.4s;
 
 }
 
+/* DARK LAYER */
+
 .album::before {
 
 content:"";
@@ -312,6 +314,8 @@ background:rgba(0,0,0,0.45);
 transform:scale(1.05);
 
 }
+
+/* CLICK TEXT */
 
 .album-hover-text {
 
@@ -364,7 +368,7 @@ z-index:2;
 
 }
 
-/* PROCESS SECTION */
+/* PROCESS */
 
 .process-grid {
 
@@ -380,36 +384,16 @@ margin:auto;
 
 }
 
-.process-step {
-
-padding:10px;
-
-}
-
-.step-number {
-
-font-family:'Playfair Display',serif;
-
-font-size:32px;
-
-margin-bottom:15px;
-
-}
-
 /* TABLET */
 
 @media (max-width:1024px){
 
 .process-grid {
-
 grid-template-columns: repeat(2,1fr);
-
 }
 
 .albums {
-
 grid-template-columns: repeat(2,1fr);
-
 }
 
 }
@@ -423,33 +407,23 @@ h1 { font-size:42px; }
 .subtitle { font-size:11px; }
 
 .albums {
-
 grid-template-columns:1fr;
-
 gap:50px;
-
 }
 
 .album {
-
 width:90%;
 height:420px;
 margin:auto;
-
-}
-
-.menu {
-
-width:260px;
-
 }
 
 .process-grid {
-
 grid-template-columns:1fr;
-
 gap:40px;
+}
 
+.menu {
+width:260px;
 }
 
 }
@@ -475,8 +449,6 @@ LUUILYY PHOTO
 </div>
 
 </nav>
-
-<!-- MENU -->
 
 <div class="menu" id="menu">
 
@@ -509,6 +481,8 @@ FASHION • FAIRYCORE • PORTRAITS
 <img src="rozmiarprawidlowy.jpg" loading="lazy">
 
 </div>
+
+<!-- PORTFOLIO zostaje bez zmian -->
 
 <div class="section" id="portfolio">
 
@@ -560,7 +534,7 @@ SESJE WIZERUNKOWE
 
 </div>
 
-<!-- JAK WYGLĄDA SESJA -->
+<!-- NOWA SEKCJA -->
 
 <div class="section" id="process">
 
@@ -568,33 +542,14 @@ SESJE WIZERUNKOWE
 
 <div class="process-grid">
 
-<div class="process-step">
-<div class="step-number">01</div>
-<p>Rezerwacja terminu.</p>
-</div>
+<div><strong>01</strong><p>Rezerwacja terminu.</p></div>
+<div><strong>02</strong><p>Przygotowanie stylizacji.</p></div>
+<div><strong>03</strong><p>Realizacja sesji.</p></div>
+<div><strong>04</strong><p>Wybór zdjęć.</p></div>
+<div><strong>05</strong><p>Gotowe fotografie.</p></div>
 
-<div class="process-step">
-<div class="step-number">02</div>
-<p>Przygotowanie stylizacji oraz makijażu.</p>
-</div>
-
-<div class="process-step">
-<div class="step-number">03</div>
-<p>Realizacja sesji zdjęciowej.</p>
-</div>
-
-<div class="process-step">
-<div class="step-number">04</div>
-<p>Wybór ulubionych zdjęć.</p>
-</div>
-
-<div class="process-step">
-<div class="step-number">05</div>
-<p>Otrzymanie gotowych fotografii.</p>
-</div>
-
-<div class="process-step">
-<div class="step-number">06</div>
+<div>
+<strong>06</strong>
 <p>
 Mam nadzieję, że zdjęcia spodobają się tak bardzo,
 że zobaczymy się na kolejnej sesji.
@@ -605,7 +560,7 @@ Mam nadzieję, że zdjęcia spodobają się tak bardzo,
 
 </div>
 
-<!-- ABOUT -->
+<!-- O MNIE (Twoje oryginalne) -->
 
 <div class="section" id="about">
 
@@ -620,6 +575,8 @@ Tworzę kobiece, modowe i artystyczne sesje zdjęciowe,
 </p>
 
 </div>
+
+<!-- KONTAKT -->
 
 <div class="section" id="contact">
 
@@ -646,6 +603,8 @@ luuilyy.photo@gmail.com
 </p>
 
 </div>
+
+<!-- WRÓĆ NA GÓRĘ -->
 
 <a href="#top" class="back-to-top">
 
