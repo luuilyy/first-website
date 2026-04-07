@@ -18,6 +18,13 @@ body {
 margin:0;
 font-family:'Montserrat',sans-serif;
 background:white;
+scroll-behavior:smooth;
+}
+
+/* ===== BLOKADA SCROLLA ===== */
+
+.no-scroll {
+overflow:hidden;
 }
 
 /* ===== NAV ===== */
@@ -55,6 +62,14 @@ padding:0 25px;
 font-family:'Playfair Display',serif;
 font-size:22px;
 letter-spacing:3px;
+
+text-decoration:none;
+
+}
+
+.logo:hover {
+
+opacity:0.7;
 
 }
 
@@ -123,6 +138,19 @@ color:#888;
 
 }
 
+/* ===== CLOSE MENU ===== */
+
+.close-menu {
+
+position:absolute;
+top:20px;
+right:25px;
+
+font-size:28px;
+cursor:pointer;
+
+}
+
 /* ===== OVERLAY ===== */
 
 .overlay {
@@ -150,6 +178,32 @@ z-index:900;
 
 opacity:1;
 pointer-events:auto;
+
+}
+
+/* ===== BACK LINK ===== */
+
+.back-link {
+
+display:inline-block;
+
+margin-top:140px;
+margin-left:40px;
+
+font-size:13px;
+letter-spacing:2px;
+
+text-decoration:none;
+
+color:#111;
+
+transition:0.3s;
+
+}
+
+.back-link:hover {
+
+opacity:0.6;
 
 }
 
@@ -307,6 +361,10 @@ height:260px;
 font-size:30px;
 }
 
+.back-link {
+margin-left:20px;
+}
+
 }
 
 </style>
@@ -321,9 +379,9 @@ font-size:30px;
 
 <div class="nav-container">
 
-<div class="logo">
-LUUILYY PHOTO
-</div>
+<a href="index.html" class="logo">
+LUUILYY.PHOTO
+</a>
 
 <div class="hamburger" onclick="toggleMenu()">
 ☰
@@ -337,6 +395,8 @@ LUUILYY PHOTO
 
 <div class="menu" id="menu">
 
+<div class="close-menu" onclick="toggleMenu()">✕</div>
+
 <a href="index.html">Strona główna</a>
 <a href="index.html#portfolio">Portfolio</a>
 <a href="faq.html">FAQ</a>
@@ -347,6 +407,14 @@ LUUILYY PHOTO
 </div>
 
 <div class="overlay" id="overlay"></div>
+
+<!-- BACK -->
+
+<a href="index.html" class="back-link">
+
+← WRÓĆ DO STRONY GŁÓWNEJ
+
+</a>
 
 <!-- HERO -->
 
@@ -511,12 +579,31 @@ function toggleMenu() {
 document.getElementById("menu").classList.toggle("active");
 document.getElementById("overlay").classList.toggle("active");
 
+document.body.classList.toggle("no-scroll");
+
 }
 
 document.getElementById("overlay").addEventListener("click", function(){
 
 document.getElementById("menu").classList.remove("active");
 document.getElementById("overlay").classList.remove("active");
+
+document.body.classList.remove("no-scroll");
+
+});
+
+const menuLinks = document.querySelectorAll(".menu a");
+
+menuLinks.forEach(link => {
+
+link.addEventListener("click", () => {
+
+document.getElementById("menu").classList.remove("active");
+document.getElementById("overlay").classList.remove("active");
+
+document.body.classList.remove("no-scroll");
+
+});
 
 });
 
