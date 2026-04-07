@@ -930,20 +930,38 @@ padding:20px 22px;
 }
 
 .opinie-section {
-padding:90px 20px 160px;
+max-width:500px;
+margin:0 auto;
+padding:90px 20px 170px;
 }
 
 .opinie-grid {
 grid-template-columns:1fr;
-gap:22px;
+gap:26px;
 }
 
 .opinia-card {
 padding:28px;
+width:100%;
 }
 
 .opinia-tekst {
 font-size:16px;
+line-height:1.7;
+max-width:none;
+}
+
+.opinia-card::before {
+font-size:42px;
+top:14px;
+left:16px;
+opacity:0.2;
+}
+
+.opinia-autorka::before {
+font-size:12px;
+margin-top:10px;
+margin-bottom:6px;
 }
 
 .offer-quote {
