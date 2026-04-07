@@ -756,6 +756,50 @@ background:#f9f9f9;
 box-shadow:0 6px 18px rgba(0,0,0,0.15);
 }
 
+.opinie-section {
+padding:110px 20px;
+text-align:center;
+}
+
+.opinie-grid {
+max-width:1120px;
+margin:0 auto;
+display:grid;
+grid-template-columns:repeat(3, minmax(0, 1fr));
+gap:34px;
+}
+
+.opinia-card {
+background:#ffffff;
+border-radius:16px;
+padding:32px;
+box-shadow:0 12px 30px rgba(0,0,0,0.07);
+text-align:left;
+transition:transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.opinia-card:hover {
+transform:translateY(-4px);
+box-shadow:0 18px 36px rgba(0,0,0,0.1);
+}
+
+.opinia-tekst {
+margin:0;
+font-family:'Playfair Display',serif;
+font-size:22px;
+line-height:1.75;
+font-style:italic;
+color:#222;
+}
+
+.opinia-autorka {
+margin-top:18px;
+font-size:13px;
+letter-spacing:1.8px;
+text-transform:uppercase;
+color:#777;
+}
+
 /* TABLET */
 
 @media (max-width:1024px){
@@ -782,6 +826,10 @@ font-size:20px;
 .reserve-button {
 padding:12px 25px;
 font-size:15px;
+}
+
+.opinie-grid {
+grid-template-columns:repeat(2, minmax(0, 1fr));
 }
 
 }
@@ -839,6 +887,23 @@ max-width:100%;
 
 .offer-list li {
 padding:20px 22px;
+}
+
+.opinie-section {
+padding:90px 20px;
+}
+
+.opinie-grid {
+grid-template-columns:1fr;
+gap:22px;
+}
+
+.opinia-card {
+padding:28px;
+}
+
+.opinia-tekst {
+font-size:19px;
 }
 
 .offer-quote {
@@ -1024,6 +1089,60 @@ Sesje indywidualne • wizerunkowe • dla par • vouchery
 <a href="rezerwacja.html" class="offer-button">ZAREZERWUJ SESJĘ</a>
 </div>
 
+</div>
+
+</div>
+
+</div>
+
+<div class="section-divider"></div>
+
+<div class="section fade-section opinie-section" id="opinie">
+
+<h2>OPINIE KLIENTEK</h2>
+
+<div class="opinie-grid">
+
+<div class="opinia-card">
+<p class="opinia-tekst">
+"To była moja pierwsza profesjonalna sesja i od początku czułam się swobodnie. Atmosfera była piękna, a zdjęcia są dokładnie takie, jak marzyłam."
+</p>
+<p class="opinia-autorka">— Marta</p>
+</div>
+
+<div class="opinia-card">
+<p class="opinia-tekst">
+"Paulina ma niesamowite wyczucie światła i detali. Dzięki niej zobaczyłam siebie w zupełnie nowy, bardziej kobiecy sposób."
+</p>
+<p class="opinia-autorka">— Karolina</p>
+</div>
+
+<div class="opinia-card">
+<p class="opinia-tekst">
+"Sesja była spokojna, naturalna i bardzo profesjonalna. Każdy kadr był dopracowany, a efekt końcowy zachwycający."
+</p>
+<p class="opinia-autorka">— Natalia</p>
+</div>
+
+<div class="opinia-card">
+<p class="opinia-tekst">
+"Czułam się zaopiekowana na każdym etapie: od przygotowania po wybór zdjęć. To było wyjątkowe doświadczenie."
+</p>
+<p class="opinia-autorka">— Aleksandra</p>
+</div>
+
+<div class="opinia-card">
+<p class="opinia-tekst">
+"Najbardziej doceniam klimat sesji i subtelny styl zdjęć. Wszystko było lekkie, eleganckie i bardzo spójne."
+</p>
+<p class="opinia-autorka">— Julia</p>
+</div>
+
+<div class="opinia-card">
+<p class="opinia-tekst">
+"To jedna z najpiękniejszych pamiątek, jakie sobie zrobiłam. Zdjęcia są pełne emocji i kobiecej delikatności."
+</p>
+<p class="opinia-autorka">— Zuzanna</p>
 </div>
 
 </div>
