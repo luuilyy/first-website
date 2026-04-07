@@ -172,6 +172,8 @@ pointer-events:auto;
 header {
 
 text-align:center;
+max-width:1160px;
+margin:0 auto;
 
 padding-top:150px;
 padding-bottom:60px;
@@ -182,8 +184,8 @@ h1 {
 
 font-family:'Playfair Display',serif;
 
-font-size:80px;
-letter-spacing:6px;
+font-size:52px;
+letter-spacing:2px;
 
 margin:0;
 
@@ -191,12 +193,15 @@ margin:0;
 
 .subtitle {
 
-margin-top:20px;
+margin-top:18px;
+margin-bottom:40px;
 
-font-size:13px;
-letter-spacing:4px;
+font-size:16px;
+line-height:1.6;
+letter-spacing:0.8px;
+font-weight:400;
 
-color:#555;
+color:#777;
 
 }
 
@@ -206,8 +211,9 @@ color:#555;
 
 display:flex;
 justify-content:center;
-
-margin-bottom:100px;
+max-width:1160px;
+margin:20px auto 100px auto;
+padding:0 20px;
 
 }
 
@@ -215,7 +221,8 @@ margin-bottom:100px;
 
 width:100%;
 max-width:1100px;
-border-radius:8px;
+border-radius:16px;
+box-shadow:0 16px 34px rgba(0,0,0,0.1);
 
 }
 
@@ -844,6 +851,10 @@ margin-bottom:6px;
 
 @media (max-width:1024px){
 
+h1 {
+font-size:44px;
+}
+
 .process-grid {
 grid-template-columns: repeat(2,1fr);
 }
@@ -879,7 +890,16 @@ grid-template-columns:repeat(2, minmax(0, 1fr));
 @media (max-width:768px){
 
 h1 {
-font-size:42px;
+font-size:36px;
+}
+
+.subtitle {
+font-size:15px;
+}
+
+.hero {
+margin:24px auto 100px auto;
+padding:0 16px;
 }
 
 .albums {
@@ -1024,10 +1044,11 @@ LUUILYY.PHOTO
 
 <header>
 
-<h1>LUUILYY PHOTO</h1>
+<h1>Luuilyy Photo</h1>
 
 <p class="subtitle">
-FASHION • FAIRYCORE • PORTRAITS
+sesje, które wydobywają<br>
+Twoją kobiecość i pewność siebie
 </p>
 
 </header>
