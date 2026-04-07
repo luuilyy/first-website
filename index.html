@@ -9,8 +9,8 @@
 <title>Luuilyy Photo</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Playfair+Display:wght@300;400&display=swap" rel="stylesheet">
-padding-top:0;
-padding-bottom:0;
+
+<style>
 
 /* BODY */
 
@@ -18,10 +18,8 @@ body {
 margin:0;
 background:white;
 color:#111;
-font-size:56px;
-font-weight:600;
-letter-spacing:1px;
-color:#ffffff;
+font-family:'Montserrat',sans-serif;
+scroll-behavior:smooth;
 }
 
 /* NAV */
@@ -29,57 +27,43 @@ color:#ffffff;
 nav {
 
 position:fixed;
-margin-top:15px;
-margin-bottom:0;
-
-font-size:17px;
-border-bottom:1px solid #eee;
-
-padding:18px 0;
-
-color:#ffffff;
-
-}
-
-
-<style>
-max-width:1150px;
-margin:auto;
-position:relative;
-
-display:flex;
-justify-content:space-between;
-align-items:center;
-font-family:'Montserrat',sans-serif;
-scroll-behavior:smooth;
-
-}
-
-.hero::before {
-
-content:"";
-position:absolute;
 top:0;
 width:100%;
 
 background:white;
+border-bottom:1px solid #eee;
+
+padding:18px 0;
+
+z-index:999;
+
+}
+
+.nav-container {
+
+max-width:1150px;
+margin:auto;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:0 25px;
+
 }
 
 .logo {
 
-z-index:999;
+font-family:'Playfair Display',serif;
 font-size:22px;
-border-radius:18px;
+letter-spacing:3px;
 text-decoration: none;
-display:block;
 
 }
 
+/* HAMBURGER */
 
-position:absolute;
-top:50%;
-left:50%;
-z-index:2;
+.hamburger {
 
 font-size:28px;
 cursor:pointer;
@@ -87,7 +71,26 @@ cursor:pointer;
 }
 
 /* MENU PANEL */
-letter-spacing:3px;
+
+.menu {
+
+position:fixed;
+
+top:0;
+right:0;
+
+width:280px;
+height:100vh;
+
+background:white;
+
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+
+transform:translateX(100%);
+transition:0.3s;
 
 box-shadow:-5px 0 15px rgba(0,0,0,0.1);
 
