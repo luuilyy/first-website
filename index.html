@@ -6,23 +6,28 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Luuilyy Photo</title>
+<title>FAQ | Luuilyy Photo</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Playfair+Display:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
 
-/* BODY */
+/* ===== BODY ===== */
 
 body {
 margin:0;
-background:white;
-color:#111;
 font-family:'Montserrat',sans-serif;
+background:white;
 scroll-behavior:smooth;
 }
 
-/* NAV */
+/* ===== BLOKADA SCROLLA ===== */
+
+.no-scroll {
+overflow:hidden;
+}
+
+/* ===== NAV ===== */
 
 nav {
 
@@ -57,20 +62,29 @@ padding:0 25px;
 font-family:'Playfair Display',serif;
 font-size:22px;
 letter-spacing:3px;
-text-decoration: none;
+
+text-decoration:none;
 
 }
 
-/* HAMBURGER */
+.logo:hover {
+
+opacity:0.7;
+
+}
+
+/* ===== HAMBURGER ===== */
 
 .hamburger {
 
 font-size:28px;
 cursor:pointer;
 
+z-index:1001;
+
 }
 
-/* MENU PANEL */
+/* ===== MENU ===== */
 
 .menu {
 
@@ -79,7 +93,7 @@ position:fixed;
 top:0;
 right:0;
 
-width:280px;
+width:300px;
 height:100vh;
 
 background:white;
@@ -104,19 +118,6 @@ transform:translateX(0);
 
 }
 
-/* X W MENU */
-
-.close-menu {
-
-position:absolute;
-top:20px;
-right:25px;
-
-font-size:28px;
-cursor:pointer;
-
-}
-
 .menu a {
 
 text-decoration:none;
@@ -124,7 +125,7 @@ color:#111;
 
 padding:18px;
 
-font-size:14px;
+font-size:13px;
 letter-spacing:2px;
 
 transition:0.3s;
@@ -137,7 +138,20 @@ color:#888;
 
 }
 
-/* OVERLAY */
+/* ===== CLOSE MENU ===== */
+
+.close-menu {
+
+position:absolute;
+top:20px;
+right:25px;
+
+font-size:28px;
+cursor:pointer;
+
+}
+
+/* ===== OVERLAY ===== */
 
 .overlay {
 
@@ -167,670 +181,171 @@ pointer-events:auto;
 
 }
 
-/* HEADER */
+/* ===== BACK LINK ===== */
 
-header {
+.back-link {
 
-text-align:center;
+display:inline-block;
 
-padding-top:150px;
-padding-bottom:60px;
-
-}
-
-h1 {
-
-font-family:'Playfair Display',serif;
-
-font-size:80px;
-letter-spacing:6px;
-
-margin:0;
-
-}
-
-.subtitle {
-
-margin-top:20px;
+margin-top:140px;
+margin-left:40px;
 
 font-size:13px;
-letter-spacing:4px;
-
-color:#555;
-
-}
-
-/* HERO */
-
-.hero {
-
-display:flex;
-justify-content:center;
-
-margin-bottom:100px;
-
-}
-
-.hero img {
-
-width:100%;
-max-width:1100px;
-border-radius:8px;
-
-}
-
-/* SECTION */
-
-.section {
-
-padding:100px 20px;
-
-text-align:center;
-
-}
-
-.section h2 {
-
-font-family:'Playfair Display',serif;
-
-font-size:36px;
-
-letter-spacing:3px;
-
-margin-bottom:20px;
-
-position:relative;
-
-}
-
-.section h2::after {
-
-content:"";
-
-display:block;
-
-width:60px;
-height:1px;
-
-background:#ddd;
-
-margin:18px auto 0 auto;
-
-}
-
-/* FADE-IN */
-
-.fade-section {
-
-opacity:0;
-transform:translateY(40px);
-
-transition:opacity 0.8s ease,
-transform 0.8s ease;
-
-}
-
-.fade-section.visible {
-
-opacity:1;
-transform:translateY(0);
-
-}
-
-/* ALBUM GRID */
-
-.albums {
-
-display:grid;
-
-grid-template-columns: repeat(2, 350px);
-
-justify-content:center;
-
-gap:60px;
-
-}
-
-/* ALBUM */
-
-.album {
-
-position:relative;
-
-width:350px;
-height:450px;
-
-overflow:hidden;
-
-text-decoration:none;
-
-color:white;
-
-border-radius:8px;
-
-}
-
-.album img {
-
-width:100%;
-height:100%;
-
-object-fit:cover;
-
-transition:0.5s ease;
-
-}
-
-.album::before {
-
-content:"";
-
-position:absolute;
-
-top:0;
-left:0;
-
-width:100%;
-height:100%;
-
-background:rgba(0,0,0,0);
-
-transition:0.5s ease;
-
-z-index:1;
-
-}
-
-.album:hover::before {
-
-background:rgba(0,0,0,0.45);
-backdrop-filter:blur(2px);
-
-}
-
-.album:hover img {
-
-transform:scale(1.08);
-
-}
-
-.album-hover-text {
-
-position:absolute;
-
-top:50%;
-left:50%;
-
-transform:translate(-50%, -50%);
-
-font-size:13px;
-
 letter-spacing:2px;
 
-opacity:0;
-
-z-index:2;
-
-transition:0.3s;
-
-text-align:center;
-
-}
-
-.album:hover .album-hover-text {
-
-opacity:1;
-
-}
-
-.album-title-box {
-
-position:absolute;
-
-bottom:15px;
-left:15px;
-right:15px;
-
-background:rgba(0,0,0,0.45);
-
-padding:16px;
-
-letter-spacing:3px;
-
-font-size:13px;
-
-text-align:center;
-
-z-index:2;
-
-border-radius:6px;
-
-}
-
-/* JAK WYGLĄDA SESJA */
-
-.process-grid {
-
-display:grid;
-
-grid-template-columns: repeat(3, 1fr);
-
-gap:60px;
-
-max-width:1000px;
-
-margin:auto;
-
-}
-
-.process-step {
-
-padding:25px;
-
-text-align:left;
-
-line-height:1.8;
-
-background:#fafafa;
-
-border-radius:8px;
-
-box-shadow:0 10px 22px rgba(0,0,0,0.06);
-
-}
-
-/* O MNIE */
-
-.about-container {
-
-display:flex;
-align-items:center;
-gap:50px;
-max-width:900px;
-margin:auto;
-text-align:left;
-
-}
-
-.about-photo img {
-
-width:180px;
-height:180px;
-
-object-fit:cover;
-
-border-radius:50%;
-
-box-shadow:0 12px 28px rgba(0,0,0,0.12);
-
-}
-
-.about-text {
-
-line-height:1.9;
-color:#444;
-font-size:15px;
-
-}
-
-.about-text p {
-
-margin-bottom:18px;
-
-}
-
-/* CONTACT */
-
-.contact-label {
-
-font-size:12px;
-letter-spacing:3px;
-color:#888;
-margin-top:30px;
-
-}
-
-.contact-link a {
-
 text-decoration:none;
+
 color:#111;
-font-size:18px;
 
-}
-
-/* WRÓĆ NA GÓRĘ */
-
-.back-to-top {
-
-display:block;
-text-align:center;
-margin:100px auto;
-font-size:13px;
-letter-spacing:2px;
-text-decoration:none;
-color:#111;
 transition:0.3s;
 
 }
 
-.back-to-top:hover {
+.back-link:hover {
 
 opacity:0.6;
 
 }
 
-/* QUOTE SECTION */
+/* ===== HERO ===== */
 
-.quote-section {
+.faq-hero {
 
-padding:100px 20px;
-
-text-align:center;
-
-}
-
-.quote-section blockquote {
-
-font-family:'Playfair Display',serif;
-font-size:32px;
-letter-spacing:1px;
-font-style:italic;
-color:#111;
-
-margin:0;
-line-height:1.8;
-
-max-width:700px;
-margin-left:auto;
-margin-right:auto;
-
-}
-/* SECTION DIVIDER */
-
-.section-divider {
-
-width:60px;
-height:1px;
-background:#e5e5e5;
-margin:40px auto;
-
-}
-
-/* FULL-WIDTH IMAGE */
-
-.full-width-image {
+margin-top:120px;
 
 width:100%;
-max-width:100%;
-height:60vh;
-object-fit:contain;
-border-radius:8px;
-display:block;
-margin-top:60px;
-margin-bottom:120px;
-margin-left:auto;
-margin-right:auto;
-
-}
-
-/* RESERVE BUTTON */
-
-.reserve-button-container {
-
-text-align:center;
-margin:40px 0;
-
-}
-
-.reserve-button {
-
-display:inline-block;
-padding:15px 30px;
-background:white;
-color:#111;
-text-decoration:none;
-font-family:'Montserrat',sans-serif;
-font-size:16px;
-letter-spacing:2px;
-border:1px solid #ddd;
-border-radius:25px;
-box-shadow:0 4px 12px rgba(0,0,0,0.1);
-transition:0.3s;
-
-}
-
-.reserve-button:hover {
-
-background:#f9f9f9;
-box-shadow:0 6px 18px rgba(0,0,0,0.15);
-
-}
-
-.reserve-button-mobile {
-
-position:fixed;
-bottom:20px;
-left:50%;
-transform:translateX(-50%);
-padding:18px 40px;
-background:white;
-color:#111;
-text-decoration:none;
-font-family:'Montserrat',sans-serif;
-font-size:18px;
-letter-spacing:2px;
-border:1px solid #ddd;
-border-radius:30px;
-box-shadow:0 4px 12px rgba(0,0,0,0.1);
-z-index:1001;
-transition:0.3s;
-
-}
-
-.reserve-button-mobile:hover {
-
-background:#f9f9f9;
-box-shadow:0 6px 18px rgba(0,0,0,0.15);
-
-}
-
-.offer-card-container {
 
 display:flex;
 justify-content:center;
+
 }
 
-.offer-card {
+.faq-hero img {
 
-max-width:760px;
 width:100%;
-background:white;
-border-radius:20px;
-box-shadow:0 18px 48px rgba(0,0,0,0.08);
-padding:40px;
-text-align:center;
+max-width:1100px;
+
+height:420px;
+
+object-fit:cover;
+
 }
 
-.offer-card h3 {
+/* ===== HEADER ===== */
+
+.faq-header {
+
+text-align:center;
+
+padding:60px 20px 40px;
+
+}
+
+.faq-header h1 {
 
 font-family:'Playfair Display',serif;
-font-size:30px;
-letter-spacing:3px;
-margin-bottom:24px;
-}
 
-.offer-list {
-list-style:none;
-padding:0;
-margin:0 auto 32px auto;
-font-size:15px;
-line-height:1.6;
-color:#111;
-display:grid;
-grid-template-columns:repeat(2, minmax(0, 1fr));
-gap:18px;
-max-width:640px;
-}
+font-size:48px;
+letter-spacing:4px;
 
-.offer-list li {
-display:flex;
-align-items:flex-start;
-gap:14px;
-padding:22px 24px;
-background:#ffffff;
-border-radius:12px;
-box-shadow:0 10px 24px rgba(0,0,0,0.06);
-position:relative;
-text-align:left;
-transition:transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.offer-list li::before {
-content:'✔';
-flex-shrink:0;
-color:#111;
-line-height:1.6;
-}
-
-.offer-list li:hover {
-transform:translateY(-3px);
-box-shadow:0 16px 32px rgba(0,0,0,0.1);
-}
-
-.offer-description,
-.offer-quote,
-.offer-meta {
-
-font-size:15px;
-line-height:1.8;
-color:#444;
-margin:0 auto 26px auto;
-max-width:650px;
-text-align:center;
-}
-
-.offer-quote {
-margin:42px auto 18px auto;
-max-width:620px;
-font-family:'Playfair Display',serif;
-font-size:28px;
-line-height:1.75;
-font-weight:400;
-color:#222;
-letter-spacing:0.3px;
-}
-
-.offer-meta {
-margin:0 auto 50px auto;
-font-size:12px;
-line-height:1.8;
-letter-spacing:3px;
-text-transform:uppercase;
-color:#888;
-}
-
-.offer-button-wrap {
-text-align:center;
-margin-top:40px;
-}
-
-.offer-button {
-
-display:inline-block;
-padding:15px 30px;
-background:white;
-color:#111;
-text-decoration:none;
-font-family:'Montserrat',sans-serif;
-font-size:16px;
-letter-spacing:2px;
-border:1px solid #ddd;
-border-radius:25px;
-box-shadow:0 4px 12px rgba(0,0,0,0.1);
-transition:0.3s;
-}
-
-.offer-button:hover {
-
-background:#f9f9f9;
-box-shadow:0 6px 18px rgba(0,0,0,0.15);
-}
-
-.opinie-section {
-padding:110px 20px;
-text-align:center;
-}
-
-.opinie-grid {
-max-width:1120px;
-margin:0 auto;
-display:grid;
-grid-template-columns:repeat(3, minmax(0, 1fr));
-gap:34px;
-}
-
-.opinia-card {
-background:#ffffff;
-border-radius:16px;
-padding:32px;
-box-shadow:0 12px 30px rgba(0,0,0,0.07);
-text-align:left;
-transition:transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.opinia-card:hover {
-transform:translateY(-4px);
-box-shadow:0 18px 36px rgba(0,0,0,0.1);
-}
-
-.opinia-tekst {
 margin:0;
-font-family:'Playfair Display',serif;
-font-size:22px;
-line-height:1.75;
-font-style:italic;
-color:#222;
+
 }
 
-.opinia-autorka {
-margin-top:18px;
+.faq-header p {
+
+margin-top:15px;
+
 font-size:13px;
-letter-spacing:1.8px;
-text-transform:uppercase;
-color:#777;
-}
+letter-spacing:3px;
 
-/* TABLET */
-
-@media (max-width:1024px){
-
-.process-grid {
-grid-template-columns: repeat(2,1fr);
-}
-
-.albums {
-grid-template-columns: repeat(2,1fr);
-}
-
-.about-container {
-
-flex-direction:column;
-text-align:center;
+color:#555;
 
 }
 
-.logo {
-font-size:20px;
+/* ===== FAQ ===== */
+
+.faq-container {
+
+max-width:800px;
+margin:auto;
+
+padding:40px 20px 80px;
+
 }
 
-.reserve-button {
-padding:12px 25px;
+.faq-item {
+
+border-bottom:1px solid #eee;
+
+}
+
+/* PYTANIA */
+
+.faq-question {
+
+width:100%;
+
+background:none;
+border:none;
+
+padding:26px 10px;
+
+font-family:'Montserrat',sans-serif;
 font-size:15px;
+
+font-weight:600;
+
+cursor:pointer;
+
+letter-spacing:1px;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+text-align:left;
+
 }
 
-.opinie-grid {
-grid-template-columns:repeat(2, minmax(0, 1fr));
+/* STRZAŁKA */
+
+.arrow {
+
+transition:0.3s;
+font-size:14px;
+
 }
+
+/* OBROT STRZAŁKI */
+
+.faq-question.active .arrow {
+
+transform:rotate(180deg);
+
+}
+
+/* ODPOWIEDZI */
+
+.faq-answer {
+
+max-height:0;
+overflow:hidden;
+
+transition:0.35s ease;
+
+}
+
+.faq-answer p {
+
+margin:0;
+
+padding:0 10px 22px 10px;
+
+font-size:14px;
+line-height:1.7;
+
+color:#444;
 
 }
 
@@ -838,86 +353,16 @@ grid-template-columns:repeat(2, minmax(0, 1fr));
 
 @media (max-width:768px){
 
-h1 {
-font-size:42px;
+.faq-hero img {
+height:260px;
 }
 
-.albums {
-grid-template-columns:1fr;
-gap:50px;
+.faq-header h1 {
+font-size:30px;
 }
 
-.album {
-width:90%;
-height:420px;
-margin:auto;
-}
-
-.process-grid {
-grid-template-columns:1fr;
-}
-
-.menu {
-width:260px;
-}
-
-.about-photo img {
-
-width:140px;
-height:140px;
-
-}
-
-.logo {
-font-size:18px;
-}
-
-.reserve-button-container {
-display:none;
-}
-
-.offer-card {
-padding:30px 22px;
-}
-
-.offer-list {
-grid-template-columns:1fr;
-max-width:100%;
-}
-
-.offer-list li {
-padding:20px 22px;
-}
-
-.opinie-section {
-padding:90px 20px;
-}
-
-.opinie-grid {
-grid-template-columns:1fr;
-gap:22px;
-}
-
-.opinia-card {
-padding:28px;
-}
-
-.opinia-tekst {
-font-size:19px;
-}
-
-.offer-quote {
-font-size:23px;
-line-height:1.7;
-}
-
-.offer-meta {
-font-size:11px;
-letter-spacing:2px;
-}
-
-.reserve-button-mobile {
-display:block;
+.back-link {
+margin-left:20px;
 }
 
 }
@@ -926,7 +371,7 @@ display:block;
 
 </head>
 
-<body id="top">
+<body>
 
 <!-- NAV -->
 
@@ -934,7 +379,7 @@ display:block;
 
 <div class="nav-container">
 
-<a href="#top" class="logo">
+<a href="index.html" class="logo">
 LUUILYY.PHOTO
 </a>
 
@@ -953,343 +398,189 @@ LUUILYY.PHOTO
 <div class="close-menu" onclick="toggleMenu()">✕</div>
 
 <a href="index.html">Strona główna</a>
-<a href="#portfolio">Portfolio</a>
+<a href="index.html#portfolio">Portfolio</a>
 <a href="faq.html">FAQ</a>
-<a href="#process">Jak wygląda sesja?</a>
-<a href="#about">O mnie</a>
-<a href="#contact">Kontakt</a>
+<a href="index.html#process">Jak wygląda sesja?</a>
+<a href="index.html#about">O mnie</a>
+<a href="index.html#contact">Kontakt</a>
 <a href="rezerwacja.html">Rezerwacja</a>
 
 </div>
 
 <div class="overlay" id="overlay"></div>
 
-<header>
+<!-- BACK -->
 
-<h1>LUUILYY PHOTO</h1>
+<a href="index.html" class="back-link">
 
-<p class="subtitle">
-FASHION • FAIRYCORE • PORTRAITS
-</p>
+← WRÓĆ DO STRONY GŁÓWNEJ
 
-</header>
-
-<div class="hero">
-
-<img src="rozmiarprawidlowy.jpg" loading="lazy">
-
-</div>
-
-<div class="reserve-button-container">
-
-<a href="rezerwacja.html" class="reserve-button">ZAREZERWUJ SESJĘ</a>
-
-</div>
-
-<!-- PORTFOLIO -->
-
-<div class="section fade-section" id="portfolio">
-
-<h2>PORTFOLIO</h2>
-
-<div class="albums">
-
-<a href="studio.html" class="album">
-<img src="nom.jpg" loading="lazy">
-<div class="album-hover-text">
-Kliknij, aby zobaczyć więcej zdjęć
-</div>
-<div class="album-title-box">
-SESJE KOBIECE — STUDIO
-</div>
 </a>
 
-<a href="plener.html" class="album">
-<img src="IMG_5170.JPEG" loading="lazy">
-<div class="album-hover-text">
-Kliknij, aby zobaczyć więcej zdjęć
-</div>
-<div class="album-title-box">
-SESJE KOBIECE — PLENER
-</div>
-</a>
+<!-- HERO -->
 
-<a href="pary.html" class="album">
-<img src="8.jpg" loading="lazy">
-<div class="album-hover-text">
-Kliknij, aby zobaczyć więcej zdjęć
-</div>
-<div class="album-title-box">
-SESJE PAR
-</div>
-</a>
+<div class="faq-hero">
 
-<a href="wizerunek.html" class="album">
-<img src="2.jpg" loading="lazy">
-<div class="album-hover-text">
-Kliknij, aby zobaczyć więcej zdjęć
-</div>
-<div class="album-title-box">
-SESJE WIZERUNKOWE
-</div>
-</a>
+<img src="2d13db5eb02ef191e58dfd69b9c3c6d1.jpg">
 
 </div>
 
-</div>
+<!-- HEADER -->
 
-<div class="section-divider"></div>
+<div class="faq-header">
 
-<img src="IMG_3377.JPG" alt="Portfolio" class="full-width-image" loading="lazy">
-
-<div class="section-divider"></div>
-
-<!-- CYTAT -->
-
-<div class="quote-section">
-
-<blockquote>
-"Każda kobieta zasługuje, aby zobaczyć siebie piękną."
-</blockquote>
-
-</div>
-
-<div class="section-divider"></div>
-
-<div class="section fade-section" id="offer">
-
-<h2>OFERTA</h2>
-
-<div class="offer-card-container">
-
-<div class="offer-card">
-
-<p class="offer-description">
-To oferta stworzona z myślą o osobach, które chcą wyjątkowej, artystycznej sesji.
-</p>
-
-<ul class="offer-list">
-<li>10 starannie wyretuszowanych zdjęć</li>
-<li>sesja w studio lub w plenerze</li>
-<li>pomoc w pozowaniu na każdym etapie</li>
-<li>wskazówki dotyczące stylizacji</li>
-<li>spokojna, komfortowa atmosfera</li>
-<li>indywidualne podejście do każdej osoby</li>
-</ul>
-
-<p class="offer-quote">
-Każda sesja jest dopasowana do Ciebie, Twojego stylu, nastroju i tego, jak chcesz zobaczyć siebie na zdjęciach.
-</p>
-
-<p class="offer-meta">
-Sesje indywidualne • wizerunkowe • dla par • vouchery
-</p>
-
-<div class="offer-button-wrap">
-<a href="rezerwacja.html" class="offer-button">ZAREZERWUJ SESJĘ</a>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="section-divider"></div>
-
-<div class="section fade-section opinie-section" id="opinie">
-
-<h2>OPINIE KLIENTEK</h2>
-
-<div class="opinie-grid">
-
-<div class="opinia-card">
-<p class="opinia-tekst">
-"To była moja pierwsza profesjonalna sesja i od początku czułam się swobodnie. Atmosfera była piękna, a zdjęcia są dokładnie takie, jak marzyłam."
-</p>
-<p class="opinia-autorka">— Marta</p>
-</div>
-
-<div class="opinia-card">
-<p class="opinia-tekst">
-"Paulina ma niesamowite wyczucie światła i detali. Dzięki niej zobaczyłam siebie w zupełnie nowy, bardziej kobiecy sposób."
-</p>
-<p class="opinia-autorka">— Karolina</p>
-</div>
-
-<div class="opinia-card">
-<p class="opinia-tekst">
-"Sesja była spokojna, naturalna i bardzo profesjonalna. Każdy kadr był dopracowany, a efekt końcowy zachwycający."
-</p>
-<p class="opinia-autorka">— Natalia</p>
-</div>
-
-<div class="opinia-card">
-<p class="opinia-tekst">
-"Czułam się zaopiekowana na każdym etapie: od przygotowania po wybór zdjęć. To było wyjątkowe doświadczenie."
-</p>
-<p class="opinia-autorka">— Aleksandra</p>
-</div>
-
-<div class="opinia-card">
-<p class="opinia-tekst">
-"Najbardziej doceniam klimat sesji i subtelny styl zdjęć. Wszystko było lekkie, eleganckie i bardzo spójne."
-</p>
-<p class="opinia-autorka">— Julia</p>
-</div>
-
-<div class="opinia-card">
-<p class="opinia-tekst">
-"To jedna z najpiękniejszych pamiątek, jakie sobie zrobiłam. Zdjęcia są pełne emocji i kobiecej delikatności."
-</p>
-<p class="opinia-autorka">— Zuzanna</p>
-</div>
-
-</div>
-
-</div>
-
-<div class="section-divider"></div>
-
-<!-- JAK WYGLĄDA SESJA -->
-
-<div class="section fade-section" id="process">
-
-<h2>JAK WYGLĄDA SESJA?</h2>
-
-<div class="process-grid">
-
-<div class="process-step">
-<p>
-<strong>01 — Rezerwacja terminu</strong><br>
-Kontaktujesz się ze mną przez Instagram lub formularz rezerwacji,
-a razem wybieramy dogodny termin sesji.
-</p>
-</div>
-
-<div class="process-step">
-<p>
-<strong>02 — Przygotowanie do sesji</strong><br>
-Otrzymujesz ode mnie wskazówki dotyczące stylizacji,
-a jeśli chcesz — możesz skorzystać z makijażu i stylizacji fryzury.
-</p>
-</div>
-
-<div class="process-step">
-<p>
-<strong>03 — Dzień sesji</strong><br>
-Podczas zdjęć pomagam w pozowaniu
-i dbam o komfortową, spokojną atmosferę.
-</p>
-</div>
-
-<div class="process-step">
-<p>
-<strong>04 — Wybór zdjęć</strong><br>
-Po sesji otrzymujesz galerię online,
-z której wybierasz swoje ulubione ujęcia.
-</p>
-</div>
-
-<div class="process-step">
-<p>
-<strong>05 — Gotowe fotografie</strong><br>
-Wybrane zdjęcia poddaję starannej obróbce,
-a następnie otrzymujesz gotowe fotografie.
-</p>
-</div>
-
-<div class="process-step">
-<p>
-<strong>06 — Do zobaczenia ponownie 🤍</strong><br>
-Mam nadzieję, że zdjęcia spodobają się tak bardzo,
-że spotkamy się ponownie na kolejnej sesji.
-</p>
-</div>
-
-</div>
-
-</div>
-
-<div class="section-divider"></div>
-
-<!-- O MNIE -->
-
-<div class="section fade-section" id="about">
-
-<h2>O MNIE</h2>
-
-<div class="about-container">
-
-<div class="about-photo">
-
-<img src="505947252_9991842110891643_2799595505019481989_n.jpg">
-
-</div>
-
-<div class="about-text">
+<h1>FAQ</h1>
 
 <p>
-Cześć! Mam na imię Paulina i jestem fotografką,
-która specjalizuje się w kobiecych i artystycznych sesjach zdjęciowych.
+NAJCZĘŚCIEJ ZADAWANE PYTANIA
+</p>
+
+</div>
+
+<!-- FAQ -->
+
+<div class="faq-container">
+
+<!-- TEMPLATE PYTANIA -->
+
+<div class="faq-item">
+<button class="faq-question">
+Ile trwa sesja zdjęciowa?
+<span class="arrow">▼</span>
+</button>
+<div class="faq-answer">
+<p>
+Czas trwania sesji zależy od wybranego pakietu — zazwyczaj trwa od około godziny do dwóch godzin, w zależności od miejsca oraz rodzaju sesji.
+</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">
+Czy pomagasz w pozowaniu?
+<span class="arrow">▼</span>
+</button>
+<div class="faq-answer">
+<p>
+Tak — podczas sesji pokazuję, jak się ustawić, ale przygotowanie zaczyna się już wcześniej. Przed sesją wspólnie ustalamy klimat zdjęć, szukamy inspiracji i wzorujemy się na wybranych przykładach — to zdecydowanie ułatwia pracę i sprawia, że nie musisz się stresować.
+</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">
+Jak przygotować się do sesji?
+<span class="arrow">▼</span>
+</button>
+<div class="faq-answer">
+<p>
+Po rezerwacji otrzymasz ode mnie wskazówki dotyczące ubioru, makijażu oraz dodatków. Pomagam dobrać stylizacje tak, aby pasowały do klimatu sesji.
+</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">
+Gdzie odbywa się sesja zdjęciowa? Kto wybiera studio?
+<span class="arrow">▼</span>
+</button>
+<div class="faq-answer">
+<p>
+Sesje odbywają się w plenerze lub w studio — w zależności od wybranego pakietu i preferencji klientki.
 </p>
 
 <p>
-Tworzę fotografie inspirowane modą i klimatem fairycore,
-dbając o detale, atmosferę oraz komfort podczas sesji.
-Zależy mi, aby każda kobieta czuła się pięknie i pewnie przed obiektywem.
+Przed wpłaceniem zaliczki wysyłam kilka propozycji studiów i razem wybieramy najlepsze. Zazwyczaj mam jedno swoje ulubione studio, jednak wszystko zależy od charakteru sesji i tego, czego potrzebujemy.
+</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">
+Ile czeka się na gotowe zdjęcia?
+<span class="arrow">▼</span>
+</button>
+<div class="faq-answer">
+<p>
+Na gotowe zdjęcia czeka się zazwyczaj od 14 do 21 dni. Czas ten może się zmienić — fotografia nie jest moją jedyną pracą, dlatego taki czas oczekiwania. Zawsze informuję, jeśli coś się zmienia.
+</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">
+Czy można dokupić dodatkowe zdjęcia?
+<span class="arrow">▼</span>
+</button>
+<div class="faq-answer">
+<p>
+Tak — oferuję trzy pakiety zdjęć, a po otrzymaniu galerii istnieje możliwość dokupienia dodatkowych ujęć według aktualnego cennika.
+</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">
+Czy wykonujesz makijaż?
+<span class="arrow">▼</span>
+</button>
+<div class="faq-answer">
+<p>
+Nie wykonuję makijażu samodzielnie, jednak współpracuję z makijażystkami oraz stylistką fryzur, które mogę polecić przed sesją.
+</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">
+Jak zarezerwować termin sesji?
+<span class="arrow">▼</span>
+</button>
+<div class="faq-answer">
+<p>
+Termin sesji możesz zarezerwować poprzez formularz rezerwacji dostępny na stronie lub kontaktując się ze mną bezpośrednio.
+</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">
+Kto wybiera zdjęcia, które otrzymam?
+<span class="arrow">▼</span>
+</button>
+<div class="faq-answer">
+<p>
+Jeśli mi zaufasz, mogę samodzielnie wybrać i obrobić najlepsze zdjęcia z sesji.
 </p>
 
+<p>
+Jeśli jednak wolisz dokonać wyboru samodzielnie — nie ma problemu. Wysyłam galerię online z możliwością wyboru zdjęć oraz dokupienia dodatkowych ujęć. Obrabiam dokładnie te zdjęcia, które wybierzesz.
+</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">
+Czy mogę przyjść z osobą towarzyszącą?
+<span class="arrow">▼</span>
+</button>
+<div class="faq-answer">
+<p>
+Tak — możesz przyjść z osobą towarzyszącą. Jeśli jednak nie bierze udziału w sesji, proszę o zaczekanie przed wejściem do studia — dla komfortu naszej pracy.
+</p>
+</div>
 </div>
 
 </div>
-
-</div>
-
-<div class="section-divider"></div>
-
-<!-- KONTAKT -->
-
-<div class="section fade-section" id="contact">
-
-<h2>KONTAKT</h2>
-
-<p class="contact-label">
-INSTAGRAM
-</p>
-
-<p class="contact-link">
-<a href="https://instagram.com/luuilyy.photo">
-@luuilyy.photo
-</a>
-</p>
-
-<p class="contact-label">
-EMAIL
-</p>
-
-<p class="contact-link">
-<a href="mailto:luuilyy.photo@gmail.com">
-luuilyy.photo@gmail.com
-</a>
-</p>
-
-</div>
-
-<a href="#top" class="back-to-top">
-
-↑ WRÓĆ NA GÓRĘ
-
-</a>
 
 <script>
-
-/* MENU */
 
 function toggleMenu() {
 
 document.getElementById("menu").classList.toggle("active");
 document.getElementById("overlay").classList.toggle("active");
+
+document.body.classList.toggle("no-scroll");
 
 }
 
@@ -1297,6 +588,8 @@ document.getElementById("overlay").addEventListener("click", function(){
 
 document.getElementById("menu").classList.remove("active");
 document.getElementById("overlay").classList.remove("active");
+
+document.body.classList.remove("no-scroll");
 
 });
 
@@ -1309,45 +602,46 @@ link.addEventListener("click", () => {
 document.getElementById("menu").classList.remove("active");
 document.getElementById("overlay").classList.remove("active");
 
-});
+document.body.classList.remove("no-scroll");
 
 });
 
-/* FADE-IN */
+});
 
-document.addEventListener("DOMContentLoaded", function(){
+/* FAQ LOGIKA */
 
-const sections = document.querySelectorAll(".fade-section");
+const faqQuestions = document.querySelectorAll(".faq-question");
 
-const observer = new IntersectionObserver((entries) => {
+faqQuestions.forEach(question => {
 
-entries.forEach(entry => {
+question.addEventListener("click", () => {
 
-if (entry.isIntersecting) {
+faqQuestions.forEach(q => {
+if(q !== question){
+q.classList.remove("active");
+q.nextElementSibling.style.maxHeight = null;
+}
+});
 
-entry.target.classList.add("visible");
+question.classList.toggle("active");
+
+const answer = question.nextElementSibling;
+
+if (answer.style.maxHeight) {
+
+answer.style.maxHeight = null;
+
+} else {
+
+answer.style.maxHeight = answer.scrollHeight + "px";
 
 }
-
-});
-
-}, {
-
-threshold: 0.15
-
-});
-
-sections.forEach(section => {
-
-observer.observe(section);
 
 });
 
 });
 
 </script>
-
-<a href="rezerwacja.html" class="reserve-button-mobile">ZAREZERWUJ SESJĘ</a>
 
 </body>
 
