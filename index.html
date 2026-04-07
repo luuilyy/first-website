@@ -634,6 +634,78 @@ box-shadow:0 6px 18px rgba(0,0,0,0.15);
 
 }
 
+.offer-card-container {
+
+display:flex;
+justify-content:center;
+}
+
+.offer-card {
+
+max-width:520px;
+width:100%;
+background:white;
+border-radius:20px;
+box-shadow:0 18px 48px rgba(0,0,0,0.08);
+padding:40px;
+text-align:left;
+}
+
+.offer-card h3 {
+
+font-family:'Playfair Display',serif;
+font-size:30px;
+letter-spacing:3px;
+margin-bottom:24px;
+}
+
+.offer-list {
+
+list-style:none;
+padding:0;
+margin:0 0 32px 0;
+font-size:15px;
+line-height:1.8;
+color:#111;
+}
+
+.offer-list li {
+
+margin-bottom:16px;
+padding-left:26px;
+position:relative;
+}
+
+.offer-list li::before {
+
+content:'✔';
+position:absolute;
+left:0;
+color:#111;
+}
+
+.offer-button {
+
+display:inline-block;
+padding:15px 30px;
+background:white;
+color:#111;
+text-decoration:none;
+font-family:'Montserrat',sans-serif;
+font-size:16px;
+letter-spacing:2px;
+border:1px solid #ddd;
+border-radius:25px;
+box-shadow:0 4px 12px rgba(0,0,0,0.1);
+transition:0.3s;
+}
+
+.offer-button:hover {
+
+background:#f9f9f9;
+box-shadow:0 6px 18px rgba(0,0,0,0.15);
+}
+
 /* TABLET */
 
 @media (max-width:1024px){
@@ -841,6 +913,35 @@ SESJE WIZERUNKOWE
 <blockquote>
 "Każda kobieta zasługuje, aby zobaczyć siebie piękną."
 </blockquote>
+
+</div>
+
+<div class="section-divider"></div>
+
+<div class="section fade-section" id="offer">
+
+<h2>OFERTA</h2>
+
+<div class="offer-card-container">
+
+<div class="offer-card">
+
+<h3>SESJA KOBIECA</h3>
+
+<ul class="offer-list">
+<li>10 zdjęć po profesjonalnej obróbce</li>
+<li>studio lub plener</li>
+<li>pomoc w pozowaniu</li>
+<li>wskazówki przed sesją</li>
+</ul>
+
+<div class="reserve-button-container">
+<a href="rezerwacja.html" class="offer-button">ZAREZERWUJ SESJĘ</a>
+</div>
+
+</div>
+
+</div>
 
 </div>
 
