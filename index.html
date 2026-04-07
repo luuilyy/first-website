@@ -8,7 +8,1235 @@
 
 <title>Luuilyy Photo</title>
 
+<link href="https://<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Luuilyy Photo</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Playfair+Display:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+
+/* BODY */
+
+body {
+margin:0;
+background:white;
+color:#111;
+font-family:'Montserrat',sans-serif;
+scroll-behavior:smooth;
+}
+
+/* NAV */
+
+nav {
+
+position:fixed;
+top:0;
+width:100%;
+
+background:white;
+border-bottom:1px solid #eee;
+
+padding:18px 0;
+
+z-index:999;
+
+}
+
+.nav-container {
+
+max-width:1150px;
+margin:auto;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:0 25px;
+
+}
+
+.logo {
+
+font-family:'Playfair Display',serif;
+font-size:22px;
+letter-spacing:3px;
+text-decoration: none;
+
+}
+
+/* HAMBURGER */
+
+.hamburger {
+
+font-size:28px;
+cursor:pointer;
+
+}
+
+/* MENU PANEL */
+
+.menu {
+
+position:fixed;
+
+top:0;
+right:0;
+
+width:280px;
+height:100vh;
+
+background:white;
+
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+
+transform:translateX(100%);
+transition:0.3s;
+
+box-shadow:-5px 0 15px rgba(0,0,0,0.1);
+
+z-index:1000;
+
+}
+
+.menu.active {
+
+transform:translateX(0);
+
+}
+
+/* X W MENU */
+
+.close-menu {
+
+position:absolute;
+top:20px;
+right:25px;
+
+font-size:28px;
+cursor:pointer;
+
+}
+
+.menu a {
+
+text-decoration:none;
+color:#111;
+
+padding:18px;
+
+font-size:14px;
+letter-spacing:2px;
+
+transition:0.3s;
+
+}
+
+.menu a:hover {
+
+color:#888;
+
+}
+
+/* OVERLAY */
+
+.overlay {
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background:rgba(0,0,0,0.3);
+
+opacity:0;
+pointer-events:none;
+
+transition:0.3s;
+
+z-index:900;
+
+}
+
+.overlay.active {
+
+opacity:1;
+pointer-events:auto;
+
+}
+
+/* HEADER */
+
+header {
+
+text-align:center;
+
+padding-top:150px;
+padding-bottom:60px;
+
+}
+
+h1 {
+
+font-family:'Playfair Display',serif;
+
+font-size:80px;
+letter-spacing:6px;
+
+margin:0;
+
+}
+
+.subtitle {
+
+margin-top:20px;
+
+font-size:13px;
+letter-spacing:4px;
+
+color:#555;
+
+}
+
+/* HERO */
+
+.hero {
+
+display:flex;
+justify-content:center;
+
+margin-bottom:100px;
+
+}
+
+.hero img {
+
+width:100%;
+max-width:1100px;
+border-radius:8px;
+
+}
+
+/* SECTION */
+
+.section {
+
+padding:100px 20px;
+
+text-align:center;
+
+}
+
+.section h2 {
+
+font-family:'Playfair Display',serif;
+
+font-size:36px;
+
+letter-spacing:3px;
+
+margin-bottom:20px;
+
+position:relative;
+
+}
+
+.section h2::after {
+
+content:"";
+
+display:block;
+
+width:60px;
+height:1px;
+
+background:#ddd;
+
+margin:18px auto 0 auto;
+
+}
+
+/* FADE-IN */
+
+.fade-section {
+
+opacity:0;
+transform:translateY(40px);
+
+transition:opacity 0.8s ease,
+transform 0.8s ease;
+
+}
+
+.fade-section.visible {
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+/* ALBUM GRID */
+
+.albums {
+
+display:grid;
+
+grid-template-columns: repeat(2, 350px);
+
+justify-content:center;
+
+gap:60px;
+
+}
+
+/* ALBUM */
+
+.album {
+
+position:relative;
+
+width:350px;
+height:450px;
+
+overflow:hidden;
+
+text-decoration:none;
+
+color:white;
+
+border-radius:8px;
+
+}
+
+.album img {
+
+width:100%;
+height:100%;
+
+object-fit:cover;
+
+transition:0.5s ease;
+
+}
+
+.album::before {
+
+content:"";
+
+position:absolute;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background:rgba(0,0,0,0);
+
+transition:0.5s ease;
+
+z-index:1;
+
+}
+
+.album:hover::before {
+
+background:rgba(0,0,0,0.45);
+backdrop-filter:blur(2px);
+
+}
+
+.album:hover img {
+
+transform:scale(1.08);
+
+}
+
+.album-hover-text {
+
+position:absolute;
+
+top:50%;
+left:50%;
+
+transform:translate(-50%, -50%);
+
+font-size:13px;
+
+letter-spacing:2px;
+
+opacity:0;
+
+z-index:2;
+
+transition:0.3s;
+
+text-align:center;
+
+}
+
+.album:hover .album-hover-text {
+
+opacity:1;
+
+}
+
+.album-title-box {
+
+position:absolute;
+
+bottom:15px;
+left:15px;
+right:15px;
+
+background:rgba(0,0,0,0.45);
+
+padding:16px;
+
+letter-spacing:3px;
+
+font-size:13px;
+
+text-align:center;
+
+z-index:2;
+
+border-radius:6px;
+
+}
+
+/* JAK WYGLĄDA SESJA */
+
+.process-grid {
+
+display:grid;
+
+grid-template-columns: repeat(3, 1fr);
+
+gap:60px;
+
+max-width:1000px;
+
+margin:auto;
+
+}
+
+.process-step {
+
+padding:25px;
+
+text-align:left;
+
+line-height:1.8;
+
+background:#fafafa;
+
+border-radius:8px;
+
+box-shadow:0 10px 22px rgba(0,0,0,0.06);
+
+}
+
+/* O MNIE */
+
+.about-container {
+
+display:flex;
+align-items:center;
+gap:50px;
+max-width:900px;
+margin:auto;
+text-align:left;
+
+}
+
+.about-photo img {
+
+width:180px;
+height:180px;
+
+object-fit:cover;
+
+border-radius:50%;
+
+box-shadow:0 12px 28px rgba(0,0,0,0.12);
+
+}
+
+.about-text {
+
+line-height:1.9;
+color:#444;
+font-size:15px;
+
+}
+
+.about-text p {
+
+margin-bottom:18px;
+
+}
+
+/* CONTACT */
+
+.contact-label {
+
+font-size:12px;
+letter-spacing:3px;
+color:#888;
+margin-top:30px;
+
+}
+
+.contact-link a {
+
+text-decoration:none;
+color:#111;
+font-size:18px;
+
+}
+
+/* WRÓĆ NA GÓRĘ */
+
+.back-to-top {
+
+display:block;
+text-align:center;
+margin:100px auto;
+font-size:13px;
+letter-spacing:2px;
+text-decoration:none;
+color:#111;
+transition:0.3s;
+
+}
+
+.back-to-top:hover {
+
+opacity:0.6;
+
+}
+
+/* QUOTE SECTION */
+
+.quote-section {
+
+padding:100px 20px;
+
+text-align:center;
+
+}
+
+.quote-section blockquote {
+
+font-family:'Playfair Display',serif;
+font-size:32px;
+letter-spacing:1px;
+font-style:italic;
+color:#111;
+
+margin:0;
+line-height:1.8;
+
+max-width:700px;
+margin-left:auto;
+margin-right:auto;
+
+}
+/* SECTION DIVIDER */
+
+.section-divider {
+
+width:60px;
+height:1px;
+background:#e5e5e5;
+margin:40px auto;
+
+}
+
+/* FULL-WIDTH IMAGE */
+
+.full-width-image {
+
+width:100%;
+max-width:100%;
+height:60vh;
+object-fit:contain;
+border-radius:8px;
+display:block;
+margin-top:60px;
+margin-bottom:120px;
+margin-left:auto;
+margin-right:auto;
+
+}
+
+/* RESERVE BUTTON */
+
+.reserve-button-container {
+
+text-align:center;
+margin:40px 0;
+
+}
+
+.reserve-button {
+
+display:inline-block;
+padding:15px 30px;
+background:white;
+color:#111;
+text-decoration:none;
+font-family:'Montserrat',sans-serif;
+font-size:16px;
+letter-spacing:2px;
+border:1px solid #ddd;
+border-radius:25px;
+box-shadow:0 4px 12px rgba(0,0,0,0.1);
+transition:0.3s;
+
+}
+
+.reserve-button:hover {
+
+background:#f9f9f9;
+box-shadow:0 6px 18px rgba(0,0,0,0.15);
+
+}
+
+.reserve-button-mobile {
+
+position:fixed;
+bottom:20px;
+left:50%;
+transform:translateX(-50%);
+padding:18px 40px;
+background:white;
+color:#111;
+text-decoration:none;
+font-family:'Montserrat',sans-serif;
+font-size:18px;
+letter-spacing:2px;
+border:1px solid #ddd;
+border-radius:30px;
+box-shadow:0 4px 12px rgba(0,0,0,0.1);
+z-index:1001;
+transition:0.3s;
+
+}
+
+.reserve-button-mobile:hover {
+
+background:#f9f9f9;
+box-shadow:0 6px 18px rgba(0,0,0,0.15);
+
+}
+
+.offer-card-container {
+
+display:flex;
+justify-content:center;
+}
+
+.offer-card {
+
+max-width:760px;
+width:100%;
+background:white;
+border-radius:20px;
+box-shadow:0 18px 48px rgba(0,0,0,0.08);
+padding:40px;
+text-align:center;
+}
+
+.offer-card h3 {
+
+font-family:'Playfair Display',serif;
+font-size:30px;
+letter-spacing:3px;
+margin-bottom:24px;
+}
+
+.offer-list {
+list-style:none;
+padding:0;
+margin:0 auto 32px auto;
+font-size:15px;
+line-height:1.6;
+color:#111;
+display:grid;
+grid-template-columns:repeat(2, minmax(0, 1fr));
+gap:18px;
+max-width:640px;
+}
+
+.offer-list li {
+display:flex;
+align-items:flex-start;
+gap:14px;
+padding:22px 24px;
+background:#ffffff;
+border-radius:12px;
+box-shadow:0 10px 24px rgba(0,0,0,0.06);
+position:relative;
+text-align:left;
+transition:transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.offer-list li::before {
+content:'✔';
+flex-shrink:0;
+color:#111;
+line-height:1.6;
+}
+
+.offer-list li:hover {
+transform:translateY(-3px);
+box-shadow:0 16px 32px rgba(0,0,0,0.1);
+}
+
+.offer-description,
+.offer-note,
+.offer-extra {
+
+font-size:15px;
+line-height:1.8;
+color:#444;
+margin:0 auto 26px auto;
+max-width:650px;
+text-align:center;
+}
+
+.offer-note {
+margin-top:30px;
+color:#555;
+font-size:15px;
+line-height:1.8;
+font-weight:600;
+}
+
+.offer-extra {
+
+font-size:13px;
+line-height:1.8;
+color:#777;
+margin:25px auto 50px auto;
+max-width:650px;
+text-align:center;
+}
+
+.offer-button-wrap {
+text-align:center;
+margin-top:40px;
+}
+
+.offer-button {
+
+display:inline-block;
+padding:15px 30px;
+background:white;
+color:#111;
+text-decoration:none;
+font-family:'Montserrat',sans-serif;
+font-size:16px;
+letter-spacing:2px;
+border:1px solid #ddd;
+border-radius:25px;
+box-shadow:0 4px 12px rgba(0,0,0,0.1);
+transition:0.3s;
+}
+
+.offer-button:hover {
+
+background:#f9f9f9;
+box-shadow:0 6px 18px rgba(0,0,0,0.15);
+}
+
+/* TABLET */
+
+@media (max-width:1024px){
+
+.process-grid {
+grid-template-columns: repeat(2,1fr);
+}
+
+.albums {
+grid-template-columns: repeat(2,1fr);
+}
+
+.about-container {
+
+flex-direction:column;
+text-align:center;
+
+}
+
+.logo {
+font-size:20px;
+}
+
+.reserve-button {
+padding:12px 25px;
+font-size:15px;
+}
+
+}
+
+/* MOBILE */
+
+@media (max-width:768px){
+
+h1 {
+font-size:42px;
+}
+
+.albums {
+grid-template-columns:1fr;
+gap:50px;
+}
+
+.album {
+width:90%;
+height:420px;
+margin:auto;
+}
+
+.process-grid {
+grid-template-columns:1fr;
+}
+
+.menu {
+width:260px;
+}
+
+.about-photo img {
+
+width:140px;
+height:140px;
+
+}
+
+.logo {
+font-size:18px;
+}
+
+.reserve-button-container {
+display:none;
+}
+
+.offer-card {
+padding:30px 22px;
+}
+
+.offer-list {
+grid-template-columns:1fr;
+max-width:100%;
+}
+
+.offer-list li {
+padding:20px 22px;
+}
+
+.reserve-button-mobile {
+display:block;
+}
+
+}
+
+</style>
+
+</head>
+
+<body id="top">
+
+<!-- NAV -->
+
+<nav>
+
+<div class="nav-container">
+
+<a href="#top" class="logo">
+LUUILYY.PHOTO
+</a>
+
+<div class="hamburger" onclick="toggleMenu()">
+☰
+</div>
+
+</div>
+
+</nav>
+
+<!-- MENU -->
+
+<div class="menu" id="menu">
+
+<div class="close-menu" onclick="toggleMenu()">✕</div>
+
+<a href="index.html">Strona główna</a>
+<a href="#portfolio">Portfolio</a>
+<a href="faq.html">FAQ</a>
+<a href="#process">Jak wygląda sesja?</a>
+<a href="#about">O mnie</a>
+<a href="#contact">Kontakt</a>
+<a href="rezerwacja.html">Rezerwacja</a>
+
+</div>
+
+<div class="overlay" id="overlay"></div>
+
+<header>
+
+<h1>LUUILYY PHOTO</h1>
+
+<p class="subtitle">
+FASHION • FAIRYCORE • PORTRAITS
+</p>
+
+</header>
+
+<div class="hero">
+
+<img src="rozmiarprawidlowy.jpg" loading="lazy">
+
+</div>
+
+<div class="reserve-button-container">
+
+<a href="rezerwacja.html" class="reserve-button">ZAREZERWUJ SESJĘ</a>
+
+</div>
+
+<!-- PORTFOLIO -->
+
+<div class="section fade-section" id="portfolio">
+
+<h2>PORTFOLIO</h2>
+
+<div class="albums">
+
+<a href="studio.html" class="album">
+<img src="nom.jpg" loading="lazy">
+<div class="album-hover-text">
+Kliknij, aby zobaczyć więcej zdjęć
+</div>
+<div class="album-title-box">
+SESJE KOBIECE — STUDIO
+</div>
+</a>
+
+<a href="plener.html" class="album">
+<img src="IMG_5170.JPEG" loading="lazy">
+<div class="album-hover-text">
+Kliknij, aby zobaczyć więcej zdjęć
+</div>
+<div class="album-title-box">
+SESJE KOBIECE — PLENER
+</div>
+</a>
+
+<a href="pary.html" class="album">
+<img src="8.jpg" loading="lazy">
+<div class="album-hover-text">
+Kliknij, aby zobaczyć więcej zdjęć
+</div>
+<div class="album-title-box">
+SESJE PAR
+</div>
+</a>
+
+<a href="wizerunek.html" class="album">
+<img src="2.jpg" loading="lazy">
+<div class="album-hover-text">
+Kliknij, aby zobaczyć więcej zdjęć
+</div>
+<div class="album-title-box">
+SESJE WIZERUNKOWE
+</div>
+</a>
+
+</div>
+
+</div>
+
+<div class="section-divider"></div>
+
+<img src="IMG_3377.JPG" alt="Portfolio" class="full-width-image" loading="lazy">
+
+<div class="section-divider"></div>
+
+<!-- CYTAT -->
+
+<div class="quote-section">
+
+<blockquote>
+"Każda kobieta zasługuje, aby zobaczyć siebie piękną."
+</blockquote>
+
+</div>
+
+<div class="section-divider"></div>
+
+<div class="section fade-section" id="offer">
+
+<h2>OFERTA</h2>
+
+<div class="offer-card-container">
+
+<div class="offer-card">
+
+<h3>OFERTA SESJI</h3>
+
+<p class="offer-description">
+To oferta stworzona z myślą o osobach, które chcą wyjątkowej, artystycznej sesji.
+</p>
+
+<ul class="offer-list">
+<li>10 starannie wyretuszowanych zdjęć</li>
+<li>sesja w studio lub w plenerze</li>
+<li>pomoc w pozowaniu na każdym etapie</li>
+<li>wskazówki dotyczące stylizacji</li>
+<li>spokojna, komfortowa atmosfera</li>
+<li>indywidualne podejście do każdej osoby</li>
+</ul>
+
+<p class="offer-note">
+Każda sesja jest dopasowana do Ciebie —<br>
+Twojego stylu, nastroju i tego,<br>
+jak chcesz zobaczyć siebie na zdjęciach.
+</p>
+
+<p class="offer-extra">
+Dostępne są również inne rodzaje sesji:<br>
+indywidualne, wizerunkowe, dla par oraz vouchery podarunkowe.
+</p>
+
+<div class="offer-button-wrap">
+<a href="rezerwacja.html" class="offer-button">ZAREZERWUJ SESJĘ</a>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="section-divider"></div>
+
+<!-- JAK WYGLĄDA SESJA -->
+
+<div class="section fade-section" id="process">
+
+<h2>JAK WYGLĄDA SESJA?</h2>
+
+<div class="process-grid">
+
+<div class="process-step">
+<p>
+<strong>01 — Rezerwacja terminu</strong><br>
+Kontaktujesz się ze mną przez Instagram lub formularz rezerwacji,
+a razem wybieramy dogodny termin sesji.
+</p>
+</div>
+
+<div class="process-step">
+<p>
+<strong>02 — Przygotowanie do sesji</strong><br>
+Otrzymujesz ode mnie wskazówki dotyczące stylizacji,
+a jeśli chcesz — możesz skorzystać z makijażu i stylizacji fryzury.
+</p>
+</div>
+
+<div class="process-step">
+<p>
+<strong>03 — Dzień sesji</strong><br>
+Podczas zdjęć pomagam w pozowaniu
+i dbam o komfortową, spokojną atmosferę.
+</p>
+</div>
+
+<div class="process-step">
+<p>
+<strong>04 — Wybór zdjęć</strong><br>
+Po sesji otrzymujesz galerię online,
+z której wybierasz swoje ulubione ujęcia.
+</p>
+</div>
+
+<div class="process-step">
+<p>
+<strong>05 — Gotowe fotografie</strong><br>
+Wybrane zdjęcia poddaję starannej obróbce,
+a następnie otrzymujesz gotowe fotografie.
+</p>
+</div>
+
+<div class="process-step">
+<p>
+<strong>06 — Do zobaczenia ponownie 🤍</strong><br>
+Mam nadzieję, że zdjęcia spodobają się tak bardzo,
+że spotkamy się ponownie na kolejnej sesji.
+</p>
+</div>
+
+</div>
+
+</div>
+
+<div class="section-divider"></div>
+
+<!-- O MNIE -->
+
+<div class="section fade-section" id="about">
+
+<h2>O MNIE</h2>
+
+<div class="about-container">
+
+<div class="about-photo">
+
+<img src="505947252_9991842110891643_2799595505019481989_n.jpg">
+
+</div>
+
+<div class="about-text">
+
+<p>
+Cześć! Mam na imię Paulina i jestem fotografką,
+która specjalizuje się w kobiecych i artystycznych sesjach zdjęciowych.
+</p>
+
+<p>
+Tworzę fotografie inspirowane modą i klimatem fairycore,
+dbając o detale, atmosferę oraz komfort podczas sesji.
+Zależy mi, aby każda kobieta czuła się pięknie i pewnie przed obiektywem.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="section-divider"></div>
+
+<!-- KONTAKT -->
+
+<div class="section fade-section" id="contact">
+
+<h2>KONTAKT</h2>
+
+<p class="contact-label">
+INSTAGRAM
+</p>
+
+<p class="contact-link">
+<a href="https://instagram.com/luuilyy.photo">
+@luuilyy.photo
+</a>
+</p>
+
+<p class="contact-label">
+EMAIL
+</p>
+
+<p class="contact-link">
+<a href="mailto:luuilyy.photo@gmail.com">
+luuilyy.photo@gmail.com
+</a>
+</p>
+
+</div>
+
+<a href="#top" class="back-to-top">
+
+↑ WRÓĆ NA GÓRĘ
+
+</a>
+
+<script>
+
+/* MENU */
+
+function toggleMenu() {
+
+document.getElementById("menu").classList.toggle("active");
+document.getElementById("overlay").classList.toggle("active");
+
+}
+
+document.getElementById("overlay").addEventListener("click", function(){
+
+document.getElementById("menu").classList.remove("active");
+document.getElementById("overlay").classList.remove("active");
+
+});
+
+const menuLinks = document.querySelectorAll(".menu a");
+
+menuLinks.forEach(link => {
+
+link.addEventListener("click", () => {
+
+document.getElementById("menu").classList.remove("active");
+document.getElementById("overlay").classList.remove("active");
+
+});
+
+});
+
+/* FADE-IN */
+
+document.addEventListener("DOMContentLoaded", function(){
+
+const sections = document.querySelectorAll(".fade-section");
+
+const observer = new IntersectionObserver((entries) => {
+
+entries.forEach(entry => {
+
+if (entry.isIntersecting) {
+
+entry.target.classList.add("visible");
+
+}
+
+});
+
+}, {
+
+threshold: 0.15
+
+});
+
+sections.forEach(section => {
+
+observer.observe(section);
+
+});
+
+});
+
+</script>
+
+<a href="rezerwacja.html" class="reserve-button-mobile">ZAREZERWUJ SESJĘ</a>
+
+</body>
+
+</html>
+/css2?family=Montserrat:wght@300;400&family=Playfair+Display:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
 
