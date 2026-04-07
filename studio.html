@@ -6,7 +6,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Sesje kobiece — studio</title>
+<title>Sesje kobiece — studio | Luuilyy Photo</title>
+
+<meta name="description"
+content="Sesje kobiece w studio — profesjonalne zdjęcia fashion i portretowe wykonane przez fotografkę Luuilyy Photo.">
+
+<link rel="icon" type="image/png" href="favicon.png">
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Playfair+Display:wght@300;400&display=swap" rel="stylesheet">
 
@@ -18,6 +23,13 @@ body {
 margin:0;
 font-family:'Montserrat',sans-serif;
 background:white;
+scroll-behavior:smooth;
+}
+
+/* BLOKADA SCROLLA */
+
+.no-scroll {
+overflow:hidden;
 }
 
 /* NAV */
@@ -45,6 +57,11 @@ padding:0 25px;
 font-family:'Playfair Display',serif;
 font-size:22px;
 letter-spacing:3px;
+text-decoration:none;
+}
+
+.logo:hover {
+opacity:0.7;
 }
 
 /* HAMBURGER */
@@ -77,12 +94,23 @@ z-index:1000;
 transform:translateX(0);
 }
 
+/* X */
+
+.close-menu {
+position:absolute;
+top:20px;
+right:25px;
+font-size:28px;
+cursor:pointer;
+}
+
 .menu a {
 text-decoration:none;
 color:#111;
 padding:18px;
 font-size:14px;
 letter-spacing:2px;
+transition:0.3s;
 }
 
 .menu a:hover {
@@ -125,15 +153,13 @@ text-decoration:none;
 
 color:#111;
 
-border-bottom:1px solid transparent;
-
 transition:0.3s;
 
 }
 
 .back-link:hover {
 
-border-bottom:1px solid #111;
+opacity:0.6;
 
 }
 
@@ -296,13 +322,15 @@ font-size:40px;
 
 <body>
 
+<!-- NAV -->
+
 <nav>
 
 <div class="nav-container">
 
-<div class="logo">
-LUUILYY PHOTO
-</div>
+<a href="index.html" class="logo">
+LUUILYY.PHOTO
+</a>
 
 <div class="hamburger" onclick="toggleMenu()">
 ☰
@@ -312,11 +340,16 @@ LUUILYY PHOTO
 
 </nav>
 
+<!-- MENU -->
+
 <div class="menu" id="menu">
+
+<div class="close-menu" onclick="toggleMenu()">✕</div>
 
 <a href="index.html">Strona główna</a>
 <a href="index.html#portfolio">Portfolio</a>
 <a href="faq.html">FAQ</a>
+<a href="index.html#process">Jak wygląda sesja?</a>
 <a href="index.html#about">O mnie</a>
 <a href="index.html#contact">Kontakt</a>
 <a href="rezerwacja.html">Rezerwacja</a>
@@ -325,11 +358,15 @@ LUUILYY PHOTO
 
 <div class="overlay" id="overlay"></div>
 
+<!-- BACK -->
+
 <a href="index.html#portfolio" class="back-link">
 
 ← WRÓĆ DO PORTFOLIO
 
 </a>
+
+<!-- TITLE -->
 
 <h2 class="album-title">
 
@@ -337,13 +374,25 @@ SESJE KOBIECE — STUDIO
 
 </h2>
 
+<!-- GALLERY -->
+
 <div class="gallery">
 
-<img src="B6561F9D-D11D-44A8-97ED-794853CE5E23.jpg" loading="lazy">
-<img src="IMG_8599.JPG" loading="lazy">
-<img src="28886b2b-4367-4c60-a7d6-4655f1ab8574.jpg" loading="lazy">
+<img src="B6561F9D-D11D-44A8-97ED-794853CE5E23.jpg"
+alt="Sesja kobieca w studio — fotografia portretowa Luuilyy Photo"
+loading="lazy">
+
+<img src="IMG_8599.JPG"
+alt="Profesjonalna sesja kobieca w studio — Luuilyy Photo"
+loading="lazy">
+
+<img src="28886b2b-4367-4c60-a7d6-4655f1ab8574.jpg"
+alt="Zdjęcie fashion w studio — Luuilyy Photo"
+loading="lazy">
 
 </div>
+
+<!-- LIGHTBOX -->
 
 <div class="lightbox" id="lightbox">
 
@@ -357,10 +406,14 @@ SESJE KOBIECE — STUDIO
 
 <script>
 
+/* MENU */
+
 function toggleMenu() {
 
 document.getElementById("menu").classList.toggle("active");
 document.getElementById("overlay").classList.toggle("active");
+
+document.body.classList.toggle("no-scroll");
 
 }
 
@@ -368,6 +421,23 @@ document.getElementById("overlay").addEventListener("click", function(){
 
 document.getElementById("menu").classList.remove("active");
 document.getElementById("overlay").classList.remove("active");
+
+document.body.classList.remove("no-scroll");
+
+});
+
+const menuLinks = document.querySelectorAll(".menu a");
+
+menuLinks.forEach(link => {
+
+link.addEventListener("click", () => {
+
+document.getElementById("menu").classList.remove("active");
+document.getElementById("overlay").classList.remove("active");
+
+document.body.classList.remove("no-scroll");
+
+});
 
 });
 
