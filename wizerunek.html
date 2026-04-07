@@ -6,7 +6,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Sesje wizerunkowe</title>
+<title>Sesje wizerunkowe | Luuilyy Photo</title>
+
+<meta name="description"
+content="Sesje wizerunkowe dla kobiet i marek — profesjonalne zdjęcia wizerunkowe wykonane przez fotografkę Luuilyy Photo.">
+
+<link rel="icon" type="image/png" href="favicon.png">
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Playfair+Display:wght@300;400&display=swap" rel="stylesheet">
 
@@ -18,6 +23,13 @@ body {
 margin:0;
 font-family:'Montserrat',sans-serif;
 background:white;
+scroll-behavior:smooth;
+}
+
+/* BLOKADA SCROLLA */
+
+.no-scroll {
+overflow:hidden;
 }
 
 /* NAV */
@@ -55,7 +67,12 @@ padding:0 25px;
 font-family:'Playfair Display',serif;
 font-size:22px;
 letter-spacing:3px;
+text-decoration:none;
 
+}
+
+.logo:hover {
+opacity:0.7;
 }
 
 /* HAMBURGER */
@@ -98,6 +115,19 @@ z-index:1000;
 .menu.active {
 
 transform:translateX(0);
+
+}
+
+/* X */
+
+.close-menu {
+
+position:absolute;
+top:20px;
+right:25px;
+
+font-size:28px;
+cursor:pointer;
 
 }
 
@@ -151,7 +181,7 @@ pointer-events:auto;
 
 }
 
-/* WRÓĆ DO PORTFOLIO */
+/* WRÓĆ */
 
 .back-link {
 
@@ -261,7 +291,7 @@ max-height:90%;
 
 }
 
-/* STRZAŁKI — DUŻE */
+/* STRZAŁKI */
 
 .arrow {
 
@@ -361,9 +391,9 @@ font-size:40px;
 
 <div class="nav-container">
 
-<div class="logo">
-LUUILYY PHOTO
-</div>
+<a href="index.html" class="logo">
+LUUILYY.PHOTO
+</a>
 
 <div class="hamburger" onclick="toggleMenu()">
 ☰
@@ -377,16 +407,14 @@ LUUILYY PHOTO
 
 <div class="menu" id="menu">
 
+<div class="close-menu" onclick="toggleMenu()">✕</div>
+
 <a href="index.html">Strona główna</a>
-
 <a href="index.html#portfolio">Portfolio</a>
-
 <a href="faq.html">FAQ</a>
-
+<a href="index.html#process">Jak wygląda sesja?</a>
 <a href="index.html#about">O mnie</a>
-
 <a href="index.html#contact">Kontakt</a>
-
 <a href="rezerwacja.html">Rezerwacja</a>
 
 </div>
@@ -411,9 +439,9 @@ SESJE WIZERUNKOWE
 
 <div class="gallery">
 
-<img src="IMG_8453.JPG" loading="lazy">
-<img src="IMG_4588.JPG" loading="lazy">
-<img src="DSC04409.jpg" loading="lazy">
+<img src="IMG_8453.JPG" alt="Sesja wizerunkowa kobieca — Luuilyy Photo" loading="lazy">
+<img src="IMG_4588.JPG" alt="Profesjonalna fotografia wizerunkowa — Luuilyy Photo" loading="lazy">
+<img src="DSC04409.jpg" alt="Zdjęcie wizerunkowe dla marki osobistej — Luuilyy Photo" loading="lazy">
 
 </div>
 
@@ -438,12 +466,16 @@ function toggleMenu() {
 document.getElementById("menu").classList.toggle("active");
 document.getElementById("overlay").classList.toggle("active");
 
+document.body.classList.toggle("no-scroll");
+
 }
 
 document.getElementById("overlay").addEventListener("click", function(){
 
 document.getElementById("menu").classList.remove("active");
 document.getElementById("overlay").classList.remove("active");
+
+document.body.classList.remove("no-scroll");
 
 });
 
@@ -455,6 +487,8 @@ link.addEventListener("click", () => {
 
 document.getElementById("menu").classList.remove("active");
 document.getElementById("overlay").classList.remove("active");
+
+document.body.classList.remove("no-scroll");
 
 });
 
