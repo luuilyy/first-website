@@ -6,7 +6,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Sesje par</title>
+<title>Sesje par | Luuilyy Photo</title>
+
+<meta name="description"
+content="Sesje zdjęciowe dla par — romantyczne fotografie w studio i plenerze wykonane przez fotografkę Luuilyy Photo.">
+
+<link rel="icon" type="image/png" href="favicon.png">
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Playfair+Display:wght@300;400&display=swap" rel="stylesheet">
 
@@ -18,6 +23,13 @@ body {
 margin:0;
 font-family:'Montserrat',sans-serif;
 background:white;
+scroll-behavior:smooth;
+}
+
+/* BLOKADA SCROLLA */
+
+.no-scroll {
+overflow:hidden;
 }
 
 /* NAV */
@@ -55,7 +67,12 @@ padding:0 25px;
 font-family:'Playfair Display',serif;
 font-size:22px;
 letter-spacing:3px;
+text-decoration:none;
 
+}
+
+.logo:hover {
+opacity:0.7;
 }
 
 /* HAMBURGER */
@@ -98,6 +115,19 @@ z-index:1000;
 .menu.active {
 
 transform:translateX(0);
+
+}
+
+/* X */
+
+.close-menu {
+
+position:absolute;
+top:20px;
+right:25px;
+
+font-size:28px;
+cursor:pointer;
 
 }
 
@@ -226,6 +256,7 @@ transition:0.3s;
 .gallery img:hover {
 
 transform:scale(1.03);
+opacity:0.9;
 
 }
 
@@ -334,13 +365,15 @@ margin-left:20px;
 
 <body>
 
+<!-- NAV -->
+
 <nav>
 
 <div class="nav-container">
 
-<div class="logo">
-LUUILYY PHOTO
-</div>
+<a href="index.html" class="logo">
+LUUILYY.PHOTO
+</a>
 
 <div class="hamburger" onclick="toggleMenu()">
 ☰
@@ -350,11 +383,16 @@ LUUILYY PHOTO
 
 </nav>
 
+<!-- MENU -->
+
 <div class="menu" id="menu">
+
+<div class="close-menu" onclick="toggleMenu()">✕</div>
 
 <a href="index.html">Strona główna</a>
 <a href="index.html#portfolio">Portfolio</a>
 <a href="faq.html">FAQ</a>
+<a href="index.html#process">Jak wygląda sesja?</a>
 <a href="index.html#about">O mnie</a>
 <a href="index.html#contact">Kontakt</a>
 <a href="rezerwacja.html">Rezerwacja</a>
@@ -363,11 +401,15 @@ LUUILYY PHOTO
 
 <div class="overlay" id="overlay"></div>
 
+<!-- BACK -->
+
 <a href="index.html#portfolio" class="back-link">
 
 ← WRÓĆ DO PORTFOLIO
 
 </a>
+
+<!-- TITLE -->
 
 <h2 class="album-title">
 
@@ -375,13 +417,25 @@ SESJE PAR
 
 </h2>
 
+<!-- GALLERY -->
+
 <div class="gallery">
 
-<img src="6.jpg" loading="lazy">
-<img src="Bez nazwy-51.jpg" loading="lazy">
-<img src="IMG_1010.JPG" loading="lazy">
+<img src="6.jpg"
+alt="Sesja zdjęciowa pary — romantyczna fotografia Luuilyy Photo"
+loading="lazy">
+
+<img src="Bez nazwy-51.jpg"
+alt="Zdjęcie zakochanej pary — sesja dla par Luuilyy Photo"
+loading="lazy">
+
+<img src="IMG_1010.JPG"
+alt="Romantyczna sesja pary w plenerze — Luuilyy Photo"
+loading="lazy">
 
 </div>
+
+<!-- LIGHTBOX -->
 
 <div class="lightbox" id="lightbox">
 
@@ -402,12 +456,31 @@ function toggleMenu() {
 document.getElementById("menu").classList.toggle("active");
 document.getElementById("overlay").classList.toggle("active");
 
+document.body.classList.toggle("no-scroll");
+
 }
 
 document.getElementById("overlay").addEventListener("click", function(){
 
 document.getElementById("menu").classList.remove("active");
 document.getElementById("overlay").classList.remove("active");
+
+document.body.classList.remove("no-scroll");
+
+});
+
+const menuLinks = document.querySelectorAll(".menu a");
+
+menuLinks.forEach(link => {
+
+link.addEventListener("click", () => {
+
+document.getElementById("menu").classList.remove("active");
+document.getElementById("overlay").classList.remove("active");
+
+document.body.classList.remove("no-scroll");
+
+});
 
 });
 
