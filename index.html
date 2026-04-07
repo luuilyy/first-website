@@ -41,8 +41,8 @@ color:#ffffff;
 
 }
 
-.nav-container {
 
+<style>
 max-width:1150px;
 margin:auto;
 position:relative;
@@ -50,10 +50,8 @@ position:relative;
 display:flex;
 justify-content:space-between;
 align-items:center;
-margin:150px auto 100px auto;
-padding:0 25px;
-overflow:hidden;
-border-radius:18px;
+font-family:'Montserrat',sans-serif;
+scroll-behavior:smooth;
 
 }
 
@@ -61,15 +59,15 @@ border-radius:18px;
 
 content:"";
 position:absolute;
-inset:0;
-background:rgba(0, 0, 0, 0.25);
-z-index:1;
+top:0;
+width:100%;
 
+background:white;
 }
 
 .logo {
 
-font-family:'Playfair Display',serif;
+z-index:999;
 font-size:22px;
 border-radius:18px;
 text-decoration: none;
@@ -77,25 +75,11 @@ display:block;
 
 }
 
-.hero-content {
 
 position:absolute;
 top:50%;
 left:50%;
-transform:translate(-50%, -50%);
 z-index:2;
-text-align:center;
-width:min(92%, 760px);
-
-}
-
-.hero-content .reserve-button {
-margin-top:25px;
-}
-
-/* HAMBURGER */
-
-.hamburger {
 
 font-size:28px;
 cursor:pointer;
@@ -103,26 +87,7 @@ cursor:pointer;
 }
 
 /* MENU PANEL */
-
-.menu {
-
-position:fixed;
-
-top:0;
-right:0;
-
-width:280px;
-height:100vh;
-
-background:white;
-
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-
-transform:translateX(100%);
-transition:0.3s;
+letter-spacing:3px;
 
 box-shadow:-5px 0 15px rgba(0,0,0,0.1);
 
@@ -1074,11 +1039,7 @@ LUUILYY.PHOTO
 
 <div class="overlay" id="overlay"></div>
 
-<div class="hero">
-
-<img src="rozmiarprawidlowy.jpg" loading="lazy">
-
-<div class="hero-content">
+<header>
 
 <h1>Luuilyy Photo</h1>
 
@@ -1087,9 +1048,17 @@ sesje, które wydobywają<br>
 Twoją kobiecość i pewność siebie
 </p>
 
-<a href="rezerwacja.html" class="reserve-button">ZAREZERWUJ SESJĘ</a>
+</header>
+
+<div class="hero">
+
+<img src="rozmiarprawidlowy.jpg" loading="lazy">
 
 </div>
+
+<div class="reserve-button-container">
+
+<a href="rezerwacja.html" class="reserve-button">ZAREZERWUJ SESJĘ</a>
 
 </div>
 
