@@ -264,6 +264,13 @@ text-align:center;
 
 }
 
+#contact {
+
+padding-top:120px;
+padding-bottom:120px;
+
+}
+
 .section h2 {
 
 font-family:'Playfair Display',serif;
@@ -516,20 +523,97 @@ margin-bottom:18px;
 
 /* CONTACT */
 
-.contact-label {
+.contact-grid {
 
-font-size:12px;
-letter-spacing:3px;
-color:#888;
-margin-top:30px;
+display:grid;
+grid-template-columns:repeat(3, 1fr);
+gap:60px;
+max-width:1000px;
+margin:0 auto;
+justify-items:center;
 
 }
 
-.contact-link a {
+.contact-item {
+
+display:flex;
+flex-direction:column;
+align-items:center;
+text-align:center;
+transition:transform 0.3s ease;
+
+}
+
+.contact-item:hover {
+
+transform:translateY(-4px);
+
+}
+
+.contact-icon-link {
+
+display:flex;
+align-items:center;
+justify-content:center;
+width:56px;
+height:56px;
+background:white;
+border:1px solid #eee;
+border-radius:50%;
+box-shadow:0 4px 12px rgba(0,0,0,0.06);
+transition:transform 0.3s ease, box-shadow 0.3s ease;
+text-decoration:none;
+color:#111;
+
+}
+
+.contact-icon-link:hover {
+
+transform:translateY(-3px);
+box-shadow:0 8px 20px rgba(0,0,0,0.1);
+
+}
+
+.contact-icon {
+
+width:24px;
+height:24px;
+stroke:#111;
+
+}
+
+.contact-name {
+
+font-size:12px;
+letter-spacing:2px;
+color:#888;
+margin-top:18px;
+margin-bottom:0;
+text-transform:uppercase;
+
+}
+
+.contact-data {
+
+font-size:16px;
+color:#111;
+margin-top:6px;
+margin-bottom:0;
+line-height:1.6;
+
+}
+
+.contact-data a {
 
 text-decoration:none;
 color:#111;
-font-size:18px;
+transition:opacity 0.3s ease;
+
+}
+
+.contact-data a:hover {
+
+opacity:0.7;
 
 }
 
@@ -1042,6 +1126,11 @@ letter-spacing:2px;
 display:block;
 }
 
+.contact-grid {
+grid-template-columns:1fr;
+gap:40px;
+}
+
 }
 
 </style>
@@ -1392,25 +1481,44 @@ Zależy mi, aby każda kobieta czuła się pięknie i pewnie przed obiektywem.
 
 <h2>KONTAKT</h2>
 
-<p class="contact-label">
-INSTAGRAM
-</p>
+<div class="contact-grid">
 
-<p class="contact-link">
-<a href="https://instagram.com/luuilyy.photo">
-@luuilyy.photo
+<div class="contact-item">
+<a href="https://instagram.com/luuilyy.photo" class="contact-icon-link" target="_blank">
+<svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+<path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37"></path>
+<circle cx="17.5" cy="6.5" r="1.5"></circle>
+</svg>
 </a>
-</p>
+<p class="contact-name">INSTAGRAM</p>
+<p class="contact-data"><a href="https://instagram.com/luuilyy.photo">@luuilyy.photo</a></p>
+</div>
 
-<p class="contact-label">
-EMAIL
-</p>
-
-<p class="contact-link">
-<a href="mailto:luuilyy.photo@gmail.com">
-luuilyy.photo@gmail.com
+<div class="contact-item">
+<a href="https://facebook.com/luuilyy.photo" class="contact-icon-link" target="_blank">
+<svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<path d="M18 2h-3a6 6 0 0 0-6 6v4a6 6 0 0 0 6 6h3"></path>
+<path d="M14 2v16"></path>
+<path d="M10 9h8"></path>
+</svg>
 </a>
-</p>
+<p class="contact-name">FACEBOOK</p>
+<p class="contact-data"><a href="https://facebook.com/luuilyy.photo">Luuilyy.Photo</a></p>
+</div>
+
+<div class="contact-item">
+<a href="mailto:luuilyy.photo@gmail.com" class="contact-icon-link">
+<svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<rect x="2" y="4" width="20" height="16" rx="2"></rect>
+<path d="M22 4 L12 13 L2 4"></path>
+</svg>
+</a>
+<p class="contact-name">EMAIL</p>
+<p class="contact-data"><a href="mailto:luuilyy.photo@gmail.com">luuilyy.photo@gmail.com</a></p>
+</div>
+
+</div>
 
 </div>
 
