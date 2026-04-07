@@ -573,6 +573,67 @@ margin-right:auto;
 
 }
 
+/* RESERVE BUTTON */
+
+.reserve-button-container {
+
+text-align:center;
+margin:50px 0;
+
+}
+
+.reserve-button {
+
+display:inline-block;
+padding:15px 30px;
+background:white;
+color:#111;
+text-decoration:none;
+font-family:'Montserrat',sans-serif;
+font-size:16px;
+letter-spacing:2px;
+border:1px solid #ddd;
+border-radius:25px;
+box-shadow:0 4px 12px rgba(0,0,0,0.1);
+transition:0.3s;
+
+}
+
+.reserve-button:hover {
+
+background:#f9f9f9;
+box-shadow:0 6px 18px rgba(0,0,0,0.15);
+
+}
+
+.reserve-button-mobile {
+
+position:fixed;
+bottom:20px;
+left:50%;
+transform:translateX(-50%);
+padding:18px 40px;
+background:white;
+color:#111;
+text-decoration:none;
+font-family:'Montserrat',sans-serif;
+font-size:18px;
+letter-spacing:2px;
+border:1px solid #ddd;
+border-radius:30px;
+box-shadow:0 4px 12px rgba(0,0,0,0.1);
+z-index:1001;
+transition:0.3s;
+
+}
+
+.reserve-button-mobile:hover {
+
+background:#f9f9f9;
+box-shadow:0 6px 18px rgba(0,0,0,0.15);
+
+}
+
 /* TABLET */
 
 @media (max-width:1024px){
@@ -594,6 +655,11 @@ text-align:center;
 
 .logo {
 font-size:20px;
+}
+
+.reserve-button {
+padding:12px 25px;
+font-size:15px;
 }
 
 }
@@ -634,6 +700,14 @@ height:140px;
 
 .logo {
 font-size:18px;
+}
+
+.reserve-button-container {
+display:none;
+}
+
+.reserve-button-mobile {
+display:block;
 }
 
 }
@@ -693,6 +767,12 @@ FASHION • FAIRYCORE • PORTRAITS
 <div class="hero">
 
 <img src="rozmiarprawidlowy.jpg" loading="lazy">
+
+</div>
+
+<div class="reserve-button-container">
+
+<a href="rezerwacja.html" class="reserve-button">ZAREZERWUJ SESJĘ</a>
 
 </div>
 
@@ -961,6 +1041,8 @@ observer.observe(section);
 });
 
 </script>
+
+<a href="rezerwacja.html" class="reserve-button-mobile">ZAREZERWUJ SESJĘ</a>
 
 </body>
 
