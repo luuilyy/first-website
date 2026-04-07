@@ -9,8 +9,8 @@
 <title>Luuilyy Photo</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Playfair+Display:wght@300;400&display=swap" rel="stylesheet">
-
-<style>
+padding-top:0;
+padding-bottom:0;
 
 /* BODY */
 
@@ -18,8 +18,10 @@ body {
 margin:0;
 background:white;
 color:#111;
-font-family:'Montserrat',sans-serif;
-scroll-behavior:smooth;
+font-size:56px;
+font-weight:600;
+letter-spacing:1px;
+color:#ffffff;
 }
 
 /* NAV */
@@ -27,15 +29,15 @@ scroll-behavior:smooth;
 nav {
 
 position:fixed;
-top:0;
-width:100%;
+margin-top:15px;
+margin-bottom:0;
 
-background:white;
+font-size:17px;
 border-bottom:1px solid #eee;
 
 padding:18px 0;
 
-z-index:999;
+color:#ffffff;
 
 }
 
@@ -43,12 +45,25 @@ z-index:999;
 
 max-width:1150px;
 margin:auto;
+position:relative;
 
 display:flex;
 justify-content:space-between;
 align-items:center;
-
+margin:150px auto 100px auto;
 padding:0 25px;
+overflow:hidden;
+border-radius:18px;
+
+}
+
+.hero::before {
+
+content:"";
+position:absolute;
+inset:0;
+background:rgba(0, 0, 0, 0.25);
+z-index:1;
 
 }
 
@@ -56,9 +71,26 @@ padding:0 25px;
 
 font-family:'Playfair Display',serif;
 font-size:22px;
-letter-spacing:3px;
+border-radius:18px;
 text-decoration: none;
+display:block;
 
+}
+
+.hero-content {
+
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%, -50%);
+z-index:2;
+text-align:center;
+width:min(92%, 760px);
+
+}
+
+.hero-content .reserve-button {
+margin-top:25px;
 }
 
 /* HAMBURGER */
@@ -852,7 +884,7 @@ margin-bottom:6px;
 @media (max-width:1024px){
 
 h1 {
-font-size:44px;
+font-size:46px;
 }
 
 .process-grid {
@@ -890,7 +922,7 @@ grid-template-columns:repeat(2, minmax(0, 1fr));
 @media (max-width:768px){
 
 h1 {
-font-size:36px;
+font-size:39px;
 }
 
 .subtitle {
@@ -898,7 +930,7 @@ font-size:15px;
 }
 
 .hero {
-margin:24px auto 100px auto;
+margin:124px auto 100px auto;
 padding:0 16px;
 }
 
@@ -1042,7 +1074,11 @@ LUUILYY.PHOTO
 
 <div class="overlay" id="overlay"></div>
 
-<header>
+<div class="hero">
+
+<img src="rozmiarprawidlowy.jpg" loading="lazy">
+
+<div class="hero-content">
 
 <h1>Luuilyy Photo</h1>
 
@@ -1051,17 +1087,9 @@ sesje, które wydobywają<br>
 Twoją kobiecość i pewność siebie
 </p>
 
-</header>
-
-<div class="hero">
-
-<img src="rozmiarprawidlowy.jpg" loading="lazy">
+<a href="rezerwacja.html" class="reserve-button">ZAREZERWUJ SESJĘ</a>
 
 </div>
-
-<div class="reserve-button-container">
-
-<a href="rezerwacja.html" class="reserve-button">ZAREZERWUJ SESJĘ</a>
 
 </div>
 
