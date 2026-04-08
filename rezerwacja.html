@@ -21,6 +21,12 @@ background:white;
 color:#111;
 }
 
+/* ===== BLOKADA SCROLLA ===== */
+
+.no-scroll {
+overflow:hidden;
+}
+
 /* ===== NAV ===== */
 
 nav {
@@ -56,10 +62,10 @@ padding:0 25px;
 font-family:'Playfair Display',serif;
 font-size:22px;
 letter-spacing:3px;
+
 text-decoration:none;
 color:#111;
 
-/* lekko bardziej premium spacing */
 text-transform:uppercase;
 
 }
@@ -71,9 +77,11 @@ text-transform:uppercase;
 font-size:28px;
 cursor:pointer;
 
+z-index:1001;
+
 }
 
-/* ===== MENU PANEL ===== */
+/* ===== MENU ===== */
 
 .menu {
 
@@ -127,6 +135,19 @@ color:#888;
 
 }
 
+/* ===== CLOSE MENU ===== */
+
+.close-menu {
+
+position:absolute;
+top:20px;
+right:25px;
+
+font-size:28px;
+cursor:pointer;
+
+}
+
 /* ===== OVERLAY ===== */
 
 .overlay {
@@ -157,11 +178,37 @@ pointer-events:auto;
 
 }
 
+/* ===== BACK LINK ===== */
+
+.back-link {
+
+display:inline-block;
+
+margin-top:140px;
+margin-left:40px;
+
+font-size:13px;
+letter-spacing:2px;
+
+text-decoration:none;
+
+color:#111;
+
+transition:0.3s;
+
+}
+
+.back-link:hover {
+
+opacity:0.6;
+
+}
+
 /* ===== TYTUŁ ===== */
 
 .page-title {
 
-padding-top:150px;
+padding-top:60px;
 
 text-align:center;
 
@@ -193,14 +240,15 @@ padding:20px;
 .page-title {
 
 font-size:28px;
-padding-top:140px;
 
 }
 
+.back-link {
+margin-left:20px;
+}
+
 .menu {
-
 width:260px;
-
 }
 
 }
@@ -233,11 +281,17 @@ LUUILYY.PHOTO
 
 <div class="menu" id="menu">
 
+<div class="close-menu" onclick="toggleMenu()">✕</div>
+
 <a href="index.html">Strona główna</a>
 
 <a href="index.html#portfolio">Portfolio</a>
 
 <a href="faq.html">FAQ</a>
+
+<!-- DODANA SEKCJA -->
+
+<a href="index.html#process">Jak wygląda sesja?</a>
 
 <a href="index.html#about">O mnie</a>
 
@@ -248,6 +302,14 @@ LUUILYY.PHOTO
 </div>
 
 <div class="overlay" id="overlay"></div>
+
+<!-- ===== WRÓĆ ===== -->
+
+<a href="index.html" class="back-link">
+
+← WRÓĆ DO STRONY GŁÓWNEJ
+
+</a>
 
 <!-- ===== TYTUŁ ===== -->
 
@@ -312,12 +374,16 @@ function toggleMenu() {
 document.getElementById("menu").classList.toggle("active");
 document.getElementById("overlay").classList.toggle("active");
 
+document.body.classList.toggle("no-scroll");
+
 }
 
 document.getElementById("overlay").addEventListener("click", function(){
 
 document.getElementById("menu").classList.remove("active");
 document.getElementById("overlay").classList.remove("active");
+
+document.body.classList.remove("no-scroll");
 
 });
 
@@ -329,6 +395,8 @@ link.addEventListener("click", () => {
 
 document.getElementById("menu").classList.remove("active");
 document.getElementById("overlay").classList.remove("active");
+
+document.body.classList.remove("no-scroll");
 
 });
 
