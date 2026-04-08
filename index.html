@@ -738,8 +738,9 @@ box-shadow:0 6px 18px rgba(0,0,0,0.15);
 
 max-width:1200px;
 margin:0 auto;
-padding-left:20px;
-padding-right:20px;
+padding-left:40px;
+padding-right:40px;
+box-sizing:border-box;
 }
 
 .offer-row {
@@ -761,7 +762,7 @@ flex-direction:row-reverse;
 .offer-img {
 
 width:100%;
-max-width:400px;
+max-width:380px;
 border-radius:56px;
 object-fit:cover;
 
@@ -829,18 +830,31 @@ color:#333;
 .offer-list-box {
 
 background-color:#f7f7f7;
-padding:22px 26px;
+padding:24px 28px;
 border-radius:28px;
-margin-top:22px;
+margin-top:28px;
+max-width:420px;
+margin-left:auto;
+margin-right:auto;
+text-align:left;
 box-shadow:0 10px 30px rgba(0,0,0,0.03);
+
+}
+
+.offer-list-box ul {
+
+padding-left:0;
+list-style:none;
 
 }
 
 .offer-list-box li {
 
-margin-bottom:10px;
+display:flex;
+align-items:center;
+gap:10px;
+margin-bottom:12px;
 line-height:1.5;
-font-size:15px;
 
 }
 
@@ -1344,7 +1358,7 @@ SESJE WIZERUNKOWE
 
 <div class="section-divider"></div>
 
-<div class="section fade-section" id="offer">
+<section class="section fade-section offer" id="offer">
 
 <h2>OFERTA</h2>
 
@@ -1356,7 +1370,7 @@ SESJE WIZERUNKOWE
 <img src="sesja_kobieca_łódź.JPG"
 alt="Sesja kobieca Łódź"
 class="offer-img">
-</div>
+</section>
 
 <div class="offer-text">
 <h3 class="offer-subtitle">
