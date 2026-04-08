@@ -44,9 +44,8 @@ z-index:999;
 
 .nav-container {
 
-max-width:1100px;
-margin-left:auto;
-margin-right:auto;
+max-width:1150px;
+margin:auto;
 width:100%;
 
 display:flex;
@@ -54,12 +53,36 @@ justify-content:space-between;
 align-items:center;
 
 padding-left:25px;
-display:grid;
-grid-template-columns:1fr 1fr;
+padding-right:25px;
 
+}
+
+.logo {
+
+font-family:'Playfair Display',serif;
+font-size:22px;
+line-height:1;
+letter-spacing:3px;
+text-decoration:none;
+
+}
+
+a {
+
+text-decoration:none;
+color:inherit;
+
+}
+
+.header {
+
+max-width:1200px;
+margin:0 auto;
+padding:20px 40px;
+display:flex;
+justify-content:space-between;
 align-items:center;
-width:100%;
-text-decoration: none;
+box-sizing:border-box;
 
 }
 
@@ -732,20 +755,19 @@ box-shadow:0 6px 18px rgba(0,0,0,0.15);
 
 .offer-container {
 
-max-width:1200px;
+max-width:1100px;
 margin:0 auto;
-padding-left:40px;
-padding-right:40px;
+padding:0 40px;
 box-sizing:border-box;
 }
 
 .offer-row {
 
-display:flex;
+display:grid;
+grid-template-columns:1fr 1fr;
 align-items:center;
 gap:80px;
 margin-top:60px;
-margin-bottom:60px;
 
 }
 
@@ -778,8 +800,7 @@ width:100%;
 max-width:420px;
 border-radius:40px;
 display:block;
-margin-left:auto;
-margin-right:auto;
+margin:0 auto;
 
 }
 
@@ -823,8 +844,7 @@ background:#f3f3f3;
 padding:40px;
 border-radius:30px;
 max-width:460px;
-margin-left:auto;
-margin-right:auto;
+margin:0 auto;
 }
 
 .offer-list li {
