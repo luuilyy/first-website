@@ -64,7 +64,6 @@ font-size:22px;
 letter-spacing:3px;
 
 text-decoration:none;
-color:#111;
 
 }
 
@@ -281,6 +280,8 @@ border-bottom:1px solid #eee;
 
 }
 
+/* PYTANIA */
+
 .faq-question {
 
 width:100%;
@@ -307,6 +308,8 @@ text-align:left;
 
 }
 
+/* STRZAŁKA */
+
 .arrow {
 
 transition:0.3s;
@@ -314,11 +317,15 @@ font-size:14px;
 
 }
 
+/* OBROT STRZAŁKI */
+
 .faq-question.active .arrow {
 
 transform:rotate(180deg);
 
 }
+
+/* ODPOWIEDZI */
 
 .faq-answer {
 
@@ -393,13 +400,6 @@ LUUILYY.PHOTO
 <a href="index.html">Strona główna</a>
 <a href="index.html#portfolio">Portfolio</a>
 <a href="faq.html">FAQ</a>
-
-<!-- DODANE -->
-
-<a href="index.html#process">
-Jak wygląda sesja?
-</a>
-
 <a href="index.html#about">O mnie</a>
 <a href="index.html#contact">Kontakt</a>
 <a href="rezerwacja.html">Rezerwacja</a>
@@ -440,7 +440,7 @@ NAJCZĘŚCIEJ ZADAWANE PYTANIA
 
 <div class="faq-container">
 
-<!-- TU ZOSTAJE TWÓJ CAŁY FAQ — NIE ZMIENIAŁEM GO -->
+<!-- TEMPLATE PYTANIA -->
 
 <div class="faq-item">
 <button class="faq-question">
@@ -489,7 +489,7 @@ Sesje odbywają się w plenerze lub w studio — w zależności od wybranego pak
 </p>
 
 <p>
-Przed wpłaceniem zaliczki wysyłam kilka propozycji studiów i razem wybieramy najlepsze.
+Przed wpłaceniem zaliczki wysyłam kilka propozycji studiów i razem wybieramy najlepsze. Zazwyczaj mam jedno swoje ulubione studio, jednak wszystko zależy od charakteru sesji i tego, czego potrzebujemy.
 </p>
 </div>
 </div>
@@ -501,7 +501,71 @@ Ile czeka się na gotowe zdjęcia?
 </button>
 <div class="faq-answer">
 <p>
-Na gotowe zdjęcia czeka się zazwyczaj od 14 do 21 dni.
+Na gotowe zdjęcia czeka się zazwyczaj od 14 do 21 dni. Czas ten może się zmienić — fotografia nie jest moją jedyną pracą, dlatego taki czas oczekiwania. Zawsze informuję, jeśli coś się zmienia.
+</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">
+Czy można dokupić dodatkowe zdjęcia?
+<span class="arrow">▼</span>
+</button>
+<div class="faq-answer">
+<p>
+Tak — oferuję trzy pakiety zdjęć, a po otrzymaniu galerii istnieje możliwość dokupienia dodatkowych ujęć według aktualnego cennika.
+</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">
+Czy wykonujesz makijaż?
+<span class="arrow">▼</span>
+</button>
+<div class="faq-answer">
+<p>
+Nie wykonuję makijażu samodzielnie, jednak współpracuję z makijażystkami oraz stylistką fryzur, które mogę polecić przed sesją.
+</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">
+Jak zarezerwować termin sesji?
+<span class="arrow">▼</span>
+</button>
+<div class="faq-answer">
+<p>
+Termin sesji możesz zarezerwować poprzez formularz rezerwacji dostępny na stronie lub kontaktując się ze mną bezpośrednio.
+</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">
+Kto wybiera zdjęcia, które otrzymam?
+<span class="arrow">▼</span>
+</button>
+<div class="faq-answer">
+<p>
+Jeśli mi zaufasz, mogę samodzielnie wybrać i obrobić najlepsze zdjęcia z sesji.
+</p>
+
+<p>
+Jeśli jednak wolisz dokonać wyboru samodzielnie — nie ma problemu. Wysyłam galerię online z możliwością wyboru zdjęć oraz dokupienia dodatkowych ujęć. Obrabiam dokładnie te zdjęcia, które wybierzesz.
+</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">
+Czy mogę przyjść z osobą towarzyszącą?
+<span class="arrow">▼</span>
+</button>
+<div class="faq-answer">
+<p>
+Tak — możesz przyjść z osobą towarzyszącą. Jeśli jednak nie bierze udziału w sesji, proszę o zaczekanie przed wejściem do studia — dla komfortu naszej pracy.
 </p>
 </div>
 </div>
@@ -527,6 +591,23 @@ document.getElementById("overlay").classList.remove("active");
 document.body.classList.remove("no-scroll");
 
 });
+
+const menuLinks = document.querySelectorAll(".menu a");
+
+menuLinks.forEach(link => {
+
+link.addEventListener("click", () => {
+
+document.getElementById("menu").classList.remove("active");
+document.getElementById("overlay").classList.remove("active");
+
+document.body.classList.remove("no-scroll");
+
+});
+
+});
+
+/* FAQ LOGIKA */
 
 const faqQuestions = document.querySelectorAll(".faq-question");
 
