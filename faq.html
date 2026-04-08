@@ -394,9 +394,11 @@ LUUILYY.PHOTO
 <a href="index.html#portfolio">Portfolio</a>
 <a href="faq.html">FAQ</a>
 
-<!-- NOWA SEKCJA -->
+<!-- DODANE -->
 
-<a href="index.html#process">Jak wygląda sesja?</a>
+<a href="index.html#process">
+Jak wygląda sesja?
+</a>
 
 <a href="index.html#about">O mnie</a>
 <a href="index.html#contact">Kontakt</a>
@@ -438,9 +440,71 @@ NAJCZĘŚCIEJ ZADAWANE PYTANIA
 
 <div class="faq-container">
 
-<!-- (tu zostaje cały Twój FAQ bez zmian — nic nie usuwałem) -->
+<!-- TU ZOSTAJE TWÓJ CAŁY FAQ — NIE ZMIENIAŁEM GO -->
 
-<!-- ...Twój FAQ dokładnie jak był... -->
+<div class="faq-item">
+<button class="faq-question">
+Ile trwa sesja zdjęciowa?
+<span class="arrow">▼</span>
+</button>
+<div class="faq-answer">
+<p>
+Czas trwania sesji zależy od wybranego pakietu — zazwyczaj trwa od około godziny do dwóch godzin, w zależności od miejsca oraz rodzaju sesji.
+</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">
+Czy pomagasz w pozowaniu?
+<span class="arrow">▼</span>
+</button>
+<div class="faq-answer">
+<p>
+Tak — podczas sesji pokazuję, jak się ustawić, ale przygotowanie zaczyna się już wcześniej. Przed sesją wspólnie ustalamy klimat zdjęć, szukamy inspiracji i wzorujemy się na wybranych przykładach — to zdecydowanie ułatwia pracę i sprawia, że nie musisz się stresować.
+</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">
+Jak przygotować się do sesji?
+<span class="arrow">▼</span>
+</button>
+<div class="faq-answer">
+<p>
+Po rezerwacji otrzymasz ode mnie wskazówki dotyczące ubioru, makijażu oraz dodatków. Pomagam dobrać stylizacje tak, aby pasowały do klimatu sesji.
+</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">
+Gdzie odbywa się sesja zdjęciowa? Kto wybiera studio?
+<span class="arrow">▼</span>
+</button>
+<div class="faq-answer">
+<p>
+Sesje odbywają się w plenerze lub w studio — w zależności od wybranego pakietu i preferencji klientki.
+</p>
+
+<p>
+Przed wpłaceniem zaliczki wysyłam kilka propozycji studiów i razem wybieramy najlepsze.
+</p>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">
+Ile czeka się na gotowe zdjęcia?
+<span class="arrow">▼</span>
+</button>
+<div class="faq-answer">
+<p>
+Na gotowe zdjęcia czeka się zazwyczaj od 14 do 21 dni.
+</p>
+</div>
+</div>
 
 </div>
 
@@ -461,21 +525,6 @@ document.getElementById("menu").classList.remove("active");
 document.getElementById("overlay").classList.remove("active");
 
 document.body.classList.remove("no-scroll");
-
-});
-
-const menuLinks = document.querySelectorAll(".menu a");
-
-menuLinks.forEach(link => {
-
-link.addEventListener("click", () => {
-
-document.getElementById("menu").classList.remove("active");
-document.getElementById("overlay").classList.remove("active");
-
-document.body.classList.remove("no-scroll");
-
-});
 
 });
 
