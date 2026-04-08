@@ -760,7 +760,8 @@ flex-direction:row-reverse;
 .offer-img {
 
 width:100%;
-border-radius:20px;
+max-width:420px;
+border-radius:36px;
 object-fit:cover;
 
 }
@@ -768,7 +769,17 @@ object-fit:cover;
 .offer-image {
 
 flex:1;
+display:flex;
+justify-content:center;
 
+}
+
+.offer-subtitle {
+font-family: 'Playfair Display', serif;
+font-size: 28px;
+letter-spacing: 2px;
+margin-bottom: 20px;
+text-transform: uppercase;
 }
 
 .offer-text {
@@ -1312,6 +1323,9 @@ class="offer-img">
 </div>
 
 <div class="offer-text">
+<h3 class="offer-subtitle">
+SESJA KOBIECA
+</h3>
 <p class="offer-intro">
 To wyjątkowa sesja stworzona z myślą o kobietach,
 które chcą zobaczyć siebie w pięknym,
