@@ -19,6 +19,7 @@ margin:0;
 font-family:'Montserrat',sans-serif;
 background:white;
 color:#111;
+text-align:center;
 }
 
 /* ===== BLOKADA SCROLLA ===== */
@@ -217,19 +218,50 @@ font-family:'Playfair Display',serif;
 font-size:40px;
 letter-spacing:4px;
 
-margin-bottom:50px;
+margin-bottom:20px;
 
 }
 
-/* ===== BOOKING ===== */
+/* ===== OPIS ===== */
 
-.booking-container {
+.booking-text {
 
-max-width:1100px;
+max-width:520px;
+margin:0 auto;
 
-margin:auto;
+line-height:1.7;
+color:#555;
 
-padding:20px;
+padding:0 20px;
+
+}
+
+/* ===== PRZYCISK ===== */
+
+.book-btn {
+
+display:inline-block;
+
+margin-top:40px;
+
+padding:18px 42px;
+
+border:1px solid #111;
+
+text-decoration:none;
+color:#111;
+
+letter-spacing:2px;
+font-size:14px;
+
+transition:0.3s;
+
+}
+
+.book-btn:hover {
+
+background:#111;
+color:white;
 
 }
 
@@ -289,8 +321,6 @@ LUUILYY.PHOTO
 
 <a href="faq.html">FAQ</a>
 
-<!-- DODANA SEKCJA -->
-
 <a href="index.html#process">Jak wygląda sesja?</a>
 
 <a href="index.html#about">O mnie</a>
@@ -319,51 +349,22 @@ ZAREZERWUJ SESJĘ
 
 </h2>
 
-<!-- ===== BOOKING ===== -->
+<p class="booking-text">
 
-<div class="booking-container">
+Wybierz dogodny termin swojej sesji w kalendarzu rezerwacji.
+Po kliknięciu zostaniesz przekierowana do systemu rezerwacji.
 
-<script src="//widget.simplybook.it/v2/widget/widget.js"></script>
+</p>
 
-<script>
+<!-- ===== PRZYCISK MAFELO ===== -->
 
-var widget = new SimplybookWidget({
+<a href="https://luuilyy-photo.mafelo.net/pl/services/20052"
+target="_blank"
+class="book-btn">
 
-"widget_type": "iframe",
+PRZEJDŹ DO KALENDARZA
 
-"url": "https://luuilyyphoto.simplybook.it",
-
-"theme": "space",
-
-"theme_settings": {
-
-"timeline_hide_unavailable": "1",
-
-"sb_base_color": "#000000",
-
-"body_bg_color": "#ffffff",
-
-"dark_font_color": "#222222",
-
-"light_font_color": "#ffffff",
-
-"btn_color_1": "#000000",
-
-"sb_busy": "#e5e5e5",
-
-"sb_available": "#f7f7f7"
-
-},
-
-"timeline": "modern",
-
-"datepicker": "top_calendar"
-
-});
-
-</script>
-
-</div>
+</a>
 
 <script>
 
